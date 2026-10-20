@@ -1,75 +1,17 @@
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Reasat Safin | Portfolio</title>
-<style>
-:root{--bg:#0b0b0c;--panel:#151517;--line:#303034;--text:#f4f1eb;--muted:#b3b0aa;--accent:#e9e2d2}
-*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:82px}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 system-ui,-apple-system,Segoe UI,Arial,sans-serif}a{color:inherit;text-decoration:none}
-header{position:sticky;top:0;z-index:5;background:#0b0b0cf2;border-bottom:1px solid var(--line);backdrop-filter:blur(12px)}nav{max-width:1120px;margin:auto;padding:13px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px}.brand{font-weight:800;letter-spacing:.08em;white-space:nowrap}.links{display:flex;gap:5px;flex-wrap:wrap}.links a{padding:7px 9px;color:#ccc;border-radius:9px;font-size:14px}.links a:hover{background:#242427;color:#fff}main{max-width:1120px;margin:auto;padding:0 22px}section{min-height:0;padding:64px 0 44px}.hero{min-height:calc(100svh - 70px);display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:48px}.eyebrow{color:#aaa;font-size:12px;letter-spacing:.18em;text-transform:uppercase}h1,h2{font-family:Georgia,serif;font-weight:500;line-height:1.04}h1{font-size:clamp(48px,7vw,86px);margin:16px 0}h2{font-size:clamp(38px,5vw,60px);margin:12px 0 28px}h3{margin:0 0 8px}.lead{font-size:19px;color:#d0cdc7;max-width:620px}.btn{display:inline-block;background:var(--accent);color:#111;border:0;border-radius:999px;padding:11px 17px;font-weight:700;cursor:pointer;margin:12px 7px 0 0}.outline{background:transparent;border:1px solid #555;color:#fff}.portraitBox{background:var(--panel);border:1px solid var(--line);padding:18px;border-radius:25px;display:grid;place-items:center;min-height:300px}.portrait{display:block;width:100%;height:auto;max-height:600px;object-fit:contain;border-radius:14px}.placeholder{color:#888;text-align:center;padding:35px;border:1px dashed #444;border-radius:14px;width:100%}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:22px}.card p{color:var(--muted);margin-bottom:0}.muted-note{color:var(--muted)}.gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.gallery figure{margin:0;background:var(--panel);border:1px solid var(--line);border-radius:18px;overflow:hidden}.gallery img{display:block;width:100%;height:auto;max-height:650px;object-fit:contain;background:#101010}.gallery figcaption{padding:12px 15px;color:#aaa}.contact{display:block;background:var(--panel);border:1px solid var(--line);padding:17px 20px;border-radius:14px;margin:10px 0;max-width:650px}footer{text-align:center;color:#888;border-top:1px solid var(--line);padding:28px}
-#editBtn{display:none;position:fixed;right:18px;bottom:18px;z-index:8}dialog{width:min(700px,94vw);max-height:90vh;overflow:auto;background:#131315;color:#fff;border:1px solid #444;border-radius:20px;padding:0}dialog::backdrop{background:#000b}.modal{padding:22px}.modal h2{font-size:34px}.form{display:grid;gap:11px}label{font-size:13px;color:#bbb}input,textarea{display:block;width:100%;margin-top:5px;padding:11px;border-radius:10px;border:1px solid #444;background:#202023;color:white;font:inherit}textarea{min-height:80px}.actions{display:flex;justify-content:flex-end;gap:8px;flex-wrap:wrap}.error{color:#ff9b9b;min-height:20px;font-size:13px}
-@media(max-width:760px){
-  nav{align-items:flex-start;flex-direction:column;gap:8px}
-  .links{gap:2px;max-width:100%;flex-wrap:nowrap;overflow-x:auto;white-space:nowrap;padding-bottom:4px}
-  .links a{font-size:12px;padding:5px 7px}
-  section{min-height:0;padding:44px 0 30px}
-  .hero{min-height:0;grid-template-columns:1fr;gap:25px;padding-top:30px}
-  .hero .portraitBox{order:2}
-  .grid{grid-template-columns:1fr 1fr}
-  .lead{font-size:17px}
-}
-@media(max-width:500px){
-  main{padding:0 15px}
-  .grid,.gallery{grid-template-columns:1fr}
-  .brand{font-size:14px}
-  .portraitBox{min-height:220px}
-}
-</style>
-</head>
-<body>
-<header><nav><a class="brand" href="#home">REASAT SAFIN</a><div class="links"><a href="#home">Home</a><a href="#about">About</a><a href="#education">Education</a><a href="#skills">Skills</a><a href="#gallery">Gallery</a><a href="#contact">Contact</a></div></nav></header>
-<main>
-<section id="home" class="hero"><div><div class="eyebrow">Personal Portfolio</div><h1 id="nameView">Reasat Safin</h1><p class="lead" id="introView">Welcome to my portfolio. Learn about my background, education and skills.</p><a class="btn" href="#about">Explore Portfolio</a><button class="btn outline" id="loginBtn">Owner Login</button></div><div class="portraitBox" id="portraitView"><div class="placeholder">Your portrait will appear here after you add an image URL in Edit Profile.<br>No square crop.</div></div></section>
-<section id="about"><div class="eyebrow">01 / About</div><h2>About Me</h2><div class="card"><p id="aboutView">Add your introduction using Edit Profile.</p></div></section>
-<section id="education"><div class="eyebrow">02 / Education</div><h2>Education</h2><div class="grid"><article class="card"><h3>Academic Background</h3><p id="edu1View">Add your school, college or university details.</p></article><article class="card"><h3>Current Studies</h3><p id="edu2View">Add your current study details.</p></article><article class="card"><h3>Goals</h3><p id="edu3View">Add your future goals.</p></article></div></section>
-<section id="skills"><div class="eyebrow">03 / Skills</div><h2>Skills</h2><div class="grid" id="skillsView"><article class="card"><h3>Web Design</h3><p>Responsive layouts and clean interfaces.</p></article><article class="card"><h3>Development</h3><p>Building useful digital experiences.</p></article><article class="card"><h3>Creative Work</h3><p>Design, ideas and problem solving.</p></article></div></section>
-<section id="gallery"><div class="eyebrow">04 / Gallery</div><h2>Gallery</h2><div class="gallery" id="galleryView"><figure><div class="placeholder">Add image URLs using Edit Profile.</div><figcaption>Gallery</figcaption></figure></div></section>
-<section id="contact"><div class="eyebrow">05 / Contact</div><h2>Contact</h2><p class="lead">Feel free to contact me.</p><a class="contact" id="emailView" href="mailto:reasatsafin@gmail.com">✉ reasatsafin@gmail.com</a><a class="contact" id="instagramView" href="#" target="_blank" rel="noopener">◎ Instagram</a></section>
-</main><footer>© <span id="yearView"></span> Reasat Safin</footer>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Reasat Safin | Home</title><link rel="stylesheet" href="assets/style.css"></head><body><div class="site-shell">
+<header><nav><a class="brand" href="index.html">Reasat Safin</a><div class="links">
+<a href="index.html" data-page="home">Home</a><a href="education.html" data-page="education">Education</a><a href="skills.html" data-page="skills">Skills</a><a href="gallery.html" data-page="gallery">Gallery</a><a href="contact.html" data-page="contact">Contact</a><a href="about.html" data-page="about">About Me</a>
+</div><button class="owner" id="loginBtn">Owner Login ♙</button></nav></header>
+<main><section class="hero"><div class="hero-copy"><div class="eyebrow">Hello, I'm</div><h1 id="nameView">Reasat Safin</h1><p class="lead" id="introView">I'm a student, creative thinker and a passionate learner. I love building digital experiences, exploring new technologies and improving my skills every day.</p><div class="actions"><a class="btn" href="education.html">Explore My Portfolio →</a><a class="btn outline" href="about.html">About Me</a></div></div><div class="portraitBox" id="portraitView"><div class="placeholder">Add your portrait URL in Owner Login → Edit Profile.</div></div><div class="quote">Better<br>Skills<br>Bigger<br>Dreams.</div></section><div class="bottomline"><span>↓ Explore my portfolio</span><span class="socials"><a href="contact.html">✉</a><a href="contact.html">f</a><a href="contact.html">◎</a><a href="contact.html">➤</a></span></div><footer><span>© <span id="yearView"></span> Reasat Safin</span><span class="socials"><a href="contact.html">✉</a><a href="contact.html">f</a><a href="contact.html">◎</a><a href="contact.html">➤</a></span></footer></main></div>
 <button class="btn" id="editBtn">Edit Profile</button>
-<dialog id="loginDialog"><div class="modal"><h2>Owner Login</h2><p>Use your existing Supabase account.</p><div class="form"><label>Email<input id="loginEmail" type="email" autocomplete="username"></label><label>Password<input id="loginPassword" type="password" autocomplete="current-password"></label><div class="error" id="loginError"></div></div><div class="actions"><button class="btn outline" id="cancelLogin">Cancel</button><button class="btn" id="loginSubmit">Login</button></div></div></dialog>
+<div id="lightbox"><span>×</span><img alt="Expanded gallery photo"></div>
+<dialog id="loginDialog"><div class="modal"><h2>Owner Login</h2><p class="muted-note">Use your existing Supabase account.</p><div class="form"><label>Email<input id="loginEmail" type="email" autocomplete="username"></label><label>Password<input id="loginPassword" type="password" autocomplete="current-password"></label><div class="error" id="loginError"></div></div><div class="modal-actions"><button class="btn outline" id="cancelLogin">Cancel</button><button class="btn" id="loginSubmit">Login</button></div></div></dialog>
 <dialog id="editDialog"><div class="modal"><h2>Edit Portfolio</h2><div class="form">
 <label>Display name<input id="fName"></label><label>Intro<textarea id="fIntro"></textarea></label><label>About<textarea id="fAbout"></textarea></label>
-<label>Education — Academic background<textarea id="fEdu1"></textarea></label><label>Education — Current studies<textarea id="fEdu2"></textarea></label><label>Education — Goals<textarea id="fEdu3"></textarea></label>
-<label>Portrait image URL (direct HTTPS link)<input id="fImage" placeholder="https://..."></label><label>Gallery image URLs (one URL per line)<textarea id="fGallery" placeholder="https://...\nhttps://..."></textarea></label><label>Contact email<input id="fEmail" type="email"></label><label>Instagram URL<input id="fInstagram" placeholder="https://instagram.com/username"></label><div class="error" id="saveError"></div></div><div class="actions"><button class="btn outline" id="logoutBtn">Logout</button><button class="btn outline" id="cancelEdit">Cancel</button><button class="btn" id="saveBtn">Save changes</button></div></div></dialog>
-<script>
-const SUPABASE_URL="https://lscaiyjwxioxzmxrfejy.supabase.co";
-const SUPABASE_ANON_KEY="sb_publishable_eqFA5mI497rEULsXL0dq_A_2q1pnF60";
-const $=id=>document.getElementById(id);
-$('yearView').textContent=new Date().getFullYear();
-$('portraitView').style.display='none';
-let sb=null, currentProfile=null;
-function safeUrl(url){try{const u=new URL(url);return ['https:'].includes(u.protocol)?u.href:''}catch{return ''}}
-function render(p){
- if(!p)return;
- $('nameView').textContent=p.display_name||'Reasat Safin';$('introView').textContent=p.intro||'I am interested in technology, creativity, and learning new things.';$('aboutView').textContent=p.about||'Welcome to my portfolio. I am always learning, building skills, and exploring creative projects.';
- $('edu1View').textContent=p.edu1||'Education details will be added soon.';$('edu2View').textContent=p.edu2||'Current study details will be added soon.';$('edu3View').textContent=p.edu3||'Future goals will be added soon.';
- const img=safeUrl(p.image||'');const portraitBox=$('portraitView');if(img){portraitBox.style.display='grid';portraitBox.innerHTML='<img class="portrait" alt="Reasat Safin portrait" src="'+img+'">'}else{portraitBox.style.display='none';}
- const urls=(p.gallery||'').split(/\r?\n/).map(safeUrl).filter(Boolean);
- $('galleryView').innerHTML=urls.length?urls.map((u,i)=>'<figure><img loading="lazy" src="'+u+'" alt="Gallery image '+(i+1)+'"><figcaption>Gallery image '+(i+1)+'</figcaption></figure>').join(''):'<p class="muted-note">Gallery photos coming soon.</p>';
- const email=p.email||'reasatsafin@gmail.com';$('emailView').textContent='✉ '+email;$('emailView').href='mailto:'+email;
- const insta=safeUrl(p.instagram||'');$('instagramView').href=insta||'#';
-}
-function fillForm(p){$('fName').value=p.display_name||'Reasat Safin';$('fIntro').value=p.intro||'';$('fAbout').value=p.about||'';$('fEdu1').value=p.edu1||'';$('fEdu2').value=p.edu2||'';$('fEdu3').value=p.edu3||'';$('fImage').value=p.image||'';$('fGallery').value=p.gallery||'';$('fEmail').value=p.email||'reasatsafin@gmail.com';$('fInstagram').value=p.instagram||''}
-async function loadPublic(){if(!sb)return;const {data,error}=await sb.from('portfolio_profile').select('*').limit(1).maybeSingle();if(!error&&data){currentProfile=data;render(data)}}
-async function openEditor(){if(!sb)return;const {data:{user}}=await sb.auth.getUser();if(!user)return;const {data,error}=await sb.from('portfolio_profile').select('*').eq('owner_id',user.id).maybeSingle();if(error){$('saveError').textContent=error.message;return}currentProfile=data||null;fillForm(data||{});$('saveError').textContent='';$('editDialog').showModal()}
-$('loginBtn').onclick=()=>$('loginDialog').showModal();$('cancelLogin').onclick=()=>$('loginDialog').close();$('cancelEdit').onclick=()=>$('editDialog').close();$('editBtn').onclick=openEditor;
-$('loginSubmit').onclick=async()=>{ $('loginError').textContent='';if(!sb){$('loginError').textContent='Supabase is still loading. Refresh and try again.';return}if(SUPABASE_ANON_KEY.includes('PASTE_')){$('loginError').textContent='First add your Supabase Publishable key in index.html.';return}const {error}=await sb.auth.signInWithPassword({email:$('loginEmail').value.trim(),password:$('loginPassword').value});if(error){$('loginError').textContent=error.message;return}$('loginDialog').close();$('editBtn').style.display='block';await openEditor()};
-$('saveBtn').onclick=async()=>{ $('saveError').textContent=''; if(!sb){$('saveError').textContent='Supabase is not connected. Refresh and try again.';return} $('saveBtn').disabled=true; $('saveBtn').textContent='Saving…'; try { const {data:{user},error:userError}=await sb.auth.getUser(); if(userError||!user){$('saveError').textContent='Login expired. Please login again.';return}
-const p={owner_id:user.id,display_name:$('fName').value.trim()||'Reasat Safin',intro:$('fIntro').value,about:$('fAbout').value,edu1:$('fEdu1').value,edu2:$('fEdu2').value,edu3:$('fEdu3').value,image:$('fImage').value.trim(),gallery:$('fGallery').value,email:$('fEmail').value.trim(),instagram:$('fInstagram').value.trim()};
-if(p.image && !safeUrl(p.image)){$('saveError').textContent='Portrait image must be a valid HTTPS URL.';return} if(p.instagram && !safeUrl(p.instagram)){$('saveError').textContent='Instagram must be a valid HTTPS URL.';return} if(p.gallery.split(/\r?\n/).some(x=>x.trim()&&!safeUrl(x.trim()))){$('saveError').textContent='Every gallery image must be a valid HTTPS URL, one per line.';return}
-const result=currentProfile?await sb.from('portfolio_profile').update(p).eq('owner_id',user.id):await sb.from('portfolio_profile').insert(p);
-if(result.error){$('saveError').textContent=result.error.message;return}currentProfile=p;render(p);$('editDialog').close(); } catch(e){$('saveError').textContent=e.message||'Could not save. Check connection and Supabase settings.'} finally {$('saveBtn').disabled=false;$('saveBtn').textContent='Save changes'} };
-$('logoutBtn').onclick=async()=>{if(sb)await sb.auth.signOut();$('editDialog').close();$('editBtn').style.display='none'};
-const script=document.createElement('script');script.src='https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2';script.onload=async()=>{sb=window.supabase.createClient(SUPABASE_URL,SUPABASE_ANON_KEY);if(!SUPABASE_ANON_KEY.includes('PASTE_')){const {data:{session}}=await sb.auth.getSession();if(session)$('editBtn').style.display='block';await loadPublic();sb.auth.onAuthStateChange((_event, session)=>{$('editBtn').style.display=session?'block':'none';if(!session)$('editDialog').open&&$('editDialog').close()})}};script.onerror=()=>console.error('Could not load Supabase library');document.head.appendChild(script);
-</script></body></html>
+<label>Education — School<textarea id="fEdu1"></textarea></label><label>Education — College / Current studies<textarea id="fEdu2"></textarea></label><label>Education — Goals<textarea id="fEdu3"></textarea></label>
+<label>Portrait image URL (direct HTTPS)<input id="fImage"></label><label>Gallery image URLs (one HTTPS URL per line)<textarea id="fGallery"></textarea></label>
+<label>School image URL<input id="fSchoolImage"></label><label>College image URL<input id="fCollegeImage"></label>
+<label>Skills (one per line, format: Name | 85)<textarea id="fSkills" placeholder="HTML & CSS | 90&#10;JavaScript | 75&#10;Python | 60"></textarea></label>
+<label>Email<input id="fEmail" type="email"></label><label>Facebook URL<input id="fFacebook"></label><label>Instagram URL<input id="fInstagram"></label><label>Telegram URL<input id="fTelegram"></label>
+<div class="error" id="saveError"></div></div><div class="modal-actions"><button class="btn outline" id="logoutBtn">Logout</button><button class="btn outline" id="cancelEdit">Cancel</button><button class="btn" id="saveBtn">Save changes</button></div></div></dialog>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="assets/app.js"></script></body></html>
