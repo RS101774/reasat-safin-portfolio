@@ -493,4 +493,4 @@ if (window.supabase && window.supabase.createClient) {
       }
     });
   })();
-}
+    }
