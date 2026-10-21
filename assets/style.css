@@ -122,3 +122,25 @@ textarea{min-height:65px}
   .contact-link .label{font-size:14px}
   .contact-link strong{font-size:15px}
 }
+
+/* ===== NEW: About page ===== */
+#aboutView{white-space:pre-line}
+.about-photo-wrap{width:100%}
+.about-placeholder{display:none;width:100%;aspect-ratio:1/1.05;align-items:center;justify-content:center;text-align:center;color:#898d95;font-size:15px;border:1px dashed #3b414b;border-radius:15px;background:linear-gradient(145deg,#11151a,#050607)}
+.about-photo-btn{display:none;margin-top:12px}
+.about-photo-wrap .error{margin-top:6px}
+
+/* ===== NEW: Contact page (social icons only) ===== */
+.page-intro.center{text-align:center;margin-left:auto;margin-right:auto}
+.page-intro.center .lead{margin-left:auto;margin-right:auto}
+.social-row{display:flex;justify-content:center;flex-wrap:wrap;gap:18px;padding:28px 0 70px}
+.social-row a{width:68px;height:68px;border-radius:50%;display:grid;place-items:center;font-size:27px;color:#f5f4f1;background:#0d1014;border:1px solid #30343b;transition:transform .2s,background .2s,border-color .2s}
+.social-row a:hover,.social-row a:active{transform:translateY(-4px)}
+.social-row a.fb:hover,.social-row a.fb:active{background:#1877f2;border-color:#1877f2}
+.social-row a.ig:hover,.social-row a.ig:active{background:#e4405f;border-color:#e4405f}
+.social-row a.wa:hover,.social-row a.wa:active{background:#25d366;border-color:#25d366}
+.social-row a.tg:hover,.social-row a.tg:active{background:#2aabee;border-color:#2aabee}
+@media(max-width:480px){
+  .social-row{gap:14px}
+  .social-row a{width:62px;height:62px;font-size:25px}
+}
