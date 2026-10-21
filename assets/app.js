@@ -24,10 +24,32 @@ if ($("yearView")) {
 
 let sb = null;
 let currentProfile = null;
+let isOwner = false;
+
+/* Show/hide the About page photo placeholder + upload button */
+function updateAboutPhoto() {
+  const img = $("aboutImageView");
+  if (!img) return;
+
+  const hasPhoto = img.style.display === "block";
+  const ph = $("aboutPlaceholder");
+  const btn = $("aboutPhotoBtn");
+
+  if (ph) ph.style.display = hasPhoto ? "none" : (isOwner ? "flex" : "none");
+
+  if (btn) {
+    btn.style.display = isOwner ? "inline-flex" : "none";
+    if (!btn.disabled) {
+      btn.textContent = hasPhoto ? "Change photo" : "Add your photo";
+    }
+  }
+}
 
 /* Show owner controls only for an authenticated session,
    or show the login button when the owner URL is used. */
 function updateOwnerControls(session) {
+  isOwner = !!session;
+
   if ($("loginBtn")) {
     $("loginBtn").style.display =
       session || ownerMode ? "inline-flex" : "none";
@@ -37,6 +59,8 @@ function updateOwnerControls(session) {
     $("editBtn").style.display =
       session ? "inline-flex" : "none";
   }
+
+  updateAboutPhoto();
 }
 
 function safeUrl(s) {
@@ -91,7 +115,7 @@ function render(p) {
   setText(
     "aboutView",
     p.about ||
-      "I am interested in technology, creativity, learning new things and solving problems."
+      "I'm a student from Dhaka who likes turning ideas into working websites.\n\nI build with HTML, CSS and SQL, store data with Supabase, and keep my code on GitHub. I'm always learning and trying to get a little better every day."
   );
 
   const portrait = $("portraitView");
@@ -123,6 +147,7 @@ function render(p) {
   setImage("schoolImageView", p.school_image);
   setImage("collegeImageView", p.college_image);
   setImage("aboutImageView", p.about_image || p.image);
+  updateAboutPhoto();
 
   const urls = (p.gallery || "")
     .split(/\r?\n/)
@@ -195,22 +220,18 @@ function render(p) {
     }
   }
 
+  /* Social links: only override the default link in the HTML
+     when a valid HTTPS URL is saved in Edit Profile. */
   [
     ["facebookView", p.facebook],
     ["instagramView", p.instagram],
     ["telegramView", p.telegram]
   ].forEach(([id, url]) => {
     const el = $(id);
+    if (!el) return;
 
-    if (el) {
-      el.href = safeUrl(url) || "#";
-
-      const label = el.querySelector(".label");
-
-      if (label) {
-        label.textContent = url || "Add link in Edit Profile";
-      }
-    }
+    const u = safeUrl(url);
+    if (u) el.href = u;
   });
 }
 
@@ -373,6 +394,11 @@ if ($("saveBtn")) {
         telegram: $("fTelegram").value.trim()
       };
 
+      /* Keep the uploaded About photo when saving the form */
+      if (currentProfile && currentProfile.about_image) {
+        p.about_image = currentProfile.about_image;
+      }
+
       for (const k of [
         "image",
         "school_image",
@@ -428,6 +454,89 @@ if ($("saveBtn")) {
     } finally {
       $("saveBtn").disabled = false;
       $("saveBtn").textContent = "Save changes";
+    }
+  };
+}
+
+/* About page: upload your own photo (owner only) */
+if ($("aboutPhotoBtn") && $("aboutPhotoInput")) {
+  $("aboutPhotoBtn").onclick = () => $("aboutPhotoInput").click();
+
+  $("aboutPhotoInput").onchange = async e => {
+    const file = e.target.files && e.target.files[0];
+    if (!file) return;
+
+    setText("aboutPhotoError", "");
+
+    if (!file.type.startsWith("image/")) {
+      setText("aboutPhotoError", "Please choose an image file.");
+      e.target.value = "";
+      return;
+    }
+
+    if (file.size > 5 * 1024 * 1024) {
+      setText("aboutPhotoError", "Image is too large. Max 5 MB.");
+      e.target.value = "";
+      return;
+    }
+
+    const btn = $("aboutPhotoBtn");
+    btn.disabled = true;
+    btn.textContent = "Uploading…";
+
+    try {
+      const {
+        data: { user },
+        error: userError
+      } = await sb.auth.getUser();
+
+      if (userError || !user) {
+        throw new Error("Login expired. Please login again.");
+      }
+
+      const ext =
+        (file.name.split(".").pop() || "jpg")
+          .toLowerCase()
+          .replace(/[^a-z0-9]/g, "") || "jpg";
+
+      const path = user.id + "/about-" + Date.now() + "." + ext;
+
+      const up = await sb.storage
+        .from("portfolio")
+        .upload(path, file, { upsert: true, contentType: file.type });
+
+      if (up.error) throw up.error;
+
+      const url = sb.storage
+        .from("portfolio")
+        .getPublicUrl(path).data.publicUrl;
+
+      const result = currentProfile
+        ? await sb
+            .from("portfolio_profile")
+            .update({ about_image: url })
+            .eq("owner_id", user.id)
+        : await sb
+            .from("portfolio_profile")
+            .insert({ owner_id: user.id, about_image: url });
+
+      if (result.error) throw result.error;
+
+      currentProfile = Object.assign({}, currentProfile || {}, {
+        owner_id: user.id,
+        about_image: url
+      });
+
+      render(currentProfile);
+    } catch (err) {
+      setText(
+        "aboutPhotoError",
+        err.message || "Upload failed. Check Supabase storage settings."
+      );
+    } finally {
+      btn.disabled = false;
+      e.target.value = "";
+      updateAboutPhoto();
     }
   };
 }
