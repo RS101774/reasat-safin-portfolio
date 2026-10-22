@@ -1,8 +1,8 @@
 
 /* =====================================================
    REASAT SAFIN — PREMIUM SIGNATURE PORTFOLIO
-   Complete Responsive Stylesheet
-   Matching Rectangular Portrait Boxes
+   Complete responsive stylesheet
+   Matching rectangular photo shapes
    ===================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Allura&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap');
@@ -277,7 +277,7 @@ p {
   max-width: 480px;
 }
 
-/* HOME PORTRAIT — RECTANGULAR BOX */
+/* HOME PHOTO — ROUNDED RECTANGLE */
 
 .portraitBox {
   position: relative;
@@ -289,7 +289,7 @@ p {
   justify-self: end;
   overflow: hidden;
   border: 1px solid #46434a;
-  border-radius: 18px;
+  border-radius: 24px;
   background:
     radial-gradient(ellipse at 50% 25%, #343038, transparent 65%),
     #121216;
@@ -674,11 +674,11 @@ footer {
   line-height: 2;
 }
 
+/* ABOUT PHOTO — SAME ROUNDED RECTANGLE */
+
 .about-photo-wrap {
   width: 100%;
 }
-
-/* ABOUT PORTRAIT — SAME RECTANGULAR BOX */
 
 .about-image {
   display: block;
@@ -686,7 +686,7 @@ footer {
   aspect-ratio: .82;
   max-height: 490px;
   border: 1px solid #3a3941;
-  border-radius: 18px;
+  border-radius: 24px;
   background: #141419;
   object-fit: cover;
 }
@@ -698,7 +698,7 @@ footer {
   align-items: center;
   justify-content: center;
   border: 1px dashed #45434b;
-  border-radius: 18px;
+  border-radius: 24px;
   background: #141419;
   color: #aaa8b2;
   text-align: center;
@@ -943,10 +943,10 @@ textarea {
   .hero .portraitBox {
     grid-row: 1;
     justify-self: center;
-    width: min(82%, 300px);
-    max-width: 300px;
+    width: min(76%, 270px);
+    max-width: 270px;
     aspect-ratio: .82;
-    border-radius: 18px;
+    border-radius: 24px;
   }
 
   .hero-copy {
@@ -1079,7 +1079,7 @@ textarea {
     border-radius: 10px;
   }
 
-  /* CONTACT — ALL FIVE ICONS ON ONE ROW */
+  /* CONTACT */
 
   .social-row {
     grid-template-columns: repeat(5, minmax(0, 1fr));
@@ -1118,10 +1118,14 @@ textarea {
 
   .about-image,
   .about-placeholder {
-    width: min(82%, 300px);
-    aspect-ratio: .82;
+    width: min(78%, 280px);
     margin: auto;
-    border-radius: 18px;
+    aspect-ratio: .82;
+    border-radius: 24px;
+  }
+
+  .about-image {
+    max-height: 490px;
   }
 
   .about-layout h2 {
