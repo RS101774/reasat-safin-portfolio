@@ -14,9 +14,7 @@
   --radius: 18px;
 }
 
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 html {
   scroll-behavior: smooth;
@@ -33,20 +31,9 @@ body {
   font: 16px/1.75 'DM Sans', system-ui, sans-serif;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-button,
-input,
-textarea {
-  font: inherit;
-}
-
-button {
-  cursor: pointer;
-}
+a { color: inherit; text-decoration: none; }
+button, input, textarea { font: inherit; }
+button { cursor: pointer; }
 
 .site-shell {
   width: min(1200px, calc(100% - 32px));
@@ -83,14 +70,15 @@ nav {
 }
 
 /* Signature-style name */
+
 .brand {
   flex-shrink: 0;
   font-family: 'Allura', cursive !important;
   font-size: 43px !important;
-  font-style: normal !important;
+  font-style: normal;
   font-weight: 400 !important;
   letter-spacing: 0 !important;
-  line-height: 1.2;
+  line-height: 1.15;
   white-space: nowrap;
 }
 
@@ -102,13 +90,13 @@ nav {
 }
 
 .links a {
-  padding: 10px 11px;
+  padding: 9px 11px;
   border-radius: 8px;
   color: #b5b5be;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 500;
   white-space: nowrap;
-  transition: color .2s ease, background .2s ease;
+  transition: .2s ease;
 }
 
 .links a:hover,
@@ -128,14 +116,12 @@ nav {
   padding: 9px 14px;
   color: var(--text);
   background: transparent;
-  font-size: 12px;
+  font-size: 14px;
 }
 
-.owner:hover {
-  background: #202127;
-}
+.owner:hover { background: #202127; }
 
-/* GENERAL TYPOGRAPHY */
+/* GENERAL */
 
 main {
   width: min(1000px, calc(100% - 48px));
@@ -144,14 +130,13 @@ main {
 
 .eyebrow {
   color: var(--accent);
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 600;
   letter-spacing: .24em;
   text-transform: uppercase;
 }
 
-h1,
-h2 {
+h1, h2 {
   font-family: 'Playfair Display', Georgia, serif;
   font-weight: 400;
   letter-spacing: -1.5px;
@@ -187,8 +172,6 @@ h3 {
   font-size: 14px;
 }
 
-/* BUTTONS */
-
 .btn {
   display: inline-flex;
   align-items: center;
@@ -216,9 +199,7 @@ h3 {
   color: var(--text);
 }
 
-.btn.outline:hover {
-  background: #1a1b20;
-}
+.btn.outline:hover { background: #1a1b20; }
 
 .actions {
   display: flex;
@@ -227,7 +208,7 @@ h3 {
   margin-top: 28px;
 }
 
-/* HOME PAGE */
+/* HOME */
 
 .hero {
   display: grid;
@@ -238,17 +219,9 @@ h3 {
   padding: 65px 0 48px;
 }
 
-.hero-copy {
-  min-width: 0;
-}
-
-.hero h1 {
-  max-width: 560px;
-}
-
-.hero .lead {
-  max-width: 480px;
-}
+.hero-copy { min-width: 0; }
+.hero h1 { max-width: 560px; }
+.hero .lead { max-width: 480px; }
 
 .portraitBox {
   position: relative;
@@ -281,9 +254,7 @@ h3 {
   text-align: center;
 }
 
-.quote {
-  display: none;
-}
+.quote { display: none; }
 
 .bottomline {
   display: flex;
@@ -307,9 +278,7 @@ h3 {
   transition: color .2s;
 }
 
-.socials a:hover {
-  color: var(--accent);
-}
+.socials a:hover { color: var(--accent); }
 
 footer {
   display: flex;
@@ -329,9 +298,7 @@ footer {
   padding: 64px 0 28px;
 }
 
-.page-intro .lead {
-  max-width: 600px;
-}
+.page-intro .lead { max-width: 600px; }
 
 .page-intro.center {
   margin-right: auto;
@@ -375,9 +342,7 @@ footer {
   line-height: 1.9;
 }
 
-.school-card {
-  padding: 12px;
-}
+.school-card { padding: 12px; }
 
 .school-image {
   display: block;
@@ -389,17 +354,9 @@ footer {
   object-fit: cover;
 }
 
-.school-card .details {
-  padding: 8px 10px 14px;
-}
-
-.school-card h3 {
-  font-size: 20px;
-}
-
-.school-card p {
-  margin-top: 5px;
-}
+.school-card .details { padding: 8px 10px 14px; }
+.school-card h3 { font-size: 20px; }
+.school-card p { margin-top: 5px; }
 
 .grid > .card:last-child {
   grid-column: 1 / -1;
@@ -497,9 +454,7 @@ footer {
   font-size: 11px;
 }
 
-.percent span:last-child {
-  color: var(--accent);
-}
+.percent span:last-child { color: var(--accent); }
 
 /* GALLERY */
 
@@ -529,11 +484,9 @@ footer {
   transition: transform .4s;
 }
 
-.gallery button:hover img {
-  transform: scale(1.06);
-}
+.gallery button:hover img { transform: scale(1.06); }
 
-/* CONTACT — SOCIAL ICONS */
+/* CONTACT */
 
 .social-row {
   display: flex;
@@ -554,12 +507,10 @@ footer {
   background: linear-gradient(145deg, #1a1b20, #101114);
   color: #f5f3ef;
   font-size: 30px;
-  transition: transform .25s, border-color .25s;
+  transition: transform .25s, border-color .25s, color .25s;
 }
 
-.social-row a:hover {
-  transform: translateY(-6px);
-}
+.social-row a:hover { transform: translateY(-6px); }
 
 .social-row a.fb:hover {
   color: #1877f2;
@@ -597,9 +548,7 @@ footer {
   line-height: 2;
 }
 
-.about-photo-wrap {
-  width: 100%;
-}
+.about-photo-wrap { width: 100%; }
 
 .about-image {
   display: block;
@@ -625,14 +574,8 @@ footer {
   text-align: center;
 }
 
-.about-photo-btn {
-  display: none;
-  margin-top: 12px;
-}
-
-.about-photo-wrap .error {
-  margin-top: 6px;
-}
+.about-photo-btn { display: none; margin-top: 12px; }
+.about-photo-wrap .error { margin-top: 6px; }
 
 .pill-row {
   display: flex;
@@ -679,27 +622,21 @@ dialog::backdrop {
   backdrop-filter: blur(7px);
 }
 
-.modal {
-  padding: 25px;
-}
+.modal { padding: 25px; }
 
 .modal h2 {
   margin-top: 0;
   font-size: 34px;
 }
 
-.form {
-  display: grid;
-  gap: 13px;
-}
+.form { display: grid; gap: 13px; }
 
 label {
   color: #c5c3cc;
   font-size: 13px;
 }
 
-input,
-textarea {
+input, textarea {
   display: block;
   width: 100%;
   margin-top: 6px;
@@ -712,15 +649,8 @@ textarea {
   font-size: 14px;
 }
 
-input:focus,
-textarea:focus {
-  border-color: var(--accent);
-}
-
-textarea {
-  min-height: 75px;
-  resize: vertical;
-}
+input:focus, textarea:focus { border-color: var(--accent); }
+textarea { min-height: 75px; resize: vertical; }
 
 .modal-actions {
   display: flex;
@@ -750,9 +680,7 @@ textarea {
   cursor: zoom-out;
 }
 
-#lightbox.open {
-  display: flex;
-}
+#lightbox.open { display: flex; }
 
 #lightbox img {
   max-width: 100%;
@@ -772,26 +700,11 @@ textarea {
 /* TABLET */
 
 @media (max-width: 900px) {
-  nav {
-    gap: 10px;
-  }
-
-  .brand {
-    font-size: 40px !important;
-  }
-
-  .links a {
-    padding: 9px 10px;
-    font-size: 15px;
-  }
-
-  .hero {
-    gap: 30px;
-  }
-
-  .skill-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
+  nav { gap: 10px; }
+  .brand { font-size: 41px !important; }
+  .links a { padding: 9px 10px; font-size: 16px; }
+  .hero { gap: 30px; }
+  .skill-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
 /* MOBILE */
@@ -812,12 +725,10 @@ textarea {
 
   .brand {
     font-size: 39px !important;
+    line-height: 1.15;
   }
 
-  .owner {
-    padding: 8px 10px;
-    font-size: 11px;
-  }
+  .owner { padding: 8px 10px; font-size: 12px; }
 
   .links {
     order: 3;
@@ -829,19 +740,16 @@ textarea {
     padding: 5px 0;
   }
 
-  .links::-webkit-scrollbar {
-    display: none;
-  }
+  .links::-webkit-scrollbar { display: none; }
 
   .links a {
     flex-shrink: 0;
     padding: 10px 12px;
     font-size: 16px;
+    font-weight: 500;
   }
 
-  main {
-    width: calc(100% - 32px);
-  }
+  main { width: calc(100% - 32px); }
 
   .hero {
     grid-template-columns: 1fr;
@@ -857,72 +765,23 @@ textarea {
     max-width: 270px;
   }
 
-  .hero-copy {
-    grid-row: 2;
-  }
+  .hero-copy { grid-row: 2; }
+  .hero h1 { font-size: clamp(42px, 12vw, 58px); }
+  .hero .lead { font-size: 14px; }
+  .actions { gap: 9px; margin-top: 22px; }
+  .btn { padding: 11px 15px; font-size: 12px; }
 
-  .hero h1 {
-    font-size: clamp(42px, 12vw, 58px);
-  }
+  .page-intro { padding: 42px 0 22px; }
+  .page-intro h2 { font-size: 42px; }
+  .page-intro .lead { font-size: 14px; }
 
-  .hero .lead {
-    font-size: 14px;
-  }
-
-  .actions {
-    gap: 9px;
-    margin-top: 22px;
-  }
-
-  .btn {
-    padding: 11px 15px;
-    font-size: 12px;
-  }
-
-  .page-intro {
-    padding: 42px 0 22px;
-  }
-
-  .page-intro h2 {
-    font-size: 42px;
-  }
-
-  .page-intro .lead {
-    font-size: 14px;
-  }
-
-  .grid {
-    gap: 11px;
-    padding-bottom: 32px;
-  }
-
-  .card {
-    padding: 14px;
-    border-radius: 13px;
-  }
-
-  .school-card {
-    padding: 9px;
-  }
-
-  .school-image {
-    height: 115px;
-    margin-bottom: 9px;
-  }
-
-  .school-card .details {
-    padding: 6px 5px 10px;
-  }
-
-  .school-card h3 {
-    font-size: 16px;
-  }
-
-  .school-card p,
-  .card p {
-    font-size: 12px;
-    line-height: 1.8;
-  }
+  .grid { gap: 11px; padding-bottom: 32px; }
+  .card { padding: 14px; border-radius: 13px; }
+  .school-card { padding: 9px; }
+  .school-image { height: 115px; margin-bottom: 9px; }
+  .school-card .details { padding: 6px 5px 10px; }
+  .school-card h3 { font-size: 16px; }
+  .school-card p, .card p { font-size: 12px; line-height: 1.8; }
 
   .grid > .card:last-child {
     grid-column: 1 / -1;
@@ -935,53 +794,19 @@ textarea {
     font-size: 23px;
   }
 
-  .grid > .card:last-child p {
-    font-size: 13px;
-  }
+  .grid > .card:last-child p { font-size: 13px; }
 
-  .skill-grid {
-    gap: 10px;
-    padding-bottom: 32px;
-  }
+  .skill-grid { gap: 10px; padding-bottom: 32px; }
+  .skill { padding: 13px; border-radius: 13px; }
+  .skilltop { gap: 8px; margin-bottom: 18px; }
+  .skillicon { width: 34px; height: 34px; border-radius: 9px; }
+  .skill h3 { font-size: 12px; }
+  .percent { font-size: 10px; }
 
-  .skill {
-    padding: 13px;
-    border-radius: 13px;
-  }
+  .gallery { gap: 9px; padding-bottom: 32px; }
+  .gallery button { border-radius: 10px; }
 
-  .skilltop {
-    gap: 8px;
-    margin-bottom: 18px;
-  }
-
-  .skillicon {
-    width: 34px;
-    height: 34px;
-    border-radius: 9px;
-  }
-
-  .skill h3 {
-    font-size: 12px;
-  }
-
-  .percent {
-    font-size: 10px;
-  }
-
-  .gallery {
-    gap: 9px;
-    padding-bottom: 32px;
-  }
-
-  .gallery button {
-    border-radius: 10px;
-  }
-
-  .social-row {
-    gap: 14px;
-    padding: 30px 0 60px;
-  }
-
+  .social-row { gap: 14px; padding: 30px 0 60px; }
   .social-row a {
     width: 62px;
     height: 62px;
@@ -995,93 +820,37 @@ textarea {
     padding: 35px 0 40px;
   }
 
-  .about-photo-wrap {
-    order: -1;
-  }
+  .about-photo-wrap { order: -1; }
 
-  .about-image,
-  .about-placeholder {
+  .about-image, .about-placeholder {
     width: min(78%, 280px);
     margin: auto;
     aspect-ratio: .9;
   }
 
-  .about-layout h2 {
-    font-size: 42px;
-  }
+  .about-layout h2 { font-size: 42px; }
+  #aboutView { font-size: 14px; }
+  .pill-row { gap: 7px; }
 
-  #aboutView {
-    font-size: 14px;
-  }
+  .bottomline { font-size: 10px; }
+  .socials { gap: 11px; }
+  footer { font-size: 10px; }
+  #editBtn { right: 12px; bottom: 12px; }
 
-  .pill-row {
-    gap: 7px;
-  }
-
-  .bottomline {
-    font-size: 10px;
-  }
-
-  .socials {
-    gap: 11px;
-  }
-
-  footer {
-    font-size: 10px;
-  }
-
-  #editBtn {
-    right: 12px;
-    bottom: 12px;
-  }
-
-  .modal {
-    padding: 18px;
-  }
-
-  .modal h2 {
-    font-size: 30px;
-  }
-
-  .modal-actions .btn {
-    flex: 1;
-  }
+  .modal { padding: 18px; }
+  .modal h2 { font-size: 30px; }
+  .modal-actions .btn { flex: 1; }
 }
 
-/* EXTRA SMALL MOBILE */
+/* VERY SMALL MOBILE */
 
 @media (max-width: 360px) {
-  .brand {
-    font-size: 35px !important;
-  }
-
-  .owner {
-    font-size: 10px;
-  }
-
-  .links a {
-    padding: 9px 10px;
-    font-size: 15px;
-  }
-
-  .grid {
-    gap: 8px;
-  }
-
-  .school-image {
-    height: 90px;
-  }
-
-  .skill {
-    padding: 10px;
-  }
-
-  .skillicon {
-    width: 30px;
-    height: 30px;
-  }
-
-  .skilltop {
-    gap: 6px;
-  }
+  .brand { font-size: 35px !important; }
+  .owner { font-size: 10px; }
+  .links a { padding: 9px 10px; font-size: 15px; }
+  .grid { gap: 8px; }
+  .school-image { height: 90px; }
+  .skill { padding: 10px; }
+  .skillicon { width: 30px; height: 30px; }
+  .skilltop { gap: 6px; }
 }
