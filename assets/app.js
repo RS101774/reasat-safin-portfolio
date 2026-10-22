@@ -1,4 +1,3 @@
-
 const SUPABASE_URL = "https://lscaiyjwxioxzmxrfejy.supabase.co";
 const SUPABASE_ANON_KEY = "sb_publishable_eqFA5mI497rEULsXL0dq_A_2q1pnF60";
 
@@ -40,6 +39,12 @@ function skillIcon(name) {
     ["react", "https://cdn.simpleicons.org/react/61DAFB"],
     ["figma", "https://cdn.simpleicons.org/figma/F24E1E"]
   ];
+
+  // SQL has no official logo, so use a database icon.
+  if (n.includes("sql")) {
+    return '<i class="fa-solid fa-database" style="font-size:20px;color:#d8c3a0"></i>';
+  }
+
   const match = icons.find(([key]) => n.includes(key));
   return match
     ? '<img alt="" src="' + match[1] + '" style="width:22px;height:22px;object-fit:contain">'
