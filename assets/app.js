@@ -18,32 +18,6 @@ document.querySelectorAll("[data-page]").forEach(a => {
 
 if ($("yearView")) $("yearView").textContent = new Date().getFullYear();
 
-if ($("skillsView")) {
-  const fa = document.createElement("link");
-  fa.rel = "stylesheet";
-  fa.href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css";
-  document.head.appendChild(fa);
-}
-
-function skillIcon(name) {
-  const n = (name || "").toLowerCase();
-  const icons = [
-    ["supabase", "https://cdn.simpleicons.org/supabase/3ECF8E"],
-    ["github", "https://cdn.simpleicons.org/github/ffffff"],
-    ["html", "https://cdn.simpleicons.org/html5/E34F26"],
-    ["css", "https://cdn.simpleicons.org/css/1572B6"],
-    ["javascript", "https://cdn.simpleicons.org/javascript/F7DF1E"],
-    ["python", "https://cdn.simpleicons.org/python/3776AB"],
-    ["react", "https://cdn.simpleicons.org/react/61DAFB"],
-    ["figma", "https://cdn.simpleicons.org/figma/F24E1E"]
-  ];
-
-  const match = icons.find(([key]) => n.includes(key));
-  return match
-    ? '<img alt="" src="' + match[1] + '" style="width:22px;height:22px;object-fit:contain">'
-    : '<i class="fa-solid fa-code"></i>';
-}
-
 function safeUrl(value) {
   try {
     const u = new URL((value || "").trim());
@@ -73,7 +47,7 @@ function setImage(id, url) {
 }
 
 function escapeHtml(value) {
-  return String(value).replace(/[&<>"']/g, c => ({
+  return String(value ?? "").replace(/[&<>"']/g, c => ({
     "&": "&amp;",
     "<": "&lt;",
     ">": "&gt;",
@@ -84,20 +58,25 @@ function escapeHtml(value) {
 
 function updateAboutPhoto() {
   const img = $("aboutImageView");
-  if (!img) return;
-
-  const hasPhoto = img.style.display === "block";
   const placeholder = $("aboutPlaceholder");
   const btn = $("aboutPhotoBtn");
 
+  const hasPhoto = !!(img && img.style.display !== "none" && img.getAttribute("src"));
+
   if (placeholder) {
-    placeholder.style.display = hasPhoto ? "none" : (isOwner ? "flex" : "none");
+    placeholder.style.display = isOwner && !hasPhoto ? "flex" : "none";
   }
 
   if (btn) {
     btn.style.display = isOwner ? "inline-flex" : "none";
-    if (!btn.disabled) btn.textContent = hasPhoto ? "Change photo" : "Add your photo";
+    btn.textContent = hasPhoto ? "Change photo" : "Add your photo";
   }
+
+  const input = $("aboutPhotoInput");
+  if (input) input.style.display = "none";
+
+  const error = $("aboutPhotoError");
+  if (error && !isOwner) error.textContent = "";
 }
 
 function updateOwnerControls(session) {
@@ -144,8 +123,7 @@ function render(p) {
   setImage("schoolImageView", p.school_image);
   setImage("collegeImageView", p.college_image);
 
-  // IMPORTANT: About photo is separate from the Home portrait.
-  // No fallback to p.image, so the two photos remain independent.
+  // Home portrait and About photo are independent.
   setImage("aboutImageView", p.about_image);
   updateAboutPhoto();
 
@@ -206,7 +184,11 @@ function render(p) {
   ].forEach(([id, url]) => {
     const el = $(id);
     const valid = safeUrl(url);
-    if (el && valid) el.href = valid;
+    if (el && valid) {
+      el.href = valid;
+    } else if (el) {
+      el.removeAttribute("href");
+    }
   });
 }
 
@@ -259,6 +241,8 @@ async function openEditor() {
 
   if (authError || !user) {
     updateOwnerControls(null);
+    setText("loginError", "Please log in to edit your portfolio.");
+    if ($("loginDialog")) $("loginDialog").showModal();
     return;
   }
 
@@ -282,7 +266,7 @@ async function openEditor() {
 
 if ($("loginBtn")) {
   $("loginBtn").onclick = () => {
-    if (sb) $("loginDialog").showModal();
+    if (sb && $("loginDialog")) $("loginDialog").showModal();
     else alert("Please wait for Supabase to load.");
   };
 }
@@ -302,6 +286,11 @@ if ($("editBtn")) {
 if ($("loginSubmit")) {
   $("loginSubmit").onclick = async () => {
     setText("loginError", "");
+
+    if (!sb) {
+      setText("loginError", "Supabase is still loading. Try again.");
+      return;
+    }
 
     const { error } = await sb.auth.signInWithPassword({
       email: $("loginEmail").value.trim(),
@@ -383,7 +372,7 @@ if ($("saveBtn")) {
 
       currentProfile = p;
       render(p);
-      $("editDialog").close();
+      if ($("editDialog")) $("editDialog").close();
 
     } catch (err) {
       setText("saveError", err.message || "Could not save changes.");
@@ -394,16 +383,26 @@ if ($("saveBtn")) {
   };
 }
 
-// Optional local file upload on About page.
-// This requires the Supabase Storage bucket and its policies to be configured.
+// Local image upload: owner only.
 if ($("aboutPhotoBtn") && $("aboutPhotoInput")) {
-  $("aboutPhotoBtn").onclick = () => $("aboutPhotoInput").click();
+  $("aboutPhotoBtn").onclick = async () => {
+    if (!isOwner || !sb) {
+      setText("aboutPhotoError", "");
+      return;
+    }
+    $("aboutPhotoInput").click();
+  };
 
   $("aboutPhotoInput").onchange = async e => {
     const file = e.target.files?.[0];
     if (!file) return;
 
     setText("aboutPhotoError", "");
+
+    if (!isOwner) {
+      e.target.value = "";
+      return;
+    }
 
     if (!file.type.startsWith("image/")) {
       setText("aboutPhotoError", "Please select an image.");
@@ -448,7 +447,12 @@ if ($("aboutPhotoBtn") && $("aboutPhotoInput")) {
 
       if (result.error) throw result.error;
 
-      currentProfile = { ...(currentProfile || {}), owner_id: user.id, about_image: url };
+      currentProfile = {
+        ...(currentProfile || {}),
+        owner_id: user.id,
+        about_image: url
+      };
+
       render(currentProfile);
 
     } catch (err) {
