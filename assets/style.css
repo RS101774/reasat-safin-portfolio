@@ -1,7 +1,9 @@
+
 /* =====================================================
    REASAT SAFIN — PREMIUM SIGNATURE PORTFOLIO
    Complete responsive stylesheet
    Home: Arch shape | About: Circle
+   Mobile: All navigation links visible
    ===================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Allura&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap');
@@ -389,7 +391,7 @@ footer {
 .school-card h3 { font-size: 20px; }
 .school-card p { margin-top: 5px; }
 
-/* FUTURE GOALS — clean straight gold bar */
+/* FUTURE GOALS */
 
 .grid > .card:last-child {
   position: relative;
@@ -529,7 +531,7 @@ footer {
 
 .gallery button:hover img { transform: scale(1.06); }
 
-/* CONTACT — FIVE ICON BUTTONS */
+/* CONTACT */
 
 .social-row {
   display: grid;
@@ -785,24 +787,24 @@ textarea { min-height: 75px; resize: vertical; }
     border-radius: 15px;
   }
 
-  /* NAV: logo + Owner Login on row 1, menu on row 2 */
+  /* NAV: LOGO + OWNER LOGIN ON TOP */
 
   nav {
     display: grid;
     grid-template-columns: minmax(0, 1fr) auto;
     grid-template-rows: auto auto;
     align-items: center;
-    gap: 4px 10px;
+    gap: 8px 8px;
     min-height: 0;
     width: calc(100% - 28px);
-    padding: 10px 0 6px;
+    padding: 10px 0 8px;
   }
 
   .brand {
     grid-column: 1;
     grid-row: 1;
     min-width: 0;
-    font-size: clamp(34px, 9.5vw, 45px) !important;
+    font-size: clamp(32px, 8.5vw, 43px) !important;
     line-height: 1.1 !important;
   }
 
@@ -810,38 +812,44 @@ textarea { min-height: 75px; resize: vertical; }
     grid-column: 2;
     grid-row: 1;
     justify-self: end;
-    padding: 8px 11px;
-    font-size: 12px;
+    padding: 8px 10px;
+    font-size: 11px;
   }
+
+  /* FIX: SHOW ALL SIX NAV LINKS WITHOUT HORIZONTAL SCROLL */
 
   .links {
     grid-column: 1 / -1;
     grid-row: 2;
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     width: 100%;
     min-width: 0;
-    justify-content: flex-start;
-    gap: 3px;
-    overflow-x: auto;
-    scrollbar-width: none;
-    padding: 4px 0;
-    /* soft fade on the right edge = "more tabs, scroll me" */
-    -webkit-mask-image: linear-gradient(to right, #000 86%, transparent 100%);
-    mask-image: linear-gradient(to right, #000 86%, transparent 100%);
+    gap: 5px;
+    overflow: visible;
+    padding: 5px 0 3px;
+    -webkit-mask-image: none;
+    mask-image: none;
   }
 
   .links::-webkit-scrollbar { display: none; }
 
   .links a {
-    flex-shrink: 0;
-    padding: 10px 12px;
-    font-size: 16px;
-    font-weight: 500;
+    display: flex;
+    width: 100%;
+    min-width: 0;
+    min-height: 42px;
+    padding: 8px 3px;
+    font-size: 13px;
+    line-height: 1.25;
+    text-align: center;
+    white-space: nowrap;
+    border-radius: 9px;
   }
 
-  main { width: calc(100% - 32px); }
-
   /* HOME */
+
+  main { width: calc(100% - 32px); }
 
   .hero {
     grid-template-columns: 1fr;
@@ -956,7 +964,7 @@ textarea { min-height: 75px; resize: vertical; }
   .social-row a.email { font-size: 0 !important; }
   .social-row a.email::before { font-size: 23px; }
 
-  /* ABOUT — CIRCULAR PHOTO ON MOBILE TOO */
+  /* ABOUT — CIRCULAR PHOTO */
 
   .about-layout {
     grid-template-columns: 1fr;
@@ -996,14 +1004,25 @@ textarea { min-height: 75px; resize: vertical; }
 /* VERY SMALL MOBILE */
 
 @media (max-width: 360px) {
-  .brand { font-size: 33px !important; }
+  .brand { font-size: 31px !important; }
 
   .owner {
     padding: 7px 8px;
     font-size: 10px;
   }
 
-  .links a { padding: 9px 10px; font-size: 15px; }
+  /* Keep all navigation items visible on narrow phones */
+
+  .links {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 4px;
+  }
+
+  .links a {
+    padding: 8px 2px;
+    font-size: 12px;
+  }
+
   .grid { gap: 8px; }
   .school-image { height: 90px; }
   .skill { padding: 10px; }
