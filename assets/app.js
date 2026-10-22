@@ -22,9 +22,53 @@ if ($("yearView")) {
   $("yearView").textContent = new Date().getFullYear();
 }
 
+/* Skills page: load brand icons (Font Awesome) */
+if ($("skillsView") && !document.getElementById("faCss")) {
+  const fa = document.createElement("link");
+  fa.id = "faCss";
+  fa.rel = "stylesheet";
+  fa.href =
+    "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css";
+  document.head.appendChild(fa);
+}
+
 let sb = null;
 let currentProfile = null;
 let isOwner = false;
+
+/* Pick a real logo for each skill by its name */
+function skillIcon(name) {
+  const n = (name || "").toLowerCase();
+  const i = (cls, color) => ({
+    html: '<i class="' + cls + '" style="font-size:20px"></i>',
+    color: color
+  });
+
+  if (n.includes("supabase")) {
+    return {
+      html:
+        '<img alt="" src="https://cdn.simpleicons.org/supabase/3ECF8E" style="width:20px;height:20px;display:block">',
+      color: "#3ecf8e"
+    };
+  }
+  if (n.includes("github")) return i("fa-brands fa-github", "#f5f4f1");
+  if (/\bgit\b/.test(n)) return i("fa-brands fa-git-alt", "#f05032");
+  if (n.includes("html")) return i("fa-brands fa-html5", "#e34f26");
+  if (n.includes("css")) return i("fa-brands fa-css3-alt", "#1572b6");
+  if (n.includes("javascript") || /\bjs\b/.test(n)) {
+    return i("fa-brands fa-js", "#f7df1e");
+  }
+  if (n.includes("react")) return i("fa-brands fa-react", "#61dafb");
+  if (n.includes("python")) return i("fa-brands fa-python", "#4b8bbe");
+  if (n.includes("node")) return i("fa-brands fa-node-js", "#68a063");
+  if (n.includes("figma") || n.includes("ui") || n.includes("design")) {
+    return i("fa-brands fa-figma", "#f24e1e");
+  }
+  if (n.includes("sql") || n.includes("database")) {
+    return i("fa-solid fa-database", "#8ab4f8");
+  }
+  return i("fa-solid fa-code", "#d8e0ee");
+}
 
 /* Show/hide the About page photo placeholder + upload button */
 function updateAboutPhoto() {
@@ -189,20 +233,24 @@ function render(p) {
       })
       .filter(x => x.name);
 
-    skills.innerHTML = rows.map((s, i) =>
-      '<article class="skill">' +
-        '<div class="skilltop">' +
-          '<div class="skillicon">' +
-            ["◇", "♫", "⚙", "♧", "✧", "⌘"][i % 6] +
+    skills.innerHTML = rows.map(s => {
+      const ic = skillIcon(s.name);
+
+      return (
+        '<article class="skill">' +
+          '<div class="skilltop">' +
+            '<div class="skillicon" style="color:' + ic.color + '">' +
+              ic.html +
+            "</div>" +
+            "<h3>" + escapeHtml(s.name) + "</h3>" +
           "</div>" +
-          "<h3>" + escapeHtml(s.name) + "</h3>" +
-        "</div>" +
-        '<div class="bar"><span style="width:' +
-          s.n + '%"></span></div>' +
-        '<div class="percent"><span>Progress</span><span>' +
-          s.n + "%</span></div>" +
-      "</article>"
-    ).join("");
+          '<div class="bar"><span style="width:' +
+            s.n + '%"></span></div>' +
+          '<div class="percent"><span>Progress</span><span>' +
+            s.n + "%</span></div>" +
+        "</article>"
+      );
+    }).join("");
   }
 
   const email = p.email || "reasatsafin@gmail.com";
