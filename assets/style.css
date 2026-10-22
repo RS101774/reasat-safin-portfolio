@@ -1,7 +1,7 @@
 /* =====================================================
    REASAT SAFIN — PREMIUM SIGNATURE PORTFOLIO
    Complete responsive stylesheet
-   Home: Rounded rectangle | About: Circle
+   Home: Arch shape | About: Circle
    ===================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Allura&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap');
@@ -245,7 +245,7 @@ p { overflow-wrap: break-word; }
 .hero h1 { max-width: 560px; }
 .hero .lead { max-width: 480px; }
 
-/* HOME PHOTO — ROUNDED RECTANGLE */
+/* HOME PHOTO — ARCH SHAPE */
 
 .portraitBox {
   position: relative;
@@ -253,15 +253,15 @@ p { overflow-wrap: break-word; }
   place-items: center;
   width: 100%;
   max-width: 340px;
-  aspect-ratio: .82;
+  aspect-ratio: .8;
   justify-self: end;
   overflow: hidden;
-  border: 1px solid #46434a;
-  border-radius: 24px;
+  border: 2px solid #d6c4a1;
+  border-radius: 999px 999px 26px 26px;
   background:
     radial-gradient(ellipse at 50% 25%, #343038, transparent 65%),
     #121216;
-  box-shadow: 0 20px 70px #0006;
+  box-shadow: 0 20px 70px #0006, 0 0 40px #d6c4a11f;
 }
 
 .portrait {
@@ -269,6 +269,7 @@ p { overflow-wrap: break-word; }
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center 25%;
   border-radius: inherit;
 }
 
@@ -822,17 +823,19 @@ textarea { min-height: 75px; resize: vertical; }
     grid-template-columns: 1fr;
     gap: 25px;
     min-height: auto;
-    padding: 35px 0 30px;
+    padding: 30px 0 30px;
   }
 
   .hero .portraitBox {
     grid-row: 1;
     justify-self: center;
-    width: min(76%, 270px);
-    max-width: 270px;
-    aspect-ratio: .82;
-    border-radius: 24px;
+    width: min(62%, 230px);
+    max-width: 230px;
+    aspect-ratio: .8;
+    border-radius: 999px 999px 22px 22px;
   }
+
+  .hero .portrait { object-position: center 22%; }
 
   .hero-copy { grid-row: 2; }
   .hero h1 { font-size: clamp(42px, 12vw, 58px); }
@@ -991,9 +994,4 @@ textarea { min-height: 75px; resize: vertical; }
 
   .social-row a {
     border-radius: 11px;
-    font-size: 18px;
-  }
-
-  .social-row a.email { font-size: 0 !important; }
-  .social-row a.email::before { font-size: 20px; }
-}
+    font-size: 18p
