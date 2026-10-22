@@ -1,8 +1,7 @@
-
 /* =====================================================
    REASAT SAFIN — PREMIUM SIGNATURE PORTFOLIO
    Complete responsive stylesheet
-   Matching rectangular photo shapes
+   Home: Rounded rectangle | About: Circle
    ===================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Allura&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap');
@@ -18,9 +17,7 @@
   --radius: 18px;
 }
 
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 html {
   scroll-behavior: smooth;
@@ -37,24 +34,10 @@ body {
   font: 16px/1.75 'DM Sans', system-ui, sans-serif;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-button,
-input,
-textarea {
-  font: inherit;
-}
-
-button {
-  cursor: pointer;
-}
-
-img {
-  max-width: 100%;
-}
+a { color: inherit; text-decoration: none; }
+button, input, textarea { font: inherit; }
+button { cursor: pointer; }
+img { max-width: 100%; }
 
 /* WEBSITE FRAME */
 
@@ -154,9 +137,7 @@ nav {
   white-space: nowrap;
 }
 
-.owner:hover {
-  background: #202127;
-}
+.owner:hover { background: #202127; }
 
 /* GENERAL CONTENT */
 
@@ -173,8 +154,7 @@ main {
   text-transform: uppercase;
 }
 
-h1,
-h2 {
+h1, h2 {
   font-family: 'Playfair Display', Georgia, serif;
   font-weight: 400;
   letter-spacing: -1.5px;
@@ -198,9 +178,7 @@ h3 {
   line-height: 1.45;
 }
 
-p {
-  overflow-wrap: break-word;
-}
+p { overflow-wrap: break-word; }
 
 .lead {
   max-width: 520px;
@@ -243,9 +221,7 @@ p {
   color: var(--text);
 }
 
-.btn.outline:hover {
-  background: #1a1b20;
-}
+.btn.outline:hover { background: #1a1b20; }
 
 .actions {
   display: flex;
@@ -265,17 +241,9 @@ p {
   padding: 65px 0 48px;
 }
 
-.hero-copy {
-  min-width: 0;
-}
-
-.hero h1 {
-  max-width: 560px;
-}
-
-.hero .lead {
-  max-width: 480px;
-}
+.hero-copy { min-width: 0; }
+.hero h1 { max-width: 560px; }
+.hero .lead { max-width: 480px; }
 
 /* HOME PHOTO — ROUNDED RECTANGLE */
 
@@ -311,9 +279,7 @@ p {
   text-align: center;
 }
 
-.quote {
-  display: none;
-}
+.quote { display: none; }
 
 /* HOME BOTTOM LINE */
 
@@ -340,9 +306,7 @@ p {
 }
 
 .socials a:hover,
-footer a:hover {
-  color: var(--accent);
-}
+footer a:hover { color: var(--accent); }
 
 /* FOOTER */
 
@@ -364,9 +328,7 @@ footer {
   padding: 64px 0 28px;
 }
 
-.page-intro .lead {
-  max-width: 600px;
-}
+.page-intro .lead { max-width: 600px; }
 
 .page-intro.center {
   margin-right: auto;
@@ -410,9 +372,7 @@ footer {
   line-height: 1.9;
 }
 
-.school-card {
-  padding: 12px;
-}
+.school-card { padding: 12px; }
 
 .school-image {
   display: block;
@@ -424,17 +384,9 @@ footer {
   object-fit: cover;
 }
 
-.school-card .details {
-  padding: 8px 10px 14px;
-}
-
-.school-card h3 {
-  font-size: 20px;
-}
-
-.school-card p {
-  margin-top: 5px;
-}
+.school-card .details { padding: 8px 10px 14px; }
+.school-card h3 { font-size: 20px; }
+.school-card p { margin-top: 5px; }
 
 /* FUTURE GOALS */
 
@@ -534,9 +486,7 @@ footer {
   font-size: 11px;
 }
 
-.percent span:last-child {
-  color: var(--accent);
-}
+.percent span:last-child { color: var(--accent); }
 
 /* GALLERY */
 
@@ -566,9 +516,7 @@ footer {
   transition: transform .4s;
 }
 
-.gallery button:hover img {
-  transform: scale(1.06);
-}
+.gallery button:hover img { transform: scale(1.06); }
 
 /* CONTACT — FIVE ICON BUTTONS */
 
@@ -601,9 +549,7 @@ footer {
   transition: transform .25s, border-color .25s, color .25s;
 }
 
-.social-row a:hover {
-  transform: translateY(-5px);
-}
+.social-row a:hover { transform: translateY(-5px); }
 
 /* EMAIL ICON */
 
@@ -614,9 +560,7 @@ footer {
   position: relative;
 }
 
-.social-row a.email i {
-  display: none !important;
-}
+.social-row a.email i { display: none !important; }
 
 .social-row a.email::before {
   content: "\f0e0";
@@ -638,25 +582,10 @@ footer {
 
 /* SOCIAL BRAND COLORS ON HOVER */
 
-.social-row a.fb:hover {
-  color: #1877f2;
-  border-color: #1877f2;
-}
-
-.social-row a.ig:hover {
-  color: #e4405f;
-  border-color: #e4405f;
-}
-
-.social-row a.wa:hover {
-  color: #25d366;
-  border-color: #25d366;
-}
-
-.social-row a.tg:hover {
-  color: #2aabee;
-  border-color: #2aabee;
-}
+.social-row a.fb:hover { color: #1877f2; border-color: #1877f2; }
+.social-row a.ig:hover { color: #e4405f; border-color: #e4405f; }
+.social-row a.wa:hover { color: #25d366; border-color: #25d366; }
+.social-row a.tg:hover { color: #2aabee; border-color: #2aabee; }
 
 /* ABOUT ME */
 
@@ -674,31 +603,28 @@ footer {
   line-height: 2;
 }
 
-/* ABOUT PHOTO — SAME ROUNDED RECTANGLE */
+/* ABOUT PHOTO — CIRCULAR */
 
-.about-photo-wrap {
-  width: 100%;
-}
+.about-photo-wrap { width: 100%; }
 
 .about-image {
   display: block;
-  width: 100%;
-  aspect-ratio: .82;
-  max-height: 490px;
+  width: min(100%, 360px);
+  aspect-ratio: 1 / 1;
   border: 1px solid #3a3941;
-  border-radius: 24px;
+  border-radius: 50%;
   background: #141419;
   object-fit: cover;
 }
 
 .about-placeholder {
   display: none;
-  width: 100%;
-  aspect-ratio: .82;
+  width: min(100%, 360px);
+  aspect-ratio: 1 / 1;
   align-items: center;
   justify-content: center;
   border: 1px dashed #45434b;
-  border-radius: 24px;
+  border-radius: 50%;
   background: #141419;
   color: #aaa8b2;
   text-align: center;
@@ -709,9 +635,7 @@ footer {
   margin-top: 12px;
 }
 
-.about-photo-wrap .error {
-  margin-top: 6px;
-}
+.about-photo-wrap .error { margin-top: 6px; }
 
 .pill-row {
   display: flex;
@@ -759,27 +683,16 @@ dialog::backdrop {
   -webkit-backdrop-filter: blur(7px);
 }
 
-.modal {
-  padding: 25px;
-}
-
-.modal h2 {
-  margin-top: 0;
-  font-size: 34px;
-}
-
-.form {
-  display: grid;
-  gap: 13px;
-}
+.modal { padding: 25px; }
+.modal h2 { margin-top: 0; font-size: 34px; }
+.form { display: grid; gap: 13px; }
 
 label {
   color: #c5c3cc;
   font-size: 13px;
 }
 
-input,
-textarea {
+input, textarea {
   display: block;
   width: 100%;
   margin-top: 6px;
@@ -792,15 +705,8 @@ textarea {
   font-size: 14px;
 }
 
-input:focus,
-textarea:focus {
-  border-color: var(--accent);
-}
-
-textarea {
-  min-height: 75px;
-  resize: vertical;
-}
+input:focus, textarea:focus { border-color: var(--accent); }
+textarea { min-height: 75px; resize: vertical; }
 
 .modal-actions {
   display: flex;
@@ -830,9 +736,7 @@ textarea {
   cursor: zoom-out;
 }
 
-#lightbox.open {
-  display: flex;
-}
+#lightbox.open { display: flex; }
 
 #lightbox img {
   max-width: 100%;
@@ -852,26 +756,11 @@ textarea {
 /* TABLET */
 
 @media (max-width: 900px) {
-  nav {
-    gap: 10px;
-  }
-
-  .brand {
-    font-size: 49px !important;
-  }
-
-  .links a {
-    padding: 9px 10px;
-    font-size: 15px;
-  }
-
-  .hero {
-    gap: 30px;
-  }
-
-  .skill-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
+  nav { gap: 10px; }
+  .brand { font-size: 49px !important; }
+  .links a { padding: 9px 10px; font-size: 15px; }
+  .hero { gap: 30px; }
+  .skill-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
 /* MOBILE */
@@ -916,9 +805,7 @@ textarea {
     padding: 5px 0;
   }
 
-  .links::-webkit-scrollbar {
-    display: none;
-  }
+  .links::-webkit-scrollbar { display: none; }
 
   .links a {
     flex-shrink: 0;
@@ -927,9 +814,7 @@ textarea {
     font-weight: 500;
   }
 
-  main {
-    width: calc(100% - 32px);
-  }
+  main { width: calc(100% - 32px); }
 
   /* HOME */
 
@@ -949,73 +834,34 @@ textarea {
     border-radius: 24px;
   }
 
-  .hero-copy {
-    grid-row: 2;
-  }
+  .hero-copy { grid-row: 2; }
+  .hero h1 { font-size: clamp(42px, 12vw, 58px); }
+  .hero .lead { font-size: 14px; }
 
-  .hero h1 {
-    font-size: clamp(42px, 12vw, 58px);
-  }
-
-  .hero .lead {
-    font-size: 14px;
-  }
-
-  .actions {
-    gap: 9px;
-    margin-top: 22px;
-  }
-
-  .btn {
-    padding: 11px 15px;
-    font-size: 12px;
-  }
+  .actions { gap: 9px; margin-top: 22px; }
+  .btn { padding: 11px 15px; font-size: 12px; }
 
   /* PAGE HEADINGS */
 
-  .page-intro {
-    padding: 42px 0 22px;
-  }
-
-  .page-intro h2 {
-    font-size: 42px;
-  }
-
-  .page-intro .lead {
-    font-size: 14px;
-  }
+  .page-intro { padding: 42px 0 22px; }
+  .page-intro h2 { font-size: 42px; }
+  .page-intro .lead { font-size: 14px; }
 
   /* EDUCATION */
 
-  .grid {
-    gap: 11px;
-    padding-bottom: 32px;
-  }
-
-  .card {
-    padding: 14px;
-    border-radius: 13px;
-  }
-
-  .school-card {
-    padding: 9px;
-  }
+  .grid { gap: 11px; padding-bottom: 32px; }
+  .card { padding: 14px; border-radius: 13px; }
+  .school-card { padding: 9px; }
 
   .school-image {
     height: 115px;
     margin-bottom: 9px;
   }
 
-  .school-card .details {
-    padding: 6px 5px 10px;
-  }
+  .school-card .details { padding: 6px 5px 10px; }
+  .school-card h3 { font-size: 16px; }
 
-  .school-card h3 {
-    font-size: 16px;
-  }
-
-  .school-card p,
-  .card p {
+  .school-card p, .card p {
     font-size: 12px;
     line-height: 1.8;
   }
@@ -1031,9 +877,7 @@ textarea {
     font-size: 23px;
   }
 
-  .grid > .card:last-child p {
-    font-size: 13px;
-  }
+  .grid > .card:last-child p { font-size: 13px; }
 
   /* SKILLS */
 
@@ -1043,15 +887,8 @@ textarea {
     padding-bottom: 32px;
   }
 
-  .skill {
-    padding: 13px;
-    border-radius: 13px;
-  }
-
-  .skilltop {
-    gap: 8px;
-    margin-bottom: 18px;
-  }
+  .skill { padding: 13px; border-radius: 13px; }
+  .skilltop { gap: 8px; margin-bottom: 18px; }
 
   .skillicon {
     width: 34px;
@@ -1059,13 +896,8 @@ textarea {
     border-radius: 9px;
   }
 
-  .skill h3 {
-    font-size: 12px;
-  }
-
-  .percent {
-    font-size: 10px;
-  }
+  .skill h3 { font-size: 12px; }
+  .percent { font-size: 10px; }
 
   /* GALLERY */
 
@@ -1075,9 +907,7 @@ textarea {
     padding-bottom: 32px;
   }
 
-  .gallery button {
-    border-radius: 10px;
-  }
+  .gallery button { border-radius: 10px; }
 
   /* CONTACT */
 
@@ -1096,15 +926,10 @@ textarea {
     font-size: clamp(18px, 5.5vw, 25px);
   }
 
-  .social-row a.email {
-    font-size: 0 !important;
-  }
+  .social-row a.email { font-size: 0 !important; }
+  .social-row a.email::before { font-size: 23px; }
 
-  .social-row a.email::before {
-    font-size: 23px;
-  }
-
-  /* ABOUT */
+  /* ABOUT — CIRCULAR PHOTO ON MOBILE TOO */
 
   .about-layout {
     grid-template-columns: 1fr;
@@ -1112,120 +937,63 @@ textarea {
     padding: 35px 0 40px;
   }
 
-  .about-photo-wrap {
-    order: -1;
-  }
+  .about-photo-wrap { order: -1; }
 
-  .about-image,
-  .about-placeholder {
+  .about-image, .about-placeholder {
     width: min(78%, 280px);
     margin: auto;
-    aspect-ratio: .82;
-    border-radius: 24px;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
   }
 
-  .about-image {
-    max-height: 490px;
-  }
-
-  .about-layout h2 {
-    font-size: 42px;
-  }
-
-  #aboutView {
-    font-size: 14px;
-  }
-
-  .pill-row {
-    gap: 7px;
-  }
+  .about-image { max-height: none; }
+  .about-layout h2 { font-size: 42px; }
+  #aboutView { font-size: 14px; }
+  .pill-row { gap: 7px; }
 
   /* FOOTER */
 
-  .bottomline {
-    font-size: 10px;
-  }
+  .bottomline { font-size: 10px; }
+  .socials { gap: 11px; }
+  footer { font-size: 10px; }
 
-  .socials {
-    gap: 11px;
-  }
-
-  footer {
-    font-size: 10px;
-  }
-
-  #editBtn {
-    right: 12px;
-    bottom: 12px;
-  }
+  #editBtn { right: 12px; bottom: 12px; }
 
   /* DIALOGS */
 
-  .modal {
-    padding: 18px;
-  }
-
-  .modal h2 {
-    font-size: 30px;
-  }
-
-  .modal-actions .btn {
-    flex: 1;
-  }
+  .modal { padding: 18px; }
+  .modal h2 { font-size: 30px; }
+  .modal-actions .btn { flex: 1; }
 }
 
 /* VERY SMALL MOBILE */
 
 @media (max-width: 360px) {
-  .brand {
-    font-size: 33px !important;
-  }
+  .brand { font-size: 33px !important; }
 
   .owner {
     padding: 7px 8px;
     font-size: 10px;
   }
 
-  .links a {
-    padding: 9px 10px;
-    font-size: 15px;
-  }
-
-  .grid {
-    gap: 8px;
-  }
-
-  .school-image {
-    height: 90px;
-  }
-
-  .skill {
-    padding: 10px;
-  }
+  .links a { padding: 9px 10px; font-size: 15px; }
+  .grid { gap: 8px; }
+  .school-image { height: 90px; }
+  .skill { padding: 10px; }
 
   .skillicon {
     width: 30px;
     height: 30px;
   }
 
-  .skilltop {
-    gap: 6px;
-  }
-
-  .social-row {
-    gap: 5px;
-  }
+  .skilltop { gap: 6px; }
+  .social-row { gap: 5px; }
 
   .social-row a {
     border-radius: 11px;
     font-size: 18px;
   }
 
-  .social-row a.email {
-    font-size: 0 !important;
-  }
-
-  .social-row a.email::before {
-    font-size: 20px;
-  }
+  .social-row a.email { font-size: 0 !important; }
+  .social-row a.email::before { font-size: 20px; }
 }
