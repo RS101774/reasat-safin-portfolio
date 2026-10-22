@@ -3,12 +3,107 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#08090b">
   <title>Reasat Safin | Contact</title>
 
   <link rel="stylesheet" href="assets/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    .social-row {
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: center;
+      align-items: center;
+      gap: clamp(8px, 2.5vw, 22px);
+      width: 100%;
+      padding: 38px 0 90px;
+    }
+
+    .social-row a {
+      display: flex;
+      flex: 0 1 78px;
+      align-items: center;
+      justify-content: center;
+      width: 78px;
+      min-width: 0;
+      height: 78px;
+      padding: 0;
+      overflow: hidden;
+      border: 1px solid #37373e;
+      border-radius: 20px;
+      background: linear-gradient(145deg, #1a1b20, #101114);
+      color: #f5f3ef;
+      font-size: 28px;
+      line-height: 1;
+      text-decoration: none;
+      transition: transform .2s ease, color .2s ease, border-color .2s ease;
+    }
+
+    .social-row a i {
+      display: block;
+      flex-shrink: 0;
+      font-size: inherit;
+      line-height: 1;
+    }
+
+    .social-row a:hover {
+      transform: translateY(-4px);
+    }
+
+    .social-row a.email:hover {
+      color: #e8c879;
+      border-color: #e8c879;
+    }
+
+    .social-row a.fb:hover {
+      color: #1877f2;
+      border-color: #1877f2;
+    }
+
+    .social-row a.ig:hover {
+      color: #e4405f;
+      border-color: #e4405f;
+    }
+
+    .social-row a.wa:hover {
+      color: #25d366;
+      border-color: #25d366;
+    }
+
+    .social-row a.tg:hover {
+      color: #2aabee;
+      border-color: #2aabee;
+    }
+
+    @media (max-width: 600px) {
+      .social-row {
+        gap: 8px;
+        padding: 30px 0 60px;
+      }
+
+      .social-row a {
+        flex: 1 1 0;
+        width: auto;
+        max-width: 62px;
+        height: auto;
+        aspect-ratio: 1 / 1;
+        border-radius: 16px;
+        font-size: clamp(20px, 6vw, 25px);
+      }
+    }
+
+    @media (max-width: 350px) {
+      .social-row {
+        gap: 5px;
+      }
+
+      .social-row a {
+        border-radius: 12px;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -40,62 +135,63 @@
 
     <div class="social-row">
 
-      <!-- 1. EMAIL -->
-      <a class="email" id="emailView"
+      <!-- 1. EMAIL: icon only -->
+      <a class="email"
+         id="emailView"
          href="mailto:reasatsafin@gmail.com"
-         aria-label="Email" title="Email">
-        <i class="fa-solid fa-envelope"></i>
+         aria-label="Email"
+         title="Email">
+        <i class="fa-solid fa-envelope" aria-hidden="true"></i>
       </a>
 
       <!-- 2. FACEBOOK -->
-      <a class="fb" id="facebookView"
+      <a class="fb"
+         id="facebookView"
          href="https://facebook.com/reasat.safin"
-         target="_blank" rel="noopener noreferrer"
-         aria-label="Facebook" title="Facebook">
-        <i class="fa-brands fa-facebook-f"></i>
+         target="_blank"
+         rel="noopener noreferrer"
+         aria-label="Facebook"
+         title="Facebook">
+        <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
       </a>
 
       <!-- 3. INSTAGRAM -->
-      <a class="ig" id="instagramView"
+      <a class="ig"
+         id="instagramView"
          href="https://instagram.com/_r._s._001"
-         target="_blank" rel="noopener noreferrer"
-         aria-label="Instagram" title="Instagram">
-        <i class="fa-brands fa-instagram"></i>
+         target="_blank"
+         rel="noopener noreferrer"
+         aria-label="Instagram"
+         title="Instagram">
+        <i class="fa-brands fa-instagram" aria-hidden="true"></i>
       </a>
 
       <!-- 4. WHATSAPP -->
-      <a class="wa" id="whatsappView"
-         href="https://wa.me/8801715663944"
-         target="_blank" rel="noopener noreferrer"
-         aria-label="WhatsApp" title="WhatsApp">
-        <i class="fa-brands fa-whatsapp"></i>
+      <a class="wa"
+         id="whatsappView"
+         href="https://wa.me/+8801715663944"
+         target="_blank"
+         rel="noopener noreferrer"
+         aria-label="WhatsApp"
+         title="WhatsApp">
+        <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
       </a>
 
       <!-- 5. TELEGRAM -->
-      <a class="tg" id="telegramView"
+      <a class="tg"
+         id="telegramView"
          href="https://t.me/ReasatSafin101"
-         target="_blank" rel="noopener noreferrer"
-         aria-label="Telegram" title="Telegram">
-        <i class="fa-brands fa-telegram"></i>
+         target="_blank"
+         rel="noopener noreferrer"
+         aria-label="Telegram"
+         title="Telegram">
+        <i class="fa-brands fa-telegram" aria-hidden="true"></i>
       </a>
 
     </div>
 
     <footer>
       <span>© <span id="yearView"></span> Reasat Safin</span>
-
-      <span class="socials">
-        <a href="mailto:reasatsafin@gmail.com" aria-label="Email">✉</a>
-        <a href="https://facebook.com/reasat.safin"
-           target="_blank" rel="noopener noreferrer"
-           aria-label="Facebook">f</a>
-        <a href="https://instagram.com/_r._s._001"
-           target="_blank" rel="noopener noreferrer"
-           aria-label="Instagram">◎</a>
-        <a href="https://t.me/ReasatSafin101"
-           target="_blank" rel="noopener noreferrer"
-           aria-label="Telegram">➤</a>
-      </span>
     </footer>
   </main>
 </div>
@@ -209,13 +305,6 @@
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="assets/app.js"></script>
-
-<style>
-.social-row a.email:hover {
-  color: #e8c879;
-  border-color: #e8c879;
-}
-</style>
 
 </body>
 </html>
