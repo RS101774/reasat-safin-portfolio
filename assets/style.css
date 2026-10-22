@@ -2,7 +2,7 @@
 /* =====================================================
    REASAT SAFIN — PREMIUM SIGNATURE PORTFOLIO
    Complete responsive stylesheet
-   Mobile navigation: ALL 6 LINKS IN ONE ROW
+   Mobile navigation: 6 LINKS IN ONE ROW
    ===================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Allura&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap');
@@ -815,7 +815,7 @@ textarea { min-height: 75px; resize: vertical; }
     font-size: 11px;
   }
 
-  /* NAVIGATION — SIX LINKS, ONE ROW */
+  /* SIX NAVIGATION LINKS — SAME ROW */
 
   .links {
     grid-column: 1 / -1;
@@ -828,10 +828,11 @@ textarea { min-height: 75px; resize: vertical; }
     gap: 0 !important;
     width: 100%;
     min-width: 0;
-    overflow: visible;
+    overflow: visible !important;
+    scrollbar-width: none;
     padding: 4px 0;
-    -webkit-mask-image: none;
-    mask-image: none;
+    -webkit-mask-image: none !important;
+    mask-image: none !important;
   }
 
   .links::-webkit-scrollbar { display: none; }
@@ -843,9 +844,11 @@ textarea { min-height: 75px; resize: vertical; }
     min-width: 0;
     align-items: center;
     justify-content: center;
-    padding: 10px 1px;
-    font-size: clamp(9px, 2.65vw, 12px);
+    padding: 11px 0;
+    font-size: clamp(10px, 2.8vw, 13px) !important;
+    font-weight: 500;
     line-height: 1.2;
+    letter-spacing: -.2px;
     text-align: center;
     white-space: nowrap;
     border-radius: 8px;
@@ -1015,21 +1018,23 @@ textarea { min-height: 75px; resize: vertical; }
     font-size: 10px;
   }
 
-  /* Keep every link in the same row on small phones */
+  /* Still keep all six links on one row */
 
   .links {
     display: flex !important;
     flex-direction: row !important;
     flex-wrap: nowrap !important;
+    justify-content: space-between;
     gap: 0 !important;
-    overflow: visible;
+    overflow: visible !important;
   }
 
   .links a {
     flex: 1 1 0;
     min-width: 0;
     padding: 10px 0;
-    font-size: 9px;
+    font-size: 10px !important;
+    letter-spacing: -.3px;
     white-space: nowrap;
   }
 
