@@ -1,3 +1,4 @@
+
 const SUPABASE_URL = "https://lscaiyjwxioxzmxrfejy.supabase.co";
 const SUPABASE_ANON_KEY = "sb_publishable_eqFA5mI497rEULsXL0dq_A_2q1pnF60";
 
@@ -146,17 +147,13 @@ function render(p) {
       : '<div class="placeholder">Add your portrait URL in Edit Profile.</div>';
   }
 
-  // Education page intro (editable from Edit Profile)
   setText("eduIntroView", p.edu_intro || DEFAULT_EDU_INTRO);
-
   setText("edu1View", p.edu1 || "Add school details in Edit Profile.");
   setText("edu2View", p.edu2 || "Add college details in Edit Profile.");
   setText("edu3View", p.edu3 || "Add your future learning goals.");
 
   setImage("schoolImageView", p.school_image);
   setImage("collegeImageView", p.college_image);
-
-  // Home portrait and About photo are independent.
   setImage("aboutImageView", p.about_image);
   updateAboutPhoto();
 
@@ -355,6 +352,16 @@ if ($("saveBtn")) {
         return;
       }
 
+      const aboutInput = $("fAboutImage");
+      const enteredAboutImage = aboutInput
+        ? aboutInput.value.trim()
+        : "";
+
+      // Preserve the saved URL if the field is absent or left blank.
+      const aboutImage = enteredAboutImage ||
+        currentProfile?.about_image ||
+        "";
+
       const p = {
         owner_id: user.id,
         display_name: $("fName")?.value.trim() || "Reasat Safin",
@@ -364,6 +371,7 @@ if ($("saveBtn")) {
         edu2: $("fEdu2")?.value || "",
         edu3: $("fEdu3")?.value || "",
         image: $("fImage")?.value.trim() || "",
+        about_image: aboutImage,
         gallery: $("fGallery")?.value || "",
         school_image: $("fSchoolImage")?.value.trim() || "",
         college_image: $("fCollegeImage")?.value.trim() || "",
@@ -374,10 +382,8 @@ if ($("saveBtn")) {
         telegram: $("fTelegram")?.value.trim() || ""
       };
 
-      // Only save these if the field exists on this page,
-      // so saving from another page never wipes them.
-      if ($("fAboutImage")) p.about_image = $("fAboutImage").value.trim();
       if ($("fEduIntro")) p.edu_intro = $("fEduIntro").value;
+      else if (currentProfile?.edu_intro) p.edu_intro = currentProfile.edu_intro;
 
       for (const key of [
         "image", "about_image", "school_image", "college_image",
@@ -407,6 +413,7 @@ if ($("saveBtn")) {
 
       currentProfile = { ...(currentProfile || {}), ...p };
       render(currentProfile);
+
       if ($("editDialog")) $("editDialog").close();
 
     } catch (err) {
@@ -473,8 +480,10 @@ if ($("aboutPhotoBtn") && $("aboutPhotoInput")) {
         ? await sb.from("portfolio_profile")
             .update({ about_image: url })
             .eq("owner_id", user.id)
-        : await sb.from("portfolio_profile")
-            .insert({ owner_id: user.id, about_image: url });
+        : await sb.from("portfolio_profile").insert({
+            owner_id: user.id,
+            about_image: url
+          });
 
       if (result.error) throw result.error;
 
