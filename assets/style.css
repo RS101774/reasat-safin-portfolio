@@ -1,8 +1,8 @@
 
 /* =====================================================
    REASAT SAFIN — PREMIUM SIGNATURE PORTFOLIO
-   Complete responsive stylesheet
-   Matching rounded-square photo shapes
+   Complete Responsive Stylesheet
+   Matching Rectangular Portrait Boxes
    ===================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Allura&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap');
@@ -269,7 +269,15 @@ p {
   min-width: 0;
 }
 
-/* HOME PHOTO — ROUNDED SQUARE */
+.hero h1 {
+  max-width: 560px;
+}
+
+.hero .lead {
+  max-width: 480px;
+}
+
+/* HOME PORTRAIT — RECTANGULAR BOX */
 
 .portraitBox {
   position: relative;
@@ -281,7 +289,7 @@ p {
   justify-self: end;
   overflow: hidden;
   border: 1px solid #46434a;
-  border-radius: 24px;
+  border-radius: 18px;
   background:
     radial-gradient(ellipse at 50% 25%, #343038, transparent 65%),
     #121216;
@@ -670,15 +678,15 @@ footer {
   width: 100%;
 }
 
-/* ABOUT PHOTO — SAME ROUNDED SQUARE */
+/* ABOUT PORTRAIT — SAME RECTANGULAR BOX */
 
 .about-image {
   display: block;
   width: 100%;
-  aspect-ratio: .84;
+  aspect-ratio: .82;
   max-height: 490px;
   border: 1px solid #3a3941;
-  border-radius: 24px;
+  border-radius: 18px;
   background: #141419;
   object-fit: cover;
 }
@@ -686,11 +694,11 @@ footer {
 .about-placeholder {
   display: none;
   width: 100%;
-  aspect-ratio: .84;
+  aspect-ratio: .82;
   align-items: center;
   justify-content: center;
   border: 1px dashed #45434b;
-  border-radius: 24px;
+  border-radius: 18px;
   background: #141419;
   color: #aaa8b2;
   text-align: center;
@@ -935,9 +943,10 @@ textarea {
   .hero .portraitBox {
     grid-row: 1;
     justify-self: center;
-    width: min(76%, 270px);
-    max-width: 270px;
-    border-radius: 20px;
+    width: min(82%, 300px);
+    max-width: 300px;
+    aspect-ratio: .82;
+    border-radius: 18px;
   }
 
   .hero-copy {
@@ -1070,7 +1079,7 @@ textarea {
     border-radius: 10px;
   }
 
-  /* CONTACT — FIVE ICONS ON ONE ROW */
+  /* CONTACT — ALL FIVE ICONS ON ONE ROW */
 
   .social-row {
     grid-template-columns: repeat(5, minmax(0, 1fr));
@@ -1095,7 +1104,7 @@ textarea {
     font-size: 23px;
   }
 
-  /* ABOUT — SAME PHOTO SHAPE AS HOME */
+  /* ABOUT */
 
   .about-layout {
     grid-template-columns: 1fr;
@@ -1109,10 +1118,10 @@ textarea {
 
   .about-image,
   .about-placeholder {
-    width: min(78%, 280px);
+    width: min(82%, 300px);
+    aspect-ratio: .82;
     margin: auto;
-    aspect-ratio: .9;
-    border-radius: 20px;
+    border-radius: 18px;
   }
 
   .about-layout h2 {
@@ -1214,13 +1223,5 @@ textarea {
 
   .social-row a.email::before {
     font-size: 20px;
-  }
-
-  /* KEEP BOTH PHOTO SHAPES CONSISTENT */
-
-  .hero .portraitBox,
-  .about-image,
-  .about-placeholder {
-    border-radius: 18px;
   }
 }
