@@ -23,7 +23,9 @@
         <a href="about.html" data-page="about">About Me</a>
       </div>
 
-      <button class="owner" id="loginBtn">Owner Login ♙</button>
+      <button class="owner" id="loginBtn" style="display:none">
+        Owner Login ♙
+      </button>
     </nav>
   </header>
 
@@ -54,7 +56,11 @@
           style="display:none"
         >
 
-        <div id="aboutPlaceholder" class="about-placeholder">
+        <div
+          id="aboutPlaceholder"
+          class="about-placeholder"
+          style="display:none"
+        >
           Your photo goes here
         </div>
 
@@ -62,9 +68,16 @@
           class="btn outline about-photo-btn"
           id="aboutPhotoBtn"
           type="button"
+          style="display:none"
         >Add your photo</button>
 
-        <input type="file" id="aboutPhotoInput" accept="image/*" hidden>
+        <input
+          type="file"
+          id="aboutPhotoInput"
+          accept="image/*"
+          hidden
+        >
+
         <div class="error" id="aboutPhotoError"></div>
       </div>
     </div>
@@ -73,16 +86,16 @@
       <span>© <span id="yearView"></span> Reasat Safin</span>
 
       <span class="socials">
-        <a href="contact.html">✉</a>
-        <a href="contact.html">f</a>
-        <a href="contact.html">◎</a>
-        <a href="contact.html">➤</a>
+        <a href="contact.html" aria-label="Email">✉</a>
+        <a href="contact.html" aria-label="Facebook">f</a>
+        <a href="contact.html" aria-label="Instagram">◎</a>
+        <a href="contact.html" aria-label="Telegram">➤</a>
       </span>
     </footer>
   </main>
 </div>
 
-<button class="btn" id="editBtn">Edit Profile</button>
+<button class="btn" id="editBtn" style="display:none">Edit Profile</button>
 
 <div id="lightbox">
   <span>×</span>
@@ -151,7 +164,7 @@
       </label>
 
       <p class="muted-note">
-        Home and About Me use separate photo URLs. Changing one does not change the other.
+        Home and About Me use separate photo URLs.
       </p>
 
       <label>Gallery image URLs (one HTTPS URL per line)
@@ -159,11 +172,11 @@
       </label>
 
       <label>School image URL
-        <input id="fSchoolImage">
+        <input id="fSchoolImage" type="url">
       </label>
 
       <label>College image URL
-        <input id="fCollegeImage">
+        <input id="fCollegeImage" type="url">
       </label>
 
       <label>Skills (one per line, format: Name | 85)
@@ -175,15 +188,15 @@
       </label>
 
       <label>Facebook URL
-        <input id="fFacebook">
+        <input id="fFacebook" type="url">
       </label>
 
       <label>Instagram URL
-        <input id="fInstagram">
+        <input id="fInstagram" type="url">
       </label>
 
       <label>Telegram URL
-        <input id="fTelegram">
+        <input id="fTelegram" type="url">
       </label>
 
       <div class="error" id="saveError"></div>
