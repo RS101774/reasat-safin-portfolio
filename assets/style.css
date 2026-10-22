@@ -98,17 +98,17 @@ nav {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 4px;
+  gap: 3px;
 }
 
 .links a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 9px 11px;
+  padding: 8px 9px;
   border-radius: 8px;
   color: #b5b5be;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 500;
   white-space: nowrap;
   transition: background .2s ease, color .2s ease;
@@ -389,7 +389,7 @@ footer {
 .school-card h3 { font-size: 20px; }
 .school-card p { margin-top: 5px; }
 
-/* FUTURE GOALS — clean straight gold bar */
+/* FUTURE GOALS — CLEAN STRAIGHT GOLD BAR */
 
 .grid > .card:last-child {
   position: relative;
@@ -771,7 +771,16 @@ textarea { min-height: 75px; resize: vertical; }
 @media (max-width: 900px) {
   nav { gap: 10px; }
   .brand { font-size: 49px !important; }
-  .links a { padding: 9px 10px; font-size: 15px; }
+
+  .links {
+    gap: 3px;
+  }
+
+  .links a {
+    padding: 8px 9px;
+    font-size: 14px;
+  }
+
   .hero { gap: 30px; }
   .skill-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
@@ -785,7 +794,7 @@ textarea { min-height: 75px; resize: vertical; }
     border-radius: 15px;
   }
 
-  /* NAV: logo + Owner Login on row 1, menu on row 2 */
+  /* NAV: LOGO + OWNER LOGIN ON ROW 1, MENU ON ROW 2 */
 
   nav {
     display: grid;
@@ -821,22 +830,25 @@ textarea { min-height: 75px; resize: vertical; }
     width: 100%;
     min-width: 0;
     justify-content: flex-start;
-    gap: 3px;
+    gap: 2px;
     overflow-x: auto;
     scrollbar-width: none;
     padding: 4px 0;
-    /* soft fade on the right edge = "more tabs, scroll me" */
-    -webkit-mask-image: linear-gradient(to right, #000 86%, transparent 100%);
-    mask-image: linear-gradient(to right, #000 86%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, #000 92%, transparent 100%);
+    mask-image: linear-gradient(to right, #000 92%, transparent 100%);
   }
 
   .links::-webkit-scrollbar { display: none; }
 
+  /* UPDATED: SMALLER NAV TEXT FOR MOBILE */
+
   .links a {
     flex-shrink: 0;
-    padding: 10px 12px;
-    font-size: 16px;
+    padding: 8px 9px;
+    font-size: 14px;
+    line-height: 1.4;
     font-weight: 500;
+    border-radius: 8px;
   }
 
   main { width: calc(100% - 32px); }
@@ -1003,7 +1015,17 @@ textarea { min-height: 75px; resize: vertical; }
     font-size: 10px;
   }
 
-  .links a { padding: 9px 10px; font-size: 15px; }
+  /* EXTRA COMPACT NAV ON VERY SMALL SCREENS */
+
+  .links {
+    gap: 1px;
+  }
+
+  .links a {
+    padding: 7px 8px;
+    font-size: 13px;
+  }
+
   .grid { gap: 8px; }
   .school-image { height: 90px; }
   .skill { padding: 10px; }
