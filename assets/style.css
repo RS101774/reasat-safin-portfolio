@@ -1,7 +1,7 @@
 
 /* =====================================================
    REASAT SAFIN — PREMIUM SIGNATURE PORTFOLIO
-   Complete stylesheet
+   Complete responsive stylesheet
    ===================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Allura&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap');
@@ -55,7 +55,7 @@ img {
   max-width: 100%;
 }
 
-/* MAIN WEBSITE FRAME */
+/* WEBSITE FRAME */
 
 .site-shell {
   width: min(1200px, calc(100% - 32px));
@@ -74,7 +74,7 @@ header {
   position: sticky;
   top: 0;
   z-index: 10;
-  border-bottom: 1px solid #292a30;
+  border-bottom: 1px solid var(--line);
   background: #090a0ced;
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
@@ -92,7 +92,7 @@ nav {
   padding: 12px 0;
 }
 
-/* SIGNATURE-STYLE NAME */
+/* SIGNATURE NAME */
 
 .brand {
   display: inline-block;
@@ -108,7 +108,7 @@ nav {
   text-shadow: none !important;
 }
 
-/* NAVIGATION LINKS */
+/* NAVIGATION */
 
 .links {
   display: flex;
@@ -140,7 +140,7 @@ nav {
   box-shadow: inset 0 -2px var(--accent);
 }
 
-/* OWNER LOGIN BUTTON */
+/* OWNER LOGIN */
 
 .owner {
   flex-shrink: 0;
@@ -253,7 +253,7 @@ p {
   margin-top: 28px;
 }
 
-/* HOME PAGE */
+/* HOME */
 
 .hero {
   display: grid;
@@ -275,8 +275,6 @@ p {
 .hero .lead {
   max-width: 480px;
 }
-
-/* PORTRAIT FRAME */
 
 .portraitBox {
   position: relative;
@@ -337,7 +335,8 @@ p {
   transition: color .2s;
 }
 
-.socials a:hover {
+.socials a:hover,
+footer a:hover {
   color: var(--accent);
 }
 
@@ -352,10 +351,6 @@ footer {
   border-top: 1px solid var(--line);
   color: #85858f;
   font-size: 12px;
-}
-
-footer a:hover {
-  color: var(--accent);
 }
 
 /* PAGE HEADINGS */
@@ -380,7 +375,7 @@ footer a:hover {
   margin-left: auto;
 }
 
-/* EDUCATION PAGE */
+/* EDUCATION */
 
 .grid {
   display: grid;
@@ -437,7 +432,7 @@ footer a:hover {
   margin-top: 5px;
 }
 
-/* FUTURE GOALS CARD */
+/* FUTURE GOALS */
 
 .grid > .card:last-child {
   grid-column: 1 / -1;
@@ -462,7 +457,7 @@ footer a:hover {
   font-size: 15px;
 }
 
-/* SKILLS PAGE */
+/* SKILLS */
 
 .skill-grid {
   display: grid;
@@ -539,7 +534,7 @@ footer a:hover {
   color: var(--accent);
 }
 
-/* GALLERY PAGE */
+/* GALLERY */
 
 .gallery {
   display: grid;
@@ -571,32 +566,45 @@ footer a:hover {
   transform: scale(1.06);
 }
 
-/* CONTACT PAGE */
+/* CONTACT — FIVE ICONS IN ONE ROW */
 
 .social-row {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 22px;
+  gap: 14px;
+  width: 100%;
   padding: 38px 0 90px;
 }
 
 .social-row a {
   display: grid;
   place-items: center;
-  width: 78px;
-  height: 78px;
+  width: 100%;
+  min-width: 0;
+  max-width: 100px;
+  aspect-ratio: 1;
+  justify-self: center;
+  overflow: hidden;
   border: 1px solid #37373e;
-  border-radius: 23px;
+  border-radius: 22px;
   background: linear-gradient(145deg, #1a1b20, #101114);
   color: #f5f3ef;
-  font-size: 30px;
+  font-size: clamp(20px, 3vw, 30px);
+  line-height: 1;
   transition: transform .25s, border-color .25s, color .25s;
 }
 
 .social-row a:hover {
-  transform: translateY(-6px);
+  transform: translateY(-5px);
+}
+
+/* SOCIAL BRAND COLORS ON HOVER */
+
+.social-row a.email:hover {
+  color: #e8cfa1;
+  border-color: #e8cfa1;
 }
 
 .social-row a.fb:hover {
@@ -619,7 +627,7 @@ footer a:hover {
   border-color: #2aabee;
 }
 
-/* ABOUT ME PAGE */
+/* ABOUT ME */
 
 .about-layout {
   display: grid;
@@ -688,7 +696,7 @@ footer a:hover {
   background: #141419;
 }
 
-/* OWNER EDIT PROFILE BUTTON */
+/* EDIT PROFILE BUTTON */
 
 #editBtn {
   display: none;
@@ -842,13 +850,10 @@ textarea {
     border-radius: 15px;
   }
 
-  /* Keep signature name and login on the same row */
-
   nav {
     display: grid;
     grid-template-columns: minmax(0, 1fr) auto;
     align-items: center;
-    justify-content: initial;
     gap: 10px;
     width: calc(100% - 28px);
     padding: 13px 0 8px;
@@ -856,7 +861,7 @@ textarea {
 
   .brand {
     min-width: 0;
-    font-size: clamp(36px, 10vw, 48px) !important;
+    font-size: clamp(34px, 9.5vw, 45px) !important;
     line-height: 1.1 !important;
   }
 
@@ -866,10 +871,7 @@ textarea {
     font-size: 12px;
   }
 
-  /* Scrollable navigation row */
-
   .links {
-    order: initial;
     grid-column: 1 / -1;
     display: flex;
     width: 100%;
@@ -896,7 +898,7 @@ textarea {
     width: calc(100% - 32px);
   }
 
-  /* Home */
+  /* HOME */
 
   .hero {
     grid-template-columns: 1fr;
@@ -934,7 +936,7 @@ textarea {
     font-size: 12px;
   }
 
-  /* Page headings */
+  /* PAGE HEADINGS */
 
   .page-intro {
     padding: 42px 0 22px;
@@ -948,7 +950,7 @@ textarea {
     font-size: 14px;
   }
 
-  /* Education */
+  /* EDUCATION */
 
   .grid {
     gap: 11px;
@@ -998,7 +1000,7 @@ textarea {
     font-size: 13px;
   }
 
-  /* Skills */
+  /* SKILLS */
 
   .skill-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1030,7 +1032,7 @@ textarea {
     font-size: 10px;
   }
 
-  /* Gallery */
+  /* GALLERY */
 
   .gallery {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1042,21 +1044,24 @@ textarea {
     border-radius: 10px;
   }
 
-  /* Contact */
+  /* CONTACT: KEEP ALL FIVE ICONS ON ONE ROW */
 
   .social-row {
-    gap: 14px;
-    padding: 30px 0 60px;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 7px;
+    padding: 30px 0 55px;
   }
 
   .social-row a {
-    width: 62px;
-    height: 62px;
-    border-radius: 18px;
-    font-size: 25px;
+    width: 100%;
+    max-width: none;
+    min-width: 0;
+    aspect-ratio: 1;
+    border-radius: 14px;
+    font-size: clamp(18px, 5.5vw, 25px);
   }
 
-  /* About */
+  /* ABOUT */
 
   .about-layout {
     grid-template-columns: 1fr;
@@ -1087,7 +1092,7 @@ textarea {
     gap: 7px;
   }
 
-  /* Footer */
+  /* FOOTER */
 
   .bottomline {
     font-size: 10px;
@@ -1101,14 +1106,12 @@ textarea {
     font-size: 10px;
   }
 
-  /* Owner edit button */
-
   #editBtn {
     right: 12px;
     bottom: 12px;
   }
 
-  /* Dialogs */
+  /* DIALOGS */
 
   .modal {
     padding: 18px;
@@ -1127,7 +1130,7 @@ textarea {
 
 @media (max-width: 360px) {
   .brand {
-    font-size: 36px !important;
+    font-size: 33px !important;
   }
 
   .owner {
@@ -1159,5 +1162,14 @@ textarea {
 
   .skilltop {
     gap: 6px;
+  }
+
+  .social-row {
+    gap: 5px;
+  }
+
+  .social-row a {
+    border-radius: 11px;
+    font-size: 18px;
   }
 }
