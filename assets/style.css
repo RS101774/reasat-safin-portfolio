@@ -1,7 +1,10 @@
 
-/* REASAT SAFIN — PREMIUM SIGNATURE PORTFOLIO */
+/* =====================================================
+   REASAT SAFIN — PREMIUM SIGNATURE PORTFOLIO
+   Complete stylesheet
+   ===================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Ballet&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Allura&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap');
 
 :root {
   --bg: #08090b;
@@ -48,6 +51,12 @@ button {
   cursor: pointer;
 }
 
+img {
+  max-width: 100%;
+}
+
+/* MAIN WEBSITE FRAME */
+
 .site-shell {
   width: min(1200px, calc(100% - 32px));
   min-height: calc(100vh - 32px);
@@ -68,6 +77,7 @@ header {
   border-bottom: 1px solid #292a30;
   background: #090a0ced;
   backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
 }
 
 nav {
@@ -82,20 +92,23 @@ nav {
   padding: 12px 0;
 }
 
-/* SIGNATURE NAME */
+/* SIGNATURE-STYLE NAME */
 
 .brand {
+  display: inline-block;
   flex-shrink: 0;
-  font-family: 'Ballet', cursive !important;
-  font-size: 54px !important;
+  font-family: 'Allura', cursive !important;
+  font-size: 55px !important;
   font-style: normal !important;
   font-weight: 400 !important;
   letter-spacing: 0 !important;
-  line-height: 1.2;
-  white-space: nowrap;
-  color: #f5f3ef;
-  text-decoration: none;
+  line-height: 1.1 !important;
+  white-space: nowrap !important;
+  text-decoration: none !important;
+  text-shadow: none !important;
 }
+
+/* NAVIGATION LINKS */
 
 .links {
   display: flex;
@@ -105,13 +118,16 @@ nav {
 }
 
 .links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   padding: 9px 11px;
   border-radius: 8px;
   color: #b5b5be;
   font-size: 16px;
   font-weight: 500;
   white-space: nowrap;
-  transition: .2s ease;
+  transition: background .2s ease, color .2s ease;
 }
 
 .links a:hover,
@@ -124,6 +140,8 @@ nav {
   box-shadow: inset 0 -2px var(--accent);
 }
 
+/* OWNER LOGIN BUTTON */
+
 .owner {
   flex-shrink: 0;
   border: 1px solid #414149;
@@ -132,13 +150,14 @@ nav {
   color: var(--text);
   background: transparent;
   font-size: 14px;
+  white-space: nowrap;
 }
 
 .owner:hover {
   background: #202127;
 }
 
-/* GENERAL */
+/* GENERAL CONTENT */
 
 main {
   width: min(1000px, calc(100% - 48px));
@@ -178,6 +197,10 @@ h3 {
   line-height: 1.45;
 }
 
+p {
+  overflow-wrap: break-word;
+}
+
 .lead {
   max-width: 520px;
   color: #b9b9c1;
@@ -189,6 +212,8 @@ h3 {
   color: var(--muted);
   font-size: 14px;
 }
+
+/* BUTTONS */
 
 .btn {
   display: inline-flex;
@@ -228,7 +253,7 @@ h3 {
   margin-top: 28px;
 }
 
-/* HOME */
+/* HOME PAGE */
 
 .hero {
   display: grid;
@@ -250,6 +275,8 @@ h3 {
 .hero .lead {
   max-width: 480px;
 }
+
+/* PORTRAIT FRAME */
 
 .portraitBox {
   position: relative;
@@ -286,6 +313,8 @@ h3 {
   display: none;
 }
 
+/* HOME BOTTOM LINE */
+
 .bottomline {
   display: flex;
   justify-content: space-between;
@@ -312,6 +341,8 @@ h3 {
   color: var(--accent);
 }
 
+/* FOOTER */
+
 footer {
   display: flex;
   justify-content: space-between;
@@ -321,6 +352,10 @@ footer {
   border-top: 1px solid var(--line);
   color: #85858f;
   font-size: 12px;
+}
+
+footer a:hover {
+  color: var(--accent);
 }
 
 /* PAGE HEADINGS */
@@ -345,7 +380,7 @@ footer {
   margin-left: auto;
 }
 
-/* EDUCATION */
+/* EDUCATION PAGE */
 
 .grid {
   display: grid;
@@ -402,6 +437,8 @@ footer {
   margin-top: 5px;
 }
 
+/* FUTURE GOALS CARD */
+
 .grid > .card:last-child {
   grid-column: 1 / -1;
   display: grid;
@@ -425,7 +462,7 @@ footer {
   font-size: 15px;
 }
 
-/* SKILLS */
+/* SKILLS PAGE */
 
 .skill-grid {
   display: grid;
@@ -502,7 +539,7 @@ footer {
   color: var(--accent);
 }
 
-/* GALLERY */
+/* GALLERY PAGE */
 
 .gallery {
   display: grid;
@@ -534,7 +571,7 @@ footer {
   transform: scale(1.06);
 }
 
-/* CONTACT */
+/* CONTACT PAGE */
 
 .social-row {
   display: flex;
@@ -582,7 +619,7 @@ footer {
   border-color: #2aabee;
 }
 
-/* ABOUT */
+/* ABOUT ME PAGE */
 
 .about-layout {
   display: grid;
@@ -651,7 +688,7 @@ footer {
   background: #141419;
 }
 
-/* OWNER EDIT BUTTON */
+/* OWNER EDIT PROFILE BUTTON */
 
 #editBtn {
   display: none;
@@ -678,6 +715,7 @@ dialog {
 dialog::backdrop {
   background: #000c;
   backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
 }
 
 .modal {
@@ -778,12 +816,12 @@ textarea {
   }
 
   .brand {
-    font-size: 48px !important;
+    font-size: 49px !important;
   }
 
   .links a {
     padding: 9px 10px;
-    font-size: 16px;
+    font-size: 15px;
   }
 
   .hero {
@@ -804,26 +842,38 @@ textarea {
     border-radius: 15px;
   }
 
+  /* Keep signature name and login on the same row */
+
   nav {
-    width: calc(100% - 28px);
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    justify-content: initial;
     gap: 10px;
+    width: calc(100% - 28px);
     padding: 13px 0 8px;
   }
 
   .brand {
-    font-size: 46px !important;
-    line-height: 1.2;
+    min-width: 0;
+    font-size: clamp(36px, 10vw, 48px) !important;
+    line-height: 1.1 !important;
   }
 
   .owner {
+    justify-self: end;
     padding: 8px 10px;
     font-size: 12px;
   }
 
+  /* Scrollable navigation row */
+
   .links {
-    order: 3;
+    order: initial;
+    grid-column: 1 / -1;
+    display: flex;
     width: 100%;
+    min-width: 0;
     justify-content: flex-start;
     gap: 3px;
     overflow-x: auto;
@@ -845,6 +895,8 @@ textarea {
   main {
     width: calc(100% - 32px);
   }
+
+  /* Home */
 
   .hero {
     grid-template-columns: 1fr;
@@ -882,6 +934,8 @@ textarea {
     font-size: 12px;
   }
 
+  /* Page headings */
+
   .page-intro {
     padding: 42px 0 22px;
   }
@@ -893,6 +947,8 @@ textarea {
   .page-intro .lead {
     font-size: 14px;
   }
+
+  /* Education */
 
   .grid {
     gap: 11px;
@@ -942,7 +998,10 @@ textarea {
     font-size: 13px;
   }
 
+  /* Skills */
+
   .skill-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 10px;
     padding-bottom: 32px;
   }
@@ -971,7 +1030,10 @@ textarea {
     font-size: 10px;
   }
 
+  /* Gallery */
+
   .gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 9px;
     padding-bottom: 32px;
   }
@@ -979,6 +1041,8 @@ textarea {
   .gallery button {
     border-radius: 10px;
   }
+
+  /* Contact */
 
   .social-row {
     gap: 14px;
@@ -991,6 +1055,8 @@ textarea {
     border-radius: 18px;
     font-size: 25px;
   }
+
+  /* About */
 
   .about-layout {
     grid-template-columns: 1fr;
@@ -1021,6 +1087,8 @@ textarea {
     gap: 7px;
   }
 
+  /* Footer */
+
   .bottomline {
     font-size: 10px;
   }
@@ -1033,10 +1101,14 @@ textarea {
     font-size: 10px;
   }
 
+  /* Owner edit button */
+
   #editBtn {
     right: 12px;
     bottom: 12px;
   }
+
+  /* Dialogs */
 
   .modal {
     padding: 18px;
@@ -1055,10 +1127,11 @@ textarea {
 
 @media (max-width: 360px) {
   .brand {
-    font-size: 40px !important;
+    font-size: 36px !important;
   }
 
   .owner {
+    padding: 7px 8px;
     font-size: 10px;
   }
 
