@@ -1,6 +1,8 @@
-
 const SUPABASE_URL = "https://lscaiyjwxioxzmxrfejy.supabase.co";
 const SUPABASE_ANON_KEY = "sb_publishable_eqFA5mI497rEULsXL0dq_A_2q1pnF60";
+
+const DEFAULT_EDU_INTRO =
+  "A look at my education so far, the places where I learned, grew, and found my direction. Every classroom taught me something new.";
 
 const $ = id => document.getElementById(id);
 const page = (location.pathname.split("/").pop() || "index.html").replace(".html", "");
@@ -144,6 +146,9 @@ function render(p) {
       : '<div class="placeholder">Add your portrait URL in Edit Profile.</div>';
   }
 
+  // Education page intro (editable from Edit Profile)
+  setText("eduIntroView", p.edu_intro || DEFAULT_EDU_INTRO);
+
   setText("edu1View", p.edu1 || "Add school details in Edit Profile.");
   setText("edu2View", p.edu2 || "Add college details in Edit Profile.");
   setText("edu3View", p.edu3 || "Add your future learning goals.");
@@ -222,6 +227,7 @@ function fillForm(p) {
     fName: p.display_name || "Reasat Safin",
     fIntro: p.intro || "",
     fAbout: p.about || "",
+    fEduIntro: p.edu_intro || DEFAULT_EDU_INTRO,
     fEdu1: p.edu1 || "",
     fEdu2: p.edu2 || "",
     fEdu3: p.edu3 || "",
@@ -358,7 +364,6 @@ if ($("saveBtn")) {
         edu2: $("fEdu2")?.value || "",
         edu3: $("fEdu3")?.value || "",
         image: $("fImage")?.value.trim() || "",
-        about_image: $("fAboutImage")?.value.trim() || "",
         gallery: $("fGallery")?.value || "",
         school_image: $("fSchoolImage")?.value.trim() || "",
         college_image: $("fCollegeImage")?.value.trim() || "",
@@ -368,6 +373,11 @@ if ($("saveBtn")) {
         instagram: $("fInstagram")?.value.trim() || "",
         telegram: $("fTelegram")?.value.trim() || ""
       };
+
+      // Only save these if the field exists on this page,
+      // so saving from another page never wipes them.
+      if ($("fAboutImage")) p.about_image = $("fAboutImage").value.trim();
+      if ($("fEduIntro")) p.edu_intro = $("fEduIntro").value;
 
       for (const key of [
         "image", "about_image", "school_image", "college_image",
@@ -395,8 +405,8 @@ if ($("saveBtn")) {
         return;
       }
 
-      currentProfile = p;
-      render(p);
+      currentProfile = { ...(currentProfile || {}), ...p };
+      render(currentProfile);
       if ($("editDialog")) $("editDialog").close();
 
     } catch (err) {
