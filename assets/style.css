@@ -1046,3 +1046,25 @@ textarea { min-height: 75px; resize: vertical; }
   .social-row a.email { font-size: 0 !important; }
   .social-row a.email::before { font-size: 20px; }
 }
+/* MOBILE NAVIGATION FIX */
+
+@media (max-width: 600px) {
+  .links {
+    gap: 0;
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+
+  .links a {
+    padding: 8px 7px;
+    font-size: 13px;
+    letter-spacing: -0.2px;
+  }
+}
+
+@media (max-width: 380px) {
+  .links a {
+    padding: 8px 6px;
+    font-size: 12px;
+  }
+}
