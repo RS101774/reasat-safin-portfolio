@@ -18,6 +18,31 @@ document.querySelectorAll("[data-page]").forEach(a => {
 
 if ($("yearView")) $("yearView").textContent = new Date().getFullYear();
 
+if ($("skillsView")) {
+  const fa = document.createElement("link");
+  fa.rel = "stylesheet";
+  fa.href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css";
+  document.head.appendChild(fa);
+}
+
+function skillIcon(name) {
+  const n = (name || "").toLowerCase();
+  const icons = [
+    ["supabase", "https://cdn.simpleicons.org/supabase/3ECF8E"],
+    ["github", "https://cdn.simpleicons.org/github/ffffff"],
+    ["html", "https://cdn.simpleicons.org/html5/E34F26"],
+    ["css", "https://cdn.simpleicons.org/css/1572B6"],
+    ["javascript", "https://cdn.simpleicons.org/javascript/F7DF1E"],
+    ["python", "https://cdn.simpleicons.org/python/3776AB"],
+    ["react", "https://cdn.simpleicons.org/react/61DAFB"],
+    ["figma", "https://cdn.simpleicons.org/figma/F24E1E"]
+  ];
+  const match = icons.find(([key]) => n.includes(key));
+  return match
+    ? '<img alt="" src="' + match[1] + '" style="width:22px;height:22px;object-fit:contain">'
+    : '<i class="fa-solid fa-code"></i>';
+}
+
 function safeUrl(value) {
   try {
     const u = new URL((value || "").trim());
@@ -36,7 +61,6 @@ function setImage(id, url) {
   if (!el) return;
 
   const valid = safeUrl(url);
-
   if (valid) {
     el.src = valid;
     el.style.display = "block";
@@ -60,8 +84,14 @@ function updateAboutPhoto() {
   const img = $("aboutImageView");
   const placeholder = $("aboutPlaceholder");
   const btn = $("aboutPhotoBtn");
+  const input = $("aboutPhotoInput");
+  const error = $("aboutPhotoError");
 
-  const hasPhoto = !!(img && img.style.display !== "none" && img.getAttribute("src"));
+  const hasPhoto = !!(
+    img &&
+    img.style.display !== "none" &&
+    img.getAttribute("src")
+  );
 
   if (placeholder) {
     placeholder.style.display = isOwner && !hasPhoto ? "flex" : "none";
@@ -72,10 +102,7 @@ function updateAboutPhoto() {
     btn.textContent = hasPhoto ? "Change photo" : "Add your photo";
   }
 
-  const input = $("aboutPhotoInput");
   if (input) input.style.display = "none";
-
-  const error = $("aboutPhotoError");
   if (error && !isOwner) error.textContent = "";
 }
 
@@ -83,11 +110,12 @@ function updateOwnerControls(session) {
   isOwner = !!session;
 
   if ($("loginBtn")) {
-    $("loginBtn").style.display = session || ownerMode ? "inline-flex" : "none";
+    $("loginBtn").style.display =
+      isOwner || ownerMode ? "inline-flex" : "none";
   }
 
   if ($("editBtn")) {
-    $("editBtn").style.display = session ? "inline-flex" : "none";
+    $("editBtn").style.display = isOwner ? "inline-flex" : "none";
   }
 
   updateAboutPhoto();
@@ -184,11 +212,8 @@ function render(p) {
   ].forEach(([id, url]) => {
     const el = $(id);
     const valid = safeUrl(url);
-    if (el && valid) {
-      el.href = valid;
-    } else if (el) {
-      el.removeAttribute("href");
-    }
+    if (el && valid) el.href = valid;
+    else if (el) el.removeAttribute("href");
   });
 }
 
@@ -383,26 +408,22 @@ if ($("saveBtn")) {
   };
 }
 
-// Local image upload: owner only.
+// Owner-only About photo upload.
 if ($("aboutPhotoBtn") && $("aboutPhotoInput")) {
-  $("aboutPhotoBtn").onclick = async () => {
-    if (!isOwner || !sb) {
-      setText("aboutPhotoError", "");
-      return;
-    }
-    $("aboutPhotoInput").click();
+  $("aboutPhotoBtn").onclick = () => {
+    if (isOwner && sb) $("aboutPhotoInput").click();
   };
 
   $("aboutPhotoInput").onchange = async e => {
     const file = e.target.files?.[0];
     if (!file) return;
 
-    setText("aboutPhotoError", "");
-
     if (!isOwner) {
       e.target.value = "";
       return;
     }
+
+    setText("aboutPhotoError", "");
 
     if (!file.type.startsWith("image/")) {
       setText("aboutPhotoError", "Please select an image.");
