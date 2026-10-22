@@ -1,8 +1,7 @@
-
 /* =====================================================
    REASAT SAFIN — PREMIUM SIGNATURE PORTFOLIO
    Complete responsive stylesheet
-   Mobile navigation: 6 LINKS IN ONE ROW
+   Home: Arch shape | About: Circle
    ===================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Allura&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap');
@@ -390,7 +389,7 @@ footer {
 .school-card h3 { font-size: 20px; }
 .school-card p { margin-top: 5px; }
 
-/* FUTURE GOALS */
+/* FUTURE GOALS — clean straight gold bar */
 
 .grid > .card:last-child {
   position: relative;
@@ -786,14 +785,14 @@ textarea { min-height: 75px; resize: vertical; }
     border-radius: 15px;
   }
 
-  /* LOGO + OWNER LOGIN TOP ROW */
+  /* NAV: logo + Owner Login on row 1, menu on row 2 */
 
   nav {
     display: grid;
     grid-template-columns: minmax(0, 1fr) auto;
     grid-template-rows: auto auto;
     align-items: center;
-    gap: 8px 8px;
+    gap: 4px 10px;
     min-height: 0;
     width: calc(100% - 28px);
     padding: 10px 0 6px;
@@ -803,7 +802,7 @@ textarea { min-height: 75px; resize: vertical; }
     grid-column: 1;
     grid-row: 1;
     min-width: 0;
-    font-size: clamp(32px, 8.5vw, 43px) !important;
+    font-size: clamp(34px, 9.5vw, 45px) !important;
     line-height: 1.1 !important;
   }
 
@@ -811,47 +810,33 @@ textarea { min-height: 75px; resize: vertical; }
     grid-column: 2;
     grid-row: 1;
     justify-self: end;
-    padding: 8px 10px;
-    font-size: 11px;
+    padding: 8px 11px;
+    font-size: 12px;
   }
-
-  /* SIX NAVIGATION LINKS — SAME ROW */
 
   .links {
     grid-column: 1 / -1;
     grid-row: 2;
-    display: flex !important;
-    flex-direction: row !important;
-    flex-wrap: nowrap !important;
-    align-items: center;
-    justify-content: space-between;
-    gap: 0 !important;
+    display: flex;
     width: 100%;
     min-width: 0;
-    overflow: visible !important;
+    justify-content: flex-start;
+    gap: 3px;
+    overflow-x: auto;
     scrollbar-width: none;
     padding: 4px 0;
-    -webkit-mask-image: none !important;
-    mask-image: none !important;
+    /* soft fade on the right edge = "more tabs, scroll me" */
+    -webkit-mask-image: linear-gradient(to right, #000 86%, transparent 100%);
+    mask-image: linear-gradient(to right, #000 86%, transparent 100%);
   }
 
   .links::-webkit-scrollbar { display: none; }
 
   .links a {
-    display: inline-flex;
-    flex: 1 1 0;
-    width: auto;
-    min-width: 0;
-    align-items: center;
-    justify-content: center;
-    padding: 11px 0;
-    font-size: clamp(10px, 2.8vw, 13px) !important;
+    flex-shrink: 0;
+    padding: 10px 12px;
+    font-size: 16px;
     font-weight: 500;
-    line-height: 1.2;
-    letter-spacing: -.2px;
-    text-align: center;
-    white-space: nowrap;
-    border-radius: 8px;
   }
 
   main { width: calc(100% - 32px); }
@@ -971,7 +956,7 @@ textarea { min-height: 75px; resize: vertical; }
   .social-row a.email { font-size: 0 !important; }
   .social-row a.email::before { font-size: 23px; }
 
-  /* ABOUT — CIRCULAR PHOTO */
+  /* ABOUT — CIRCULAR PHOTO ON MOBILE TOO */
 
   .about-layout {
     grid-template-columns: 1fr;
@@ -1011,33 +996,14 @@ textarea { min-height: 75px; resize: vertical; }
 /* VERY SMALL MOBILE */
 
 @media (max-width: 360px) {
-  .brand { font-size: 31px !important; }
+  .brand { font-size: 33px !important; }
 
   .owner {
     padding: 7px 8px;
     font-size: 10px;
   }
 
-  /* Still keep all six links on one row */
-
-  .links {
-    display: flex !important;
-    flex-direction: row !important;
-    flex-wrap: nowrap !important;
-    justify-content: space-between;
-    gap: 0 !important;
-    overflow: visible !important;
-  }
-
-  .links a {
-    flex: 1 1 0;
-    min-width: 0;
-    padding: 10px 0;
-    font-size: 10px !important;
-    letter-spacing: -.3px;
-    white-space: nowrap;
-  }
-
+  .links a { padding: 9px 10px; font-size: 15px; }
   .grid { gap: 8px; }
   .school-image { height: 90px; }
   .skill { padding: 10px; }
