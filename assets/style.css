@@ -1,7 +1,7 @@
 
 /* =====================================================
    REASAT SAFIN — PREMIUM SIGNATURE PORTFOLIO
-   Complete responsive stylesheet
+   Complete responsive stylesheet — EMAIL ICON FIXED
    ===================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Allura&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap');
@@ -566,13 +566,13 @@ footer {
   transform: scale(1.06);
 }
 
-/* CONTACT — FIVE ICONS IN ONE ROW */
+/* CONTACT — FIVE ICON BUTTONS */
 
 .social-row {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   gap: 14px;
   width: 100%;
   padding: 38px 0 90px;
@@ -593,6 +593,7 @@ footer {
   color: #f5f3ef;
   font-size: clamp(20px, 3vw, 30px);
   line-height: 1;
+  text-align: center;
   transition: transform .25s, border-color .25s, color .25s;
 }
 
@@ -600,12 +601,42 @@ footer {
   transform: translateY(-5px);
 }
 
-/* SOCIAL BRAND COLORS ON HOVER */
+/*
+  EMAIL FIX:
+  Hide any text injected by app.js inside the email link.
+  Render a clean envelope icon using Font Awesome's glyph.
+*/
+
+.social-row a.email {
+  font-size: 0 !important;
+  color: #f5f3ef !important;
+  text-indent: -9999px;
+  position: relative;
+}
+
+.social-row a.email i {
+  display: none !important;
+}
+
+.social-row a.email::before {
+  content: "\f0e0";
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-family: "Font Awesome 6 Free";
+  font-size: 25px;
+  font-weight: 900;
+  text-indent: 0;
+  line-height: 1;
+}
 
 .social-row a.email:hover {
-  color: #e8cfa1;
+  color: #e8cfa1 !important;
   border-color: #e8cfa1;
 }
+
+/* SOCIAL BRAND COLORS ON HOVER */
 
 .social-row a.fb:hover {
   color: #1877f2;
@@ -1044,7 +1075,7 @@ textarea {
     border-radius: 10px;
   }
 
-  /* CONTACT: KEEP ALL FIVE ICONS ON ONE ROW */
+  /* CONTACT — ALL FIVE ICONS ON ONE ROW */
 
   .social-row {
     grid-template-columns: repeat(5, minmax(0, 1fr));
@@ -1059,6 +1090,14 @@ textarea {
     aspect-ratio: 1;
     border-radius: 14px;
     font-size: clamp(18px, 5.5vw, 25px);
+  }
+
+  .social-row a.email {
+    font-size: 0 !important;
+  }
+
+  .social-row a.email::before {
+    font-size: 23px;
   }
 
   /* ABOUT */
@@ -1171,5 +1210,13 @@ textarea {
   .social-row a {
     border-radius: 11px;
     font-size: 18px;
+  }
+
+  .social-row a.email {
+    font-size: 0 !important;
+  }
+
+  .social-row a.email::before {
+    font-size: 20px;
   }
 }
