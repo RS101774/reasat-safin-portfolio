@@ -4,6 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#08090b">
   <title>Reasat Safin | About Me</title>
   <link rel="stylesheet" href="assets/style.css">
 </head>
@@ -30,8 +31,31 @@
   </header>
 
   <main>
-    <div class="about-layout">
-      <div>
+    <section class="about-layout">
+      <div class="about-photo-wrap">
+        <img
+          id="aboutImageView"
+          class="about-image"
+          alt="Reasat Safin"
+          style="display:none"
+        >
+
+        <div id="aboutPlaceholder" class="about-placeholder" style="display:none">
+          Your photo goes here
+        </div>
+
+        <button
+          class="btn outline about-photo-btn"
+          id="aboutPhotoBtn"
+          type="button"
+          style="display:none"
+        >Add your photo</button>
+
+        <input type="file" id="aboutPhotoInput" accept="image/*" hidden>
+        <div class="error" id="aboutPhotoError"></div>
+      </div>
+
+      <div class="about-copy">
         <div class="eyebrow">About Me</div>
         <h2>About Me</h2>
 
@@ -47,44 +71,10 @@
           <span>↗ Grow</span>
         </div>
       </div>
-
-      <div class="about-photo-wrap">
-        <img
-          id="aboutImageView"
-          class="about-image"
-          alt="Reasat Safin"
-          style="display:none"
-        >
-
-        <div
-          id="aboutPlaceholder"
-          class="about-placeholder"
-          style="display:none"
-        >
-          Your photo goes here
-        </div>
-
-        <button
-          class="btn outline about-photo-btn"
-          id="aboutPhotoBtn"
-          type="button"
-          style="display:none"
-        >Add your photo</button>
-
-        <input
-          type="file"
-          id="aboutPhotoInput"
-          accept="image/*"
-          hidden
-        >
-
-        <div class="error" id="aboutPhotoError"></div>
-      </div>
-    </div>
+    </section>
 
     <footer>
       <span>© <span id="yearView"></span> Reasat Safin</span>
-
       <span class="socials">
         <a href="contact.html" aria-label="Email">✉</a>
         <a href="contact.html" aria-label="Facebook">f</a>
@@ -164,7 +154,8 @@
       </label>
 
       <p class="muted-note">
-        Home and About Me use separate photo URLs.
+        Home uses a rectangular photo. About Me uses a circular photo.
+        The two photo URLs are independent.
       </p>
 
       <label>Gallery image URLs (one HTTPS URL per line)
