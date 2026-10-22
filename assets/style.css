@@ -2,8 +2,7 @@
 /* =====================================================
    REASAT SAFIN — PREMIUM SIGNATURE PORTFOLIO
    Complete responsive stylesheet
-   Home: Arch shape | About: Circle
-   Mobile: All navigation links visible
+   Mobile navigation: ALL 6 LINKS IN ONE ROW
    ===================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Allura&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap');
@@ -531,7 +530,7 @@ footer {
 
 .gallery button:hover img { transform: scale(1.06); }
 
-/* CONTACT */
+/* CONTACT — FIVE ICON BUTTONS */
 
 .social-row {
   display: grid;
@@ -787,7 +786,7 @@ textarea { min-height: 75px; resize: vertical; }
     border-radius: 15px;
   }
 
-  /* NAV: LOGO + OWNER LOGIN ON TOP */
+  /* LOGO + OWNER LOGIN TOP ROW */
 
   nav {
     display: grid;
@@ -797,7 +796,7 @@ textarea { min-height: 75px; resize: vertical; }
     gap: 8px 8px;
     min-height: 0;
     width: calc(100% - 28px);
-    padding: 10px 0 8px;
+    padding: 10px 0 6px;
   }
 
   .brand {
@@ -816,18 +815,21 @@ textarea { min-height: 75px; resize: vertical; }
     font-size: 11px;
   }
 
-  /* FIX: SHOW ALL SIX NAV LINKS WITHOUT HORIZONTAL SCROLL */
+  /* NAVIGATION — SIX LINKS, ONE ROW */
 
   .links {
     grid-column: 1 / -1;
     grid-row: 2;
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0 !important;
     width: 100%;
     min-width: 0;
-    gap: 5px;
     overflow: visible;
-    padding: 5px 0 3px;
+    padding: 4px 0;
     -webkit-mask-image: none;
     mask-image: none;
   }
@@ -835,21 +837,23 @@ textarea { min-height: 75px; resize: vertical; }
   .links::-webkit-scrollbar { display: none; }
 
   .links a {
-    display: flex;
-    width: 100%;
+    display: inline-flex;
+    flex: 1 1 0;
+    width: auto;
     min-width: 0;
-    min-height: 42px;
-    padding: 8px 3px;
-    font-size: 13px;
-    line-height: 1.25;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 1px;
+    font-size: clamp(9px, 2.65vw, 12px);
+    line-height: 1.2;
     text-align: center;
     white-space: nowrap;
-    border-radius: 9px;
+    border-radius: 8px;
   }
 
-  /* HOME */
-
   main { width: calc(100% - 32px); }
+
+  /* HOME */
 
   .hero {
     grid-template-columns: 1fr;
@@ -1011,16 +1015,22 @@ textarea { min-height: 75px; resize: vertical; }
     font-size: 10px;
   }
 
-  /* Keep all navigation items visible on narrow phones */
+  /* Keep every link in the same row on small phones */
 
   .links {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 4px;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    gap: 0 !important;
+    overflow: visible;
   }
 
   .links a {
-    padding: 8px 2px;
-    font-size: 12px;
+    flex: 1 1 0;
+    min-width: 0;
+    padding: 10px 0;
+    font-size: 9px;
+    white-space: nowrap;
   }
 
   .grid { gap: 8px; }
