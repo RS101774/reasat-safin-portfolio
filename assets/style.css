@@ -612,10 +612,12 @@ footer {
   display: block;
   width: min(100%, 360px);
   aspect-ratio: 1 / 1;
-  border: 1px solid #3a3941;
+  border: 2px solid #d6c4a1;
   border-radius: 50%;
   background: #141419;
   object-fit: cover;
+  object-position: center 15%;
+  box-shadow: 0 20px 60px #0006, 0 0 40px #d6c4a11f;
 }
 
 .about-placeholder {
@@ -994,4 +996,9 @@ textarea { min-height: 75px; resize: vertical; }
 
   .social-row a {
     border-radius: 11px;
-    font-size: 18p
+    font-size: 18px;
+  }
+
+  .social-row a.email { font-size: 0 !important; }
+  .social-row a.email::before { font-size: 20px; }
+}
