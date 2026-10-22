@@ -42,7 +42,7 @@ button { cursor: pointer; }
   overflow: hidden;
   border: 1px solid #292a30;
   border-radius: 22px;
-  background: #090a0ceF;
+  background: #090a0cef;
   box-shadow: 0 25px 90px #0005;
 }
 
@@ -72,8 +72,11 @@ nav {
 .brand {
   flex-shrink: 0;
   font-family: 'Playfair Display', Georgia, serif;
-  font-size: 25px;
-  letter-spacing: -.8px;
+  font-size: 29px;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -1px;
+  white-space: nowrap;
 }
 
 .links {
@@ -84,10 +87,11 @@ nav {
 }
 
 .links a {
-  padding: 9px 11px;
+  padding: 10px 11px;
   border-radius: 8px;
   color: #b5b5be;
-  font-size: 13px;
+  font-size: 15px;
+  font-weight: 500;
   white-space: nowrap;
   transition: .2s ease;
 }
@@ -700,10 +704,21 @@ textarea { min-height: 75px; resize: vertical; }
 
 @media (max-width: 900px) {
   nav { gap: 10px; }
-  .brand { font-size: 23px; }
-  .links a { padding: 8px; font-size: 12px; }
+
+  .brand {
+    font-size: 27px;
+  }
+
+  .links a {
+    padding: 9px 10px;
+    font-size: 15px;
+  }
+
   .hero { gap: 30px; }
-  .skill-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+  .skill-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 /* MOBILE */
@@ -722,8 +737,15 @@ textarea { min-height: 75px; resize: vertical; }
     padding: 13px 0 8px;
   }
 
-  .brand { font-size: 22px; }
-  .owner { padding: 8px 10px; font-size: 11px; }
+  .brand {
+    font-size: 26px;
+    font-style: italic;
+  }
+
+  .owner {
+    padding: 8px 10px;
+    font-size: 11px;
+  }
 
   .links {
     order: 3;
@@ -736,7 +758,12 @@ textarea { min-height: 75px; resize: vertical; }
   }
 
   .links::-webkit-scrollbar { display: none; }
-  .links a { flex-shrink: 0; padding: 9px 10px; font-size: 12px; }
+
+  .links a {
+    flex-shrink: 0;
+    padding: 10px 12px;
+    font-size: 16px;
+  }
 
   main { width: calc(100% - 32px); }
 
@@ -755,22 +782,55 @@ textarea { min-height: 75px; resize: vertical; }
   }
 
   .hero-copy { grid-row: 2; }
-  .hero h1 { font-size: clamp(42px, 12vw, 58px); }
+
+  .hero h1 {
+    font-size: clamp(42px, 12vw, 58px);
+  }
+
   .hero .lead { font-size: 14px; }
-  .actions { gap: 9px; margin-top: 22px; }
-  .btn { padding: 11px 15px; font-size: 12px; }
+
+  .actions {
+    gap: 9px;
+    margin-top: 22px;
+  }
+
+  .btn {
+    padding: 11px 15px;
+    font-size: 12px;
+  }
 
   .page-intro { padding: 42px 0 22px; }
+
   .page-intro h2 { font-size: 42px; }
+
   .page-intro .lead { font-size: 14px; }
 
-  .grid { gap: 11px; padding-bottom: 32px; }
-  .card { padding: 14px; border-radius: 13px; }
+  .grid {
+    gap: 11px;
+    padding-bottom: 32px;
+  }
+
+  .card {
+    padding: 14px;
+    border-radius: 13px;
+  }
+
   .school-card { padding: 9px; }
-  .school-image { height: 115px; margin-bottom: 9px; }
+
+  .school-image {
+    height: 115px;
+    margin-bottom: 9px;
+  }
+
   .school-card .details { padding: 6px 5px 10px; }
+
   .school-card h3 { font-size: 16px; }
-  .school-card p, .card p { font-size: 12px; line-height: 1.8; }
+
+  .school-card p,
+  .card p {
+    font-size: 12px;
+    line-height: 1.8;
+  }
 
   .grid > .card:last-child {
     grid-column: 1 / -1;
@@ -785,18 +845,49 @@ textarea { min-height: 75px; resize: vertical; }
 
   .grid > .card:last-child p { font-size: 13px; }
 
-  .skill-grid { gap: 10px; padding-bottom: 32px; }
-  .skill { padding: 13px; border-radius: 13px; }
-  .skilltop { gap: 8px; margin-bottom: 18px; }
-  .skillicon { width: 34px; height: 34px; border-radius: 9px; }
+  .skill-grid {
+    gap: 10px;
+    padding-bottom: 32px;
+  }
+
+  .skill {
+    padding: 13px;
+    border-radius: 13px;
+  }
+
+  .skilltop {
+    gap: 8px;
+    margin-bottom: 18px;
+  }
+
+  .skillicon {
+    width: 34px;
+    height: 34px;
+    border-radius: 9px;
+  }
+
   .skill h3 { font-size: 12px; }
+
   .percent { font-size: 10px; }
 
-  .gallery { gap: 9px; padding-bottom: 32px; }
+  .gallery {
+    gap: 9px;
+    padding-bottom: 32px;
+  }
+
   .gallery button { border-radius: 10px; }
 
-  .social-row { gap: 14px; padding: 30px 0 60px; }
-  .social-row a { width: 62px; height: 62px; border-radius: 18px; font-size: 25px; }
+  .social-row {
+    gap: 14px;
+    padding: 30px 0 60px;
+  }
+
+  .social-row a {
+    width: 62px;
+    height: 62px;
+    border-radius: 18px;
+    font-size: 25px;
+  }
 
   .about-layout {
     grid-template-columns: 1fr;
@@ -805,33 +896,60 @@ textarea { min-height: 75px; resize: vertical; }
   }
 
   .about-photo-wrap { order: -1; }
-  .about-image, .about-placeholder {
+
+  .about-image,
+  .about-placeholder {
     width: min(78%, 280px);
     margin: auto;
     aspect-ratio: .9;
   }
 
   .about-layout h2 { font-size: 42px; }
+
   #aboutView { font-size: 14px; }
+
   .pill-row { gap: 7px; }
 
   .bottomline { font-size: 10px; }
+
   .socials { gap: 11px; }
+
   footer { font-size: 10px; }
-  #editBtn { right: 12px; bottom: 12px; }
+
+  #editBtn {
+    right: 12px;
+    bottom: 12px;
+  }
 
   .modal { padding: 18px; }
+
   .modal h2 { font-size: 30px; }
+
   .modal-actions .btn { flex: 1; }
 }
 
+/* EXTRA SMALL MOBILE */
+
 @media (max-width: 360px) {
-  .brand { font-size: 20px; }
+  .brand { font-size: 24px; }
+
   .owner { font-size: 10px; }
-  .links a { padding: 8px; font-size: 11px; }
+
+  .links a {
+    padding: 9px 10px;
+    font-size: 15px;
+  }
+
   .grid { gap: 8px; }
+
   .school-image { height: 90px; }
+
   .skill { padding: 10px; }
-  .skillicon { width: 30px; height: 30px; }
+
+  .skillicon {
+    width: 30px;
+    height: 30px;
+  }
+
   .skilltop { gap: 6px; }
 }
