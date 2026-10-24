@@ -2379,3 +2379,68 @@ html body:has(.skill-grid) .skill-grid .skill .skillicon {
     inset 0 1px 0 rgba(255, 255, 255, .07),
     0 4px 12px rgba(0, 0, 0, .5) !important;
 }
+/* =====================================================
+   SKILLS PAGE — LAST TWEAK (paste at the very bottom)
+   ===================================================== */
+
+/* clearer border all around, brighter corners */
+
+html body:has(.skill-grid) .skill-grid .skill {
+  background:
+    radial-gradient(ellipse at 0% 0%, rgba(var(--rgb), .26), transparent 42%) padding-box,
+    radial-gradient(ellipse at 100% 100%, rgba(var(--rgb2), .22), transparent 40%) padding-box,
+    linear-gradient(160deg, #0d0c0b, #050506) padding-box,
+    radial-gradient(circle at 0% 0%, rgba(var(--rgb), 1), transparent 40%) border-box,
+    radial-gradient(circle at 100% 100%, rgba(var(--rgb2), 1), transparent 40%) border-box,
+    linear-gradient(rgba(var(--rgb), .78), rgba(var(--rgb), .78)) border-box !important;
+
+  box-shadow:
+    0 0 16px rgba(var(--rgb), .2),
+    inset 0 0 22px rgba(var(--rgb), .14),
+    inset 0 1px 0 rgba(255, 255, 255, .08) !important;
+}
+
+/* big soft quarter-circle swoosh in the bottom-right corner */
+
+html body:has(.skill-grid) .skill-grid .skill::before {
+  right: -135px !important;
+  bottom: -135px !important;
+  width: 270px !important;
+  height: 270px !important;
+  border: 1px solid rgba(var(--rgb2), .75) !important;
+  border-radius: 50% !important;
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(var(--rgb2), .30) 0%,
+    rgba(var(--rgb2), .10) 45%,
+    transparent 70%
+  ) !important;
+  box-shadow:
+    0 0 14px rgba(var(--rgb2), .35),
+    inset 0 0 16px rgba(var(--rgb2), .18) !important;
+}
+
+html body:has(.skill-grid) .skill-grid .skill::after {
+  right: -170px !important;
+  bottom: -170px !important;
+  width: 340px !important;
+  height: 340px !important;
+  border: 1px solid rgba(var(--rgb2), .30) !important;
+  border-radius: 50% !important;
+}
+
+@media (min-width: 601px) {
+  html body:has(.skill-grid) .skill-grid .skill::before {
+    right: -170px !important;
+    bottom: -170px !important;
+    width: 340px !important;
+    height: 340px !important;
+  }
+
+  html body:has(.skill-grid) .skill-grid .skill::after {
+    right: -215px !important;
+    bottom: -215px !important;
+    width: 430px !important;
+    height: 430px !important;
+  }
+}
