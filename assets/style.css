@@ -1548,3 +1548,82 @@ font-size: 8px;
 gap: 9px;
 }
 }
+/* FIX: RESTORE ORIGINAL SKILLS DESIGN */
+
+@media (max-width: 600px) {
+/* Restore the Skills heading and description */
+.page-intro {
+display: block !important;
+padding: 42px 0 22px !important;
+}
+
+.page-intro h2 {
+display: block !important;
+font-size: 42px !important;
+}
+
+.page-intro .lead {
+display: block !important;
+font-size: 14px !important;
+}
+
+/* Remove forced card height and excess empty space */
+.skill {
+height: auto !important;
+min-height: 0 !important;
+padding: 14px 12px !important;
+align-self: start;
+}
+
+.skilltop {
+gap: 9px !important;
+}
+
+.skillicon {
+flex: 0 0 44px !important;
+width: 44px !important;
+height: 44px !important;
+}
+
+.skillicon img {
+width: 27px !important;
+height: 27px !important;
+}
+
+.skillicon i {
+font-size: 25px !important;
+}
+
+.skill h3 {
+font-size: 14px !important;
+}
+
+.skill h3::after {
+margin-top: 7px !important;
+padding: 5px 8px !important;
+font-size: 9px !important;
+}
+
+.skill-grid {
+grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+gap: 12px !important;
+padding: 22px 0 30px !important;
+align-items: stretch;
+}
+}
+
+@media (max-width: 380px) {
+.skill {
+height: auto !important;
+padding: 12px 9px !important;
+}
+
+.skill h3 {
+font-size: 13px !important;
+}
+
+.skill h3::after {
+padding: 4px 7px !important;
+font-size: 8px !important;
+}
+}
