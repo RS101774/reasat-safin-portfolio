@@ -2555,3 +2555,28 @@ html body:has(.skill-grid) .skill-grid .skill {
     inset -22px -22px 40px -24px rgba(var(--rgb2), .38),
     inset 0 1px 0 rgba(255, 255, 255, .08) !important;
 }
+/* =====================================================
+   SKILLS PAGE — CURVE SIZE FIX (paste at the very bottom)
+   ===================================================== */
+
+html body:has(.skill-grid) .skill-grid .skill::before {
+  width: 42% !important;
+  height: 46% !important;
+  background: linear-gradient(135deg, transparent 35%, rgba(var(--rgb2), .20) 100%) !important;
+}
+
+html body:has(.skill-grid) .skill-grid .skill::after {
+  width: 42% !important;
+  height: 46% !important;
+  background: rgba(var(--rgb2), .55) !important;
+}
+
+/* lighter corner haze */
+
+html body:has(.skill-grid) .skill-grid .skill {
+  box-shadow:
+    0 0 20px rgba(var(--rgb), .26),
+    inset 0 0 24px rgba(var(--rgb), .15),
+    inset -18px -18px 36px -24px rgba(var(--rgb2), .24),
+    inset 0 1px 0 rgba(255, 255, 255, .08) !important;
+}
