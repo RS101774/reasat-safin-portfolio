@@ -1258,3 +1258,186 @@ line-height: 1.8;
 
 .grid > .card:last-child {
 grid-column: 1
+grid-column: 1 / -1;
+display: block;
+padding: 20px 20px 20px 26px;
+}
+
+.grid > .card:last-child h3 {
+margin-bottom: 10px;
+font-size: 23px;
+}
+
+.grid > .card:last-child p {
+font-size: 13px;
+}
+
+/* SKILLS */
+
+.skill-grid {
+grid-template-columns: repeat(2, minmax(0, 1fr));
+gap: 12px;
+padding: 22px 0 30px;
+}
+
+.skill {
+min-width: 0;
+padding: 14px 12px;
+border-radius: 16px;
+}
+
+.skilltop {
+gap: 9px;
+}
+
+.skillicon {
+flex-basis: 44px;
+width: 44px;
+height: 44px;
+border-radius: 13px;
+}
+
+.skillicon img {
+width: 27px !important;
+height: 27px !important;
+}
+
+.skillicon i {
+font-size: 25px !important;
+}
+
+.skill h3 {
+font-size: 14px;
+}
+
+.skill h3::after {
+padding: 5px 8px;
+font-size: 9px;
+}
+
+/* GALLERY */
+
+.gallery {
+grid-template-columns: repeat(2, minmax(0, 1fr));
+gap: 10px;
+padding-bottom: 32px;
+}
+
+/* CONTACT */
+
+.social-row {
+grid-template-columns: repeat(5, minmax(0, 1fr));
+gap: 8px;
+padding: 28px 0 55px;
+}
+
+.social-row a {
+border-radius: 14px;
+}
+
+/* ABOUT */
+
+.about-layout {
+grid-template-columns: 1fr;
+gap: 28px;
+padding: 30px 0 45px;
+}
+
+.about-photo-wrap {
+grid-row: 1;
+}
+
+.about-image,
+.about-placeholder {
+width: min(78%, 280px);
+margin: 0 auto;
+}
+
+#aboutView {
+font-size: 14px;
+}
+
+/* FOOTER */
+
+.bottomline,
+footer {
+flex-wrap: wrap;
+gap: 12px;
+}
+
+.socials {
+gap: 13px;
+}
+
+/* DIALOGS */
+
+.modal {
+padding: 18px;
+}
+
+.modal h2 {
+font-size: 29px;
+}
+}
+
+/* SMALL MOBILE */
+
+@media (max-width: 380px) {
+.brand {
+font-size: 33px !important;
+}
+
+.owner {
+padding: 7px 9px;
+font-size: 11px;
+}
+
+.links a {
+padding: 8px 5px;
+font-size: 13px;
+}
+
+main {
+width: calc(100% - 26px);
+}
+
+.skill-grid {
+gap: 9px;
+}
+
+.skill {
+padding: 12px 9px;
+}
+
+.skill h3 {
+font-size: 13px;
+}
+
+.skill h3::after {
+padding: 4px 7px;
+font-size: 8px;
+}
+
+.skillicon {
+flex-basis: 40px;
+width: 40px;
+height: 40px;
+}
+
+.skillicon img {
+width: 25px !important;
+height: 25px !important;
+}
+
+.skillicon i {
+font-size: 23px !important;
+}
+
+.card {
+padding: 11px;
+}
+
+.school-card {
+padding: 8px;
+}
+  }
