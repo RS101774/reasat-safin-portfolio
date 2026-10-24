@@ -2528,3 +2528,30 @@ html body:has(.skill-grid) .skill-grid .skill::after {
   height: 46% !important;
   background: rgba(var(--rgb2), .55) !important;
 }
+/* =====================================================
+   SKILLS PAGE — FINAL POLISH (paste at the very bottom)
+   ===================================================== */
+
+/* bigger, smoother curve */
+
+html body:has(.skill-grid) .skill-grid .skill::before {
+  width: 54% !important;
+  height: 62% !important;
+  background: linear-gradient(135deg, transparent 30%, rgba(var(--rgb2), .30) 100%) !important;
+}
+
+html body:has(.skill-grid) .skill-grid .skill::after {
+  width: 54% !important;
+  height: 62% !important;
+  background: rgba(var(--rgb2), .70) !important;
+}
+
+/* soft haze in the bottom-right corner */
+
+html body:has(.skill-grid) .skill-grid .skill {
+  box-shadow:
+    0 0 22px rgba(var(--rgb), .28),
+    inset 0 0 26px rgba(var(--rgb), .16),
+    inset -22px -22px 40px -24px rgba(var(--rgb2), .38),
+    inset 0 1px 0 rgba(255, 255, 255, .08) !important;
+}
