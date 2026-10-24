@@ -1978,3 +1978,36 @@ body:has(.skill-grid) .skill h3 {
     font-size: 14px !important;
   }
 }
+/* =====================================================
+   SKILLS PAGE — FINE TUNE TO MATCH REFERENCE
+   (Paste at the very bottom of style.css)
+   ===================================================== */
+
+body:has(.skill-grid) .page-intro h2 {
+  margin: 4px 0 8px;
+}
+
+body:has(.skill-grid) .page-intro .lead {
+  color: #a9b0c6;
+  line-height: 1.45;
+}
+
+@media (max-width: 600px) {
+
+  body:has(.skill-grid) .skill-grid {
+    gap: 14px !important;
+  }
+
+  body:has(.skill-grid) .skill {
+    min-height: 92px !important;
+    padding: 10px 8px 12px !important;
+  }
+
+  body:has(.skill-grid) .skilltop {
+    gap: 5px !important;
+  }
+
+  body:has(.skill-grid) .skill h3 {
+    font-size: 14.5px !important;
+  }
+}
