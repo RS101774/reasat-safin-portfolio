@@ -2,7 +2,7 @@
    REASAT SAFIN — PREMIUM SIGNATURE PORTFOLIO
    Complete Responsive Stylesheet
    Home: Arch | About: Circle
-   Skills: Medium Soft Glow Cards
+   Skills: Medium Soft Glow Cards + Category Labels
 ===================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Allura&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap');
@@ -479,7 +479,7 @@ footer {
 }
 
 /* =====================================================
-   SKILLS — MEDIUM SOFT GLOW CARDS
+   SKILLS — MEDIUM SOFT GLOW CARDS + CATEGORY LABELS
 ===================================================== */
 
 .skill-grid {
@@ -552,12 +552,12 @@ footer {
     inset 0 1px 0 rgba(255,255,255,.07);
 }
 
-/* Remove decorative pseudo-elements and category labels */
+/* REMOVE ONLY DECORATIVE CARD OVERLAY
+   Keep h3::after available for category labels. */
 
 .skill::before,
 .skill::after,
-.skill h3::before,
-.skill h3::after {
+.skill h3::before {
   content: none !important;
   display: none !important;
 }
@@ -620,6 +620,8 @@ footer {
   font-size: 29px !important;
 }
 
+/* SKILL NAME */
+
 .skill h3 {
   display: block;
   min-width: 0;
@@ -634,7 +636,44 @@ footer {
   overflow-wrap: anywhere;
 }
 
-/* Hide unused progress bars and descriptions */
+/* CATEGORY LABELS */
+
+.skill h3::after {
+  display: block;
+  width: fit-content;
+  max-width: 100%;
+  margin-top: 9px;
+  padding: 5px 9px;
+  border: 1px solid rgba(214,196,161,.20);
+  border-radius: 100px;
+  background: linear-gradient(135deg, #f0dfbd, #d6c4a1);
+  color: #282219;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1.4;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+.skill:nth-child(1) h3::after {
+  content: "Web Design";
+}
+
+.skill:nth-child(2) h3::after {
+  content: "Database";
+}
+
+.skill:nth-child(3) h3::after {
+  content: "Database Platform";
+}
+
+.skill:nth-child(4) h3::after {
+  content: "Code Management";
+}
+
+/* HIDE UNUSED PROGRESS BARS AND DESCRIPTIONS */
 
 .skill .bar,
 .skill .percent,
@@ -650,7 +689,7 @@ footer {
   display: none !important;
 }
 
-/* Skills page background */
+/* SKILLS PAGE BACKGROUND */
 
 body:has(.skill-grid) .site-shell::before,
 body:has(.skill-grid) .site-shell::after {
@@ -1162,7 +1201,7 @@ textarea {
     font-size: 12px;
   }
 
-  /* PAGE HEADINGS — COMPACT SPACING */
+  /* PAGE HEADINGS */
 
   .page-intro {
     padding: 24px 0 10px;
@@ -1229,7 +1268,7 @@ textarea {
     font-size: 13px;
   }
 
-  /* SKILLS — MEDIUM CARDS, NO LABELS */
+  /* SKILLS — MEDIUM CARDS WITH LABELS */
 
   .skill-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1271,6 +1310,12 @@ textarea {
   .skill h3 {
     font-size: 15px;
     line-height: 1.4;
+  }
+
+  .skill h3::after {
+    margin-top: 7px;
+    padding: 5px 8px;
+    font-size: 9px;
   }
 
   /* GALLERY */
@@ -1403,6 +1448,12 @@ textarea {
 
   .skill h3 {
     font-size: 13px;
+  }
+
+  .skill h3::after {
+    margin-top: 6px;
+    padding: 4px 7px;
+    font-size: 8px;
   }
 
   .card {
