@@ -2087,3 +2087,112 @@ body:has(.skill-grid) .skill::after {
   border: 1px solid rgba(var(--rgb2), .32) !important;
   transform: none !important;
 }
+/* =====================================================
+   SKILLS PAGE — FINAL MATCH (paste at the very bottom)
+   ===================================================== */
+
+/* ---------- PURE BLACK PAGE (no grey area below) ---------- */
+
+body:has(.skill-grid) {
+  background: #030304 !important;
+}
+
+body:has(.skill-grid) .site-shell {
+  background: #040405 !important;
+}
+
+/* ---------- HEADING COLORS ---------- */
+
+body:has(.skill-grid) .eyebrow {
+  color: #e3c27f;
+}
+
+body:has(.skill-grid) .eyebrow::before {
+  background: #e3c27f;
+  box-shadow: 0 0 8px rgba(227, 194, 127, .5);
+}
+
+body:has(.skill-grid) footer {
+  color: #8d93ab;
+}
+
+/* ---------- CARD ---------- */
+
+body:has(.skill-grid) .skill {
+  --r: 30px;
+
+  border: 1.5px solid transparent !important;
+  background:
+    radial-gradient(circle at 0% 0%, rgba(var(--rgb), .34), transparent 34%) padding-box,
+    radial-gradient(circle at 100% 100%, rgba(var(--rgb2), .30), transparent 38%) padding-box,
+    linear-gradient(160deg, #0e0d0c, #050506) padding-box,
+    radial-gradient(circle at 0% 0%, rgba(var(--rgb), 1), transparent 55%) border-box,
+    radial-gradient(circle at 100% 100%, rgba(var(--rgb2), 1), transparent 55%) border-box,
+    linear-gradient(rgba(var(--rgb), .78), rgba(var(--rgb), .78)) border-box !important;
+
+  box-shadow:
+    0 0 16px rgba(var(--rgb), .22),
+    inset 0 0 18px rgba(var(--rgb), .16),
+    inset 0 1px 0 rgba(255, 255, 255, .1) !important;
+}
+
+@media (min-width: 601px) {
+  body:has(.skill-grid) .skill {
+    --r: 48px;
+  }
+}
+
+/* ---------- SMALL CORNER ARC (bottom-right only) ---------- */
+
+body:has(.skill-grid) .skill::before {
+  content: "" !important;
+  display: block !important;
+  position: absolute !important;
+  z-index: -1 !important;
+  top: auto !important;
+  left: auto !important;
+  right: calc(var(--r) * -0.8) !important;
+  bottom: calc(var(--r) * -0.8) !important;
+  width: calc(var(--r) * 2) !important;
+  height: calc(var(--r) * 2) !important;
+  border: 1px solid rgba(var(--rgb2), .95) !important;
+  border-radius: 50% !important;
+  transform: none !important;
+  background: radial-gradient(circle, rgba(var(--rgb2), .38) 0%, rgba(var(--rgb2), .10) 60%, transparent 75%) !important;
+  box-shadow:
+    0 0 12px rgba(var(--rgb2), .45),
+    inset 0 0 12px rgba(var(--rgb2), .2) !important;
+  pointer-events: none !important;
+}
+
+body:has(.skill-grid) .skill::after {
+  content: "" !important;
+  display: block !important;
+  position: absolute !important;
+  z-index: -1 !important;
+  top: auto !important;
+  left: auto !important;
+  right: calc(var(--r) * -1.2) !important;
+  bottom: calc(var(--r) * -1.2) !important;
+  width: calc(var(--r) * 2.8) !important;
+  height: calc(var(--r) * 2.8) !important;
+  border: 1px solid rgba(var(--rgb2), .35) !important;
+  border-radius: 50% !important;
+  transform: none !important;
+  background: none !important;
+  pointer-events: none !important;
+}
+
+/* ---------- ICON BOX: brighter border + soft glow ---------- */
+
+body:has(.skill-grid) .skill .skillicon,
+body:has(.skill-grid) .skill:nth-child(1) .skillicon,
+body:has(.skill-grid) .skill:nth-child(2) .skillicon,
+body:has(.skill-grid) .skill:nth-child(3) .skillicon,
+body:has(.skill-grid) .skill:nth-child(4) .skillicon {
+  border: 1.5px solid rgba(var(--icon), 1) !important;
+  box-shadow:
+    0 0 12px rgba(var(--icon), .28),
+    inset 0 1px 0 rgba(255, 255, 255, .08),
+    0 4px 14px rgba(0, 0, 0, .5) !important;
+}
