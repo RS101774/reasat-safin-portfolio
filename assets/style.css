@@ -2196,3 +2196,83 @@ body:has(.skill-grid) .skill:nth-child(4) .skillicon {
     inset 0 1px 0 rgba(255, 255, 255, .08),
     0 4px 14px rgba(0, 0, 0, .5) !important;
 }
+/* =====================================================
+   SKILLS PAGE — BORDER + CURVE FIX (paste at the very bottom)
+   ===================================================== */
+
+body:has(.skill-grid) .skill {
+  --r: 26px;
+
+  border: 1px solid transparent !important;
+  background:
+    radial-gradient(circle at 0% 0%, rgba(var(--rgb), .30), transparent 32%) padding-box,
+    radial-gradient(circle at 100% 100%, rgba(var(--rgb2), .26), transparent 34%) padding-box,
+    linear-gradient(160deg, #0e0d0c, #050506) padding-box,
+    radial-gradient(circle at 0% 0%, rgba(var(--rgb), 1), transparent 42%) border-box,
+    radial-gradient(circle at 100% 100%, rgba(var(--rgb2), 1), transparent 42%) border-box,
+    linear-gradient(rgba(var(--rgb), .32), rgba(var(--rgb), .32)) border-box !important;
+
+  box-shadow:
+    0 0 14px rgba(var(--rgb), .16),
+    inset 0 0 16px rgba(var(--rgb), .10),
+    inset 0 1px 0 rgba(255, 255, 255, .07) !important;
+}
+
+@media (min-width: 601px) {
+  body:has(.skill-grid) .skill {
+    --r: 40px;
+  }
+}
+
+/* small thin curve, centered on the bottom-right corner */
+
+body:has(.skill-grid) .skill::before {
+  content: "" !important;
+  display: block !important;
+  position: absolute !important;
+  z-index: -1 !important;
+  top: auto !important;
+  left: auto !important;
+  right: calc(var(--r) * -1) !important;
+  bottom: calc(var(--r) * -1) !important;
+  width: calc(var(--r) * 2) !important;
+  height: calc(var(--r) * 2) !important;
+  border: 1px solid rgba(var(--rgb2), .55) !important;
+  border-radius: 50% !important;
+  background: none !important;
+  transform: none !important;
+  box-shadow: 0 0 8px rgba(var(--rgb2), .22) !important;
+  pointer-events: none !important;
+}
+
+body:has(.skill-grid) .skill::after {
+  content: "" !important;
+  display: block !important;
+  position: absolute !important;
+  z-index: -1 !important;
+  top: auto !important;
+  left: auto !important;
+  right: calc(var(--r) * -1.5) !important;
+  bottom: calc(var(--r) * -1.5) !important;
+  width: calc(var(--r) * 3) !important;
+  height: calc(var(--r) * 3) !important;
+  border: 1px solid rgba(var(--rgb2), .24) !important;
+  border-radius: 50% !important;
+  background: none !important;
+  transform: none !important;
+  pointer-events: none !important;
+}
+
+/* icon box: thinner border */
+
+body:has(.skill-grid) .skill .skillicon,
+body:has(.skill-grid) .skill:nth-child(1) .skillicon,
+body:has(.skill-grid) .skill:nth-child(2) .skillicon,
+body:has(.skill-grid) .skill:nth-child(3) .skillicon,
+body:has(.skill-grid) .skill:nth-child(4) .skillicon {
+  border: 1px solid rgba(var(--icon), .85) !important;
+  box-shadow:
+    0 0 8px rgba(var(--icon), .16),
+    inset 0 1px 0 rgba(255, 255, 255, .07),
+    0 4px 12px rgba(0, 0, 0, .5) !important;
+}
