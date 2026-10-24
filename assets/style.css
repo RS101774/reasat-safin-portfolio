@@ -424,7 +424,14 @@ footer {
   font-size: 15px;
 }
 
-/* SKILLS — FROSTED CARDS (ICON + NAME ONLY) */
+/* SKILLS — GOLD TOP LINE CARDS (ICON + NAME ONLY) */
+
+/* Uses a plain sans ampersand inside the serif skill names */
+@font-face {
+  font-family: "AmpSans";
+  src: local("Roboto"), local("Arial"), local("Helvetica Neue"), local("Segoe UI");
+  unicode-range: U+0026;
+}
 
 .skill-grid {
   display: grid;
@@ -435,43 +442,56 @@ footer {
 
 .skill {
   min-width: 0;
-  padding: 18px 16px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  border-radius: 18px;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  transition: transform .25s, border-color .25s;
+  display: flex;
+  flex-direction: column;
+  padding: 26px 20px 28px;
+  background: linear-gradient(145deg, #17181d, #101114);
+  border: 1px solid var(--line);
+  border-top: 2px solid var(--accent);
+  border-radius: 6px 6px 18px 18px;
+  transition: transform .25s, box-shadow .25s;
 }
 
 .skill:hover {
   transform: translateY(-4px);
-  border-color: rgba(255, 255, 255, 0.28);
+  box-shadow: 0 0 40px #d6c4a11f;
 }
 
 .skilltop {
   display: flex;
-  align-items: center;
-  gap: 12px;
-  min-height: 42px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  min-height: 0;
   margin-bottom: 0;
 }
 
 .skillicon {
-  display: grid;
+  display: block;
   flex-shrink: 0;
-  place-items: center;
-  width: 42px;
-  height: 42px;
-  border: 1px solid #383840;
-  border-radius: 12px;
-  background: #202026;
-  font-size: 20px;
+  width: auto;
+  height: auto;
+  border: 0;
+  background: none;
+  line-height: 1;
+}
+
+.skillicon img {
+  display: block;
+  width: 32px !important;
+  height: 32px !important;
+}
+
+.skillicon i {
+  font-size: 30px !important;
 }
 
 .skill h3 {
   margin: 0;
-  font-size: 14px;
+  font-family: "AmpSans", 'Playfair Display', Georgia, serif;
+  font-size: 22px;
+  font-weight: 400;
+  letter-spacing: -0.3px;
   overflow-wrap: anywhere;
 }
 
@@ -909,16 +929,21 @@ textarea { min-height: 75px; resize: vertical; }
     padding-bottom: 32px;
   }
 
-  .skill { padding: 14px 12px; border-radius: 15px; }
-  .skilltop { gap: 8px; min-height: 34px; }
-
-  .skillicon {
-    width: 34px;
-    height: 34px;
-    border-radius: 9px;
+  .skill {
+    padding: 22px 14px 24px;
+    border-radius: 5px 5px 16px 16px;
   }
 
-  .skill h3 { font-size: 12px; }
+  .skilltop { gap: 14px; }
+
+  .skillicon img {
+    width: 28px !important;
+    height: 28px !important;
+  }
+
+  .skillicon i { font-size: 27px !important; }
+
+  .skill h3 { font-size: 20px; }
 
   /* GALLERY */
 
@@ -1010,14 +1035,11 @@ textarea { min-height: 75px; resize: vertical; }
 
   .grid { gap: 8px; }
   .school-image { height: 90px; }
-  .skill { padding: 12px 10px; }
+  .skill { padding: 18px 10px 20px; }
 
-  .skillicon {
-    width: 30px;
-    height: 30px;
-  }
+  .skilltop { gap: 10px; }
 
-  .skilltop { gap: 6px; min-height: 30px; }
+  .skill h3 { font-size: 17px; }
   .social-row { gap: 5px; }
 
   .social-row a {
