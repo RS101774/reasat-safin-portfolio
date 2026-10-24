@@ -2,7 +2,7 @@
 REASAT SAFIN — PREMIUM SIGNATURE PORTFOLIO
 Responsive CSS
 Home: Arch | About: Circle
-Skills: Compact Soft Glow Cards
+Skills: Premium Soft Glow Cards
 ===================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Allura&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap');
@@ -147,7 +147,7 @@ box-shadow: inset 0 -2px var(--accent);
 
 .owner {
 flex-shrink: 0;
-border: 1px solid #414149;
+border: 1px solid #8d7958;
 border-radius: 100px;
 padding: 9px 14px;
 color: var(--text);
@@ -437,12 +437,7 @@ font-size: 20px;
 margin-top: 5px;
 }
 
-/*
-FUTURE GOALS:
-Uses :last-child as in the supplied stylesheet.
-Keep this rule only if Future Goals really is the
-final direct .card child inside .grid.
-*/
+/* FUTURE GOALS */
 
 .grid > .card:last-child {
 position: relative;
@@ -478,7 +473,7 @@ font-size: 15px;
 }
 
 /* =====================================================
-SKILLS — COMPACT SOFT GLOW CARDS
+SKILLS — PREMIUM SOFT GLOW CARDS
 ===================================================== */
 
 .skill-grid {
@@ -495,10 +490,10 @@ display: flex;
 align-items: flex-start;
 min-width: 0;
 min-height: 0;
-padding: 16px 14px;
+padding: 20px 18px;
 overflow: hidden;
 border: 1px solid #343943;
-border-radius: 17px;
+border-radius: 22px;
 background:
 radial-gradient(ellipse at 0% 0%, rgba(214,196,161,.18), transparent 65%),
 radial-gradient(ellipse at 100% 100%, rgba(85,120,160,.12), transparent 65%),
@@ -511,30 +506,51 @@ transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
 
 .skill:nth-child(1),
 .skill:nth-child(3) {
-border-color: #514536;
+border-color: #a58b5b;
 background:
-radial-gradient(ellipse at 0% 0%, rgba(214,166,96,.19), transparent 65%),
-radial-gradient(ellipse at 100% 100%, rgba(67,100,137,.12), transparent 65%),
+radial-gradient(ellipse at 0% 0%, rgba(214,166,96,.28), transparent 65%),
+radial-gradient(ellipse at 100% 100%, rgba(220,112,45,.16), transparent 65%),
 linear-gradient(145deg, #201e1b 0%, #131417 65%, #0c0d10 100%);
+box-shadow:
+inset 0 1px 0 rgba(255,255,255,.06),
+0 5px 18px rgba(0,0,0,.25);
 }
 
-.skill:nth-child(2),
-.skill:nth-child(4) {
-border-color: #353a43;
+.skill:nth-child(2) {
+border-color: #a58b5b;
 background:
-radial-gradient(ellipse at 100% 0%, rgba(107,129,157,.17), transparent 65%),
-radial-gradient(ellipse at 0% 100%, rgba(214,196,161,.09), transparent 65%),
+radial-gradient(ellipse at 100% 0%, rgba(214,196,161,.22), transparent 65%),
+radial-gradient(ellipse at 0% 100%, rgba(214,196,161,.13), transparent 65%),
+linear-gradient(145deg, #1b1c20 0%, #131417 65%, #0c0d10 100%);
+}
+
+.skill:nth-child(3) {
+border-color: #9ca75d;
+background:
+radial-gradient(ellipse at 0% 0%, rgba(90,200,100,.20), transparent 65%),
+radial-gradient(ellipse at 100% 100%, rgba(50,160,90,.15), transparent 65%),
+linear-gradient(145deg, #151e19 0%, #111417 65%, #0c0d10 100%);
+}
+
+.skill:nth-child(4) {
+border-color: #7b8797;
+background:
+radial-gradient(ellipse at 0% 0%, rgba(190,200,215,.20), transparent 65%),
+radial-gradient(ellipse at 100% 100%, rgba(70,120,170,.17), transparent 65%),
 linear-gradient(145deg, #1b1c20 0%, #131417 65%, #0c0d10 100%);
 }
 
 .skill:hover {
 transform: translateY(-3px);
-border-color: #9b8460;
+border-color: #d6c4a1;
 box-shadow:
 0 8px 24px rgba(0,0,0,.35),
-0 0 18px rgba(214,196,161,.12),
+0 0 22px rgba(214,196,161,.15),
 inset 0 1px 0 rgba(255,255,255,.07);
 }
+
+/* Hide decorative card pseudo-elements only.
+Do not hide the category labels on h3. */
 
 .skill::before,
 .skill::after {
@@ -549,7 +565,7 @@ display: flex;
 flex-direction: column;
 align-items: flex-start;
 justify-content: flex-start;
-gap: 10px;
+gap: 12px;
 width: 100%;
 min-width: 0;
 margin: 0;
@@ -557,47 +573,47 @@ margin: 0;
 
 .skillicon {
 display: flex;
-flex: 0 0 44px;
+flex: 0 0 64px;
 align-items: center;
 justify-content: center;
-width: 44px;
-height: 44px;
+width: 64px;
+height: 64px;
 border: 1px solid #51483b;
-border-radius: 13px;
+border-radius: 22px;
 background: linear-gradient(145deg, #242321, #111214);
 box-shadow: inset 0 1px 0 rgba(255,255,255,.05);
 line-height: 1;
 }
 
 .skill:nth-child(1) .skillicon {
-border-color: #70402d;
+border-color: #d86b35;
 background: linear-gradient(145deg, #291a15, #111011);
 }
 
 .skill:nth-child(2) .skillicon {
-border-color: #66563e;
+border-color: #8e7955;
 background: linear-gradient(145deg, #29241b, #111112);
 }
 
 .skill:nth-child(3) .skillicon {
-border-color: #276048;
+border-color: #1caa78;
 background: linear-gradient(145deg, #14271f, #101211);
 }
 
 .skill:nth-child(4) .skillicon {
-border-color: #41434a;
+border-color: #777f8c;
 background: linear-gradient(145deg, #222328, #111214);
 }
 
 .skillicon img {
-width: 28px !important;
-height: 28px !important;
+width: 38px !important;
+height: 38px !important;
 max-width: none;
 object-fit: contain;
 }
 
 .skillicon i {
-font-size: 26px !important;
+font-size: 34px !important;
 }
 
 .skill h3 {
@@ -607,22 +623,23 @@ max-width: 100%;
 margin: 0;
 color: #f5f3ef;
 font-family: 'DM Sans', sans-serif;
-font-size: 15px;
+font-size: 19px;
 font-weight: 600;
 letter-spacing: -.2px;
 line-height: 1.4;
 overflow-wrap: anywhere;
 }
 
-/* UPDATED CATEGORY LABELS */
+/* CATEGORY LABELS */
 
 .skill h3::after {
+content: "";
 display: block;
 width: fit-content;
 max-width: 100%;
 margin-top: 9px;
-padding: 5px 10px;
-border: 1px solid rgba(214,196,161,.20);
+padding: 5px 9px;
+border: 1px solid rgba(214,196,161,.25);
 border-radius: 100px;
 background: linear-gradient(135deg, #f0dfbd, #d6c4a1);
 color: #282219;
@@ -1031,26 +1048,27 @@ gap: 13px;
 }
 
 .skill {
-padding: 16px 14px;
+padding: 18px 16px;
 }
 
 .skillicon {
-flex-basis: 44px;
-width: 44px;
-height: 44px;
+flex-basis: 58px;
+width: 58px;
+height: 58px;
+border-radius: 20px;
 }
 
 .skillicon img {
-width: 28px !important;
-height: 28px !important;
+width: 35px !important;
+height: 35px !important;
 }
 
 .skillicon i {
-font-size: 26px !important;
+font-size: 31px !important;
 }
 
 .skill h3 {
-font-size: 15px;
+font-size: 17px;
 }
 
 .about-layout {
@@ -1058,9 +1076,7 @@ gap: 32px;
 }
 }
 
-/* =====================================================
-NAVIGATION ADJUSTMENT FOR NARROW DESKTOP/TABLET
-===================================================== */
+/* NAVIGATION — NARROW DESKTOP/TABLET */
 
 @media (min-width: 601px) and (max-width: 760px) {
 nav {
@@ -1100,8 +1116,6 @@ width: calc(100% - 12px);
 margin: 6px auto;
 border-radius: 15px;
 }
-
-/* LOGO + LOGIN FIRST ROW, MENU SECOND ROW */
 
 nav {
 display: grid;
@@ -1257,7 +1271,6 @@ line-height: 1.8;
 }
 
 .grid > .card:last-child {
-grid-column: 1
 grid-column: 1 / -1;
 display: block;
 padding: 20px 20px 20px 26px;
@@ -1272,7 +1285,7 @@ font-size: 23px;
 font-size: 13px;
 }
 
-/* SKILLS */
+/* SKILLS — MATCH MOBILE REFERENCE */
 
 .skill-grid {
 grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1282,35 +1295,40 @@ padding: 22px 0 30px;
 
 .skill {
 min-width: 0;
-padding: 14px 12px;
-border-radius: 16px;
+min-height: 190px;
+padding: 17px 12px;
+border-radius: 22px;
+align-items: flex-start;
 }
 
 .skilltop {
-gap: 9px;
+align-items: flex-start;
+gap: 12px;
 }
 
 .skillicon {
-flex-basis: 44px;
-width: 44px;
-height: 44px;
-border-radius: 13px;
+flex-basis: 64px;
+width: 64px;
+height: 64px;
+border-radius: 22px;
 }
 
 .skillicon img {
-width: 27px !important;
-height: 27px !important;
+width: 38px !important;
+height: 38px !important;
 }
 
 .skillicon i {
-font-size: 25px !important;
+font-size: 34px !important;
 }
 
 .skill h3 {
-font-size: 14px;
+font-size: 16px;
+line-height: 1.4;
 }
 
 .skill h3::after {
+margin-top: 8px;
 padding: 5px 8px;
 font-size: 9px;
 }
@@ -1380,7 +1398,9 @@ font-size: 29px;
 }
 }
 
-/* SMALL MOBILE */
+/* =====================================================
+SMALL MOBILE
+===================================================== */
 
 @media (max-width: 380px) {
 .brand {
@@ -1406,11 +1426,17 @@ gap: 9px;
 }
 
 .skill {
-padding: 12px 9px;
+min-height: 175px;
+padding: 13px 9px;
+border-radius: 18px;
+}
+
+.skilltop {
+gap: 10px;
 }
 
 .skill h3 {
-font-size: 13px;
+font-size: 14px;
 }
 
 .skill h3::after {
@@ -1419,18 +1445,19 @@ font-size: 8px;
 }
 
 .skillicon {
-flex-basis: 40px;
-width: 40px;
-height: 40px;
+flex-basis: 54px;
+width: 54px;
+height: 54px;
+border-radius: 18px;
 }
 
 .skillicon img {
-width: 25px !important;
-height: 25px !important;
+width: 32px !important;
+height: 32px !important;
 }
 
 .skillicon i {
-font-size: 23px !important;
+font-size: 29px !important;
 }
 
 .card {
@@ -1440,4 +1467,17 @@ padding: 11px;
 .school-card {
 padding: 8px;
 }
-  }
+}
+
+/* REDUCE UNWANTED ANIMATION FOR ACCESSIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
+*,
+*::before,
+*::after {
+scroll-behavior: auto !important;
+transition-duration: .01ms !important;
+animation-duration: .01ms !important;
+animation-iteration-count: 1 !important;
+}
+}
