@@ -1135,4 +1135,171 @@ height: 26px !important;
 
 /* SKILLS PAGE ARC (mobile position) */
 
-body:has
+body:has(.skill-grid) .site-shell::before {
+top: 110px;
+right: -230px;
+width: 440px;
+height: 440px;
+}
+
+body:has(.skill-grid) .site-shell::after {
+top: 70px;
+right: -330px;
+width: 440px;
+height: 640px;
+}
+
+/* GALLERY */
+
+.gallery {
+grid-template-columns: repeat(2, minmax(0, 1fr));
+gap: 9px;
+padding-bottom: 32px;
+}
+
+.gallery button { border-radius: 10px; }
+
+/* CONTACT */
+
+.social-row {
+grid-template-columns: repeat(5, minmax(0, 1fr));
+gap: 7px;
+padding: 30px 0 55px;
+}
+
+.social-row a {
+width: 100%;
+max-width: none;
+min-width: 0;
+aspect-ratio: 1;
+border-radius: 14px;
+font-size: clamp(18px, 5.5vw, 25px);
+}
+
+.social-row a.email { font-size: 0 !important; }
+.social-row a.email::before { font-size: 23px; }
+
+/* ABOUT — CIRCULAR PHOTO ON MOBILE TOO */
+
+.about-layout {
+grid-template-columns: 1fr;
+gap: 25px;
+padding: 35px 0 40px;
+}
+
+.about-photo-wrap { order: -1; }
+
+.about-image, .about-placeholder {
+width: min(78%, 280px);
+margin: auto;
+aspect-ratio: 1 / 1;
+border-radius: 50%;
+}
+
+.about-image { max-height: none; }
+.about-layout h2 { font-size: 42px; }
+#aboutView { font-size: 14px; }
+.pill-row { gap: 7px; }
+
+/* FOOTER */
+
+.bottomline { font-size: 10px; }
+.socials { gap: 11px; }
+footer { font-size: 10px; }
+
+#editBtn { right: 12px; bottom: 12px; }
+
+/* DIALOGS */
+
+.modal { padding: 18px; }
+.modal h2 { font-size: 30px; }
+.modal-actions .btn { flex: 1; }
+}
+
+/* VERY SMALL MOBILE */
+
+@media (max-width: 360px) {
+.brand { font-size: 33px !important; }
+
+.owner {
+padding: 7px 8px;
+font-size: 10px;
+}
+
+/* EXTRA COMPACT NAV ON VERY SMALL SCREENS */
+
+.links {
+gap: 1px;
+}
+
+.links a {
+padding: 7px 8px;
+font-size: 13px;
+}
+
+.grid { gap: 8px; }
+.school-image { height: 90px; }
+
+.skill { padding: 12px 8px; }
+
+.skilltop { gap: 8px; }
+
+.skillicon {
+flex-basis: 40px;
+width: 40px;
+height: 40px;
+}
+
+.skill h3 { font-size: 13.5px; }
+.social-row { gap: 5px; }
+
+.social-row a {
+border-radius: 11px;
+font-size: 18px;
+}
+
+.social-row a.email { font-size: 0 !important; }
+.social-row a.email::before { font-size: 20px; }
+}
+/* MOBILE NAVIGATION FIX */
+
+@media (max-width: 600px) {
+.links {
+gap: 0;
+-webkit-mask-image: none;
+mask-image: none;
+}
+
+.links a {
+padding: 8px 7px;
+font-size: 13px;
+letter-spacing: -0.2px;
+}
+}
+
+@media (max-width: 380px) {
+.links a {
+padding: 8px 6px;
+font-size: 12px;
+}
+}
+/* MEDIUM SIZE MOBILE NAVIGATION */
+
+@media (max-width: 600px) {
+.links {
+gap: 0;
+}
+
+.links a {
+padding: 8px 7px;
+font-size: 14px;
+letter-spacing: -0.2px;
+}
+}
+
+@media (max-width: 380px) {
+.links a {
+padding: 8px 6px;
+font-size: 13px;
+}
+}
