@@ -1,12 +1,10 @@
 /* =====================================================
    REASAT SAFIN — PREMIUM SIGNATURE PORTFOLIO
    Complete Responsive Stylesheet
-   Home: Arch Shape | About: Circle
-   Skills: Glowing Black & Gold Cards
-   Skills: Icon + Name Only
+   Skills page = Black & Gold glow design (scoped)
    ===================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Allura&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Allura&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap');
 
 :root {
   --bg: #08090b;
@@ -494,17 +492,8 @@ footer {
 }
 
 /* =====================================================
-   SKILLS — PREMIUM BLACK & GOLD DESIGN
-   ICON + SKILL NAME ONLY
-
-   No arrows
-   No percentages
-   No progress bars
-   No descriptions
-   No category labels
+   SKILLS — BASE (icon + name only)
    ===================================================== */
-
-/* TWO-COLUMN SKILL GRID */
 
 .skill-grid {
   display: grid;
@@ -513,41 +502,19 @@ footer {
   padding: 10px 0 48px;
 }
 
-/* SKILL CARD */
-
 .skill {
   position: relative;
   isolation: isolate;
   min-width: 0;
   min-height: 155px;
-
   display: flex;
   align-items: center;
   justify-content: flex-start;
-
   padding: 26px 24px;
   overflow: hidden;
-
   border: 1px solid #5b4b34;
   border-radius: 20px;
-
-  background:
-    radial-gradient(
-      ellipse at 10% 0%,
-      #d6c4a112,
-      transparent 55%
-    ),
-    linear-gradient(
-      145deg,
-      #151515 0%,
-      #0b0c0e 60%,
-      #101114 100%
-    );
-
-  box-shadow:
-    inset 0 1px 0 #ffffff08,
-    0 0 0 1px #d6c4a106;
-
+  background: linear-gradient(145deg, #151515 0%, #0b0c0e 60%, #101114 100%);
   transition:
     transform .28s ease,
     border-color .28s ease,
@@ -555,166 +522,40 @@ footer {
     background .28s ease;
 }
 
-/* SUBTLE GOLD GLOW */
-
-.skill::before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  top: -80px;
-  right: -65px;
-
-  width: 170px;
-  height: 170px;
-
-  border-radius: 50%;
-
-  background: radial-gradient(
-    circle,
-    #d6c4a116 0%,
-    #d6c4a107 42%,
-    transparent 72%
-  );
-
-  pointer-events: none;
-}
-
-/* SUBTLE DECORATIVE CURVE */
-
-.skill::after {
-  content: "";
-  position: absolute;
-  z-index: -1;
-
-  right: -35px;
-  bottom: -65px;
-
-  width: 190px;
-  height: 95px;
-
-  border: 1px solid #d6c4a11b;
-  border-radius: 50%;
-
-  transform: rotate(-16deg);
-
-  box-shadow:
-    0 -9px 0 -8px #d6c4a119,
-    0 -18px 0 -17px #d6c4a113,
-    0 -27px 0 -26px #d6c4a10e;
-
-  pointer-events: none;
-}
-
-/* CARD HOVER */
-
-.skill:hover {
-  transform: translateY(-4px);
-
-  border-color: #d6c4a1;
-
-  background:
-    radial-gradient(
-      ellipse at 10% 0%,
-      #d6c4a11b,
-      transparent 60%
-    ),
-    linear-gradient(
-      145deg,
-      #191919 0%,
-      #0b0c0e 60%,
-      #121216 100%
-    );
-
-  box-shadow:
-    0 0 24px #d6c4a114,
-    0 8px 32px #0005,
-    inset 0 1px 0 #ffffff0b;
-}
-
-/* ICON + NAME IN ONE ROW */
-
 .skilltop {
   position: relative;
   z-index: 1;
-
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
-
   gap: 20px;
-
   width: 100%;
   min-width: 0;
-  min-height: 0;
   margin: 0;
 }
-
-/* SKILL ICON CONTAINER */
 
 .skillicon {
   position: relative;
   flex: 0 0 76px;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   width: 76px;
   height: 76px;
-
   border: 1px solid #4b4235;
   border-radius: 20px;
-
-  background:
-    linear-gradient(
-      145deg,
-      #1c1c1e,
-      #101114
-    );
-
-  box-shadow:
-    inset 0 1px 0 #ffffff08,
-    0 4px 16px #0004;
-
+  background: linear-gradient(145deg, #1c1c1e, #101114);
   line-height: 1;
-
-  transition:
-    border-color .25s ease,
-    background .25s ease,
-    box-shadow .25s ease;
 }
-
-/* ICON BOX HOVER */
-
-.skill:hover .skillicon {
-  border-color: #8d7651;
-
-  background:
-    linear-gradient(
-      145deg,
-      #24211c,
-      #111114
-    );
-
-  box-shadow:
-    0 0 20px #d6c4a112,
-    inset 0 1px 0 #ffffff0c;
-}
-
-/* IMAGE ICONS */
 
 .skillicon img {
   display: block;
-
   width: 42px !important;
   height: 42px !important;
-
   max-width: none;
   object-fit: contain;
 }
-
-/* FONT ICONS */
 
 .skillicon i {
   display: inline-block;
@@ -722,28 +563,19 @@ footer {
   line-height: 1;
 }
 
-/* SKILL NAME */
-
 .skill h3 {
   flex: 1 1 auto;
   min-width: 0;
-
   margin: 0;
-
   color: #f5f3ef;
-
   font-family: 'Playfair Display', Georgia, serif;
   font-size: clamp(19px, 2.2vw, 27px);
   font-weight: 400;
-
   letter-spacing: -.5px;
   line-height: 1.3;
-
   overflow-wrap: normal;
   word-break: normal;
 }
-
-/* KEEP AMPERSAND SIMPLE AND CLEAN */
 
 .skill h3 .amp,
 .skill h3 .ampersand {
@@ -765,12 +597,7 @@ footer {
 .skill .arrow,
 .skill .percentage,
 .skill .progress,
-.skill .progress-bar {
-  display: none !important;
-}
-
-/* REMOVE ARROWS IF PRESENT IN THE HTML */
-
+.skill .progress-bar,
 .skill .fa-arrow-right,
 .skill .fa-chevron-right,
 .skill .fa-angle-right,
@@ -830,25 +657,19 @@ footer {
 .social-row a {
   display: grid;
   place-items: center;
-
   width: 100%;
   min-width: 0;
   max-width: 100px;
   aspect-ratio: 1;
-
   justify-self: center;
   overflow: hidden;
-
   border: 1px solid #37373e;
   border-radius: 22px;
-
   background: linear-gradient(145deg, #1a1b20, #101114);
   color: #f5f3ef;
-
   font-size: clamp(20px, 3vw, 30px);
   line-height: 1;
   text-align: center;
-
   transition:
     transform .25s,
     border-color .25s,
@@ -863,7 +684,6 @@ footer {
 
 .social-row a.email {
   position: relative;
-
   font-size: 0 !important;
   color: #f5f3ef !important;
   text-indent: -9999px;
@@ -875,17 +695,13 @@ footer {
 
 .social-row a.email::before {
   content: "\f0e0";
-
   position: absolute;
   inset: 0;
-
   display: grid;
   place-items: center;
-
   font-family: "Font Awesome 6 Free";
   font-size: 25px;
   font-weight: 900;
-
   text-indent: 0;
   line-height: 1;
 }
@@ -943,18 +759,13 @@ footer {
 
 .about-image {
   display: block;
-
   width: min(100%, 360px);
   aspect-ratio: 1 / 1;
-
   border: 2px solid #d6c4a1;
   border-radius: 50%;
-
   background: #141419;
-
   object-fit: cover;
   object-position: center 15%;
-
   box-shadow:
     0 20px 60px #0006,
     0 0 40px #d6c4a11f;
@@ -962,16 +773,12 @@ footer {
 
 .about-placeholder {
   display: none;
-
   width: min(100%, 360px);
   aspect-ratio: 1 / 1;
-
   align-items: center;
   justify-content: center;
-
   border: 1px dashed #45434b;
   border-radius: 50%;
-
   background: #141419;
   color: #aaa8b2;
   text-align: center;
@@ -1008,12 +815,10 @@ footer {
 
 #editBtn {
   display: none;
-
   position: fixed;
   right: 20px;
   bottom: 20px;
   z-index: 20;
-
   box-shadow: 0 8px 35px #0009;
 }
 
@@ -1024,20 +829,16 @@ footer {
 dialog {
   width: min(650px, 94vw);
   max-height: 88vh;
-
   overflow: auto;
   padding: 0;
-
   border: 1px solid #42414a;
   border-radius: 20px;
-
   background: #111116;
   color: var(--text);
 }
 
 dialog::backdrop {
   background: #000c;
-
   backdrop-filter: blur(7px);
   -webkit-backdrop-filter: blur(7px);
 }
@@ -1064,15 +865,12 @@ label {
 input,
 textarea {
   display: block;
-
   width: 100%;
   margin-top: 6px;
   padding: 12px 13px;
-
   border: 1px solid #383840;
   border-radius: 10px;
   outline: none;
-
   background: #19191f;
   color: white;
   font-size: 14px;
@@ -1110,13 +908,10 @@ textarea {
   position: fixed;
   inset: 0;
   z-index: 30;
-
   display: none;
   align-items: center;
   justify-content: center;
-
   padding: 20px;
-
   background: #000e;
   cursor: zoom-out;
 }
@@ -1128,7 +923,6 @@ textarea {
 #lightbox img {
   max-width: 100%;
   max-height: 90vh;
-
   border-radius: 12px;
   object-fit: contain;
 }
@@ -1137,7 +931,6 @@ textarea {
   position: absolute;
   top: 12px;
   right: 22px;
-
   color: white;
   font-size: 34px;
 }
@@ -1199,4 +992,526 @@ textarea {
     font-size: 35px !important;
   }
 
-  .skill h
+  .skill h3 {
+    font-size: clamp(18px, 3vw, 24px);
+  }
+
+  .about-layout {
+    gap: 30px;
+  }
+}
+
+/* =====================================================
+   MOBILE
+   ===================================================== */
+
+@media (max-width: 700px) {
+
+  .site-shell {
+    width: 100%;
+    margin: 0;
+    border: 0;
+    border-radius: 0;
+  }
+
+  nav {
+    width: calc(100% - 32px);
+    min-height: 0;
+    gap: 6px 12px;
+    padding: 10px 0 0;
+  }
+
+  .brand {
+    font-size: 46px !important;
+  }
+
+  .owner {
+    padding: 9px 18px;
+    font-size: 14px;
+  }
+
+  .links {
+    order: 3;
+    width: 100%;
+    justify-content: space-between;
+    gap: 0;
+    padding-bottom: 8px;
+  }
+
+  .links a {
+    padding: 6px 4px;
+    font-size: 14px;
+  }
+
+  main {
+    width: calc(100% - 40px);
+  }
+
+  .page-intro {
+    padding: 48px 0 18px;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 40px 0 30px;
+    gap: 30px;
+  }
+
+  .portraitBox {
+    justify-self: center;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .grid > .card:last-child {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .skill-grid {
+    gap: 14px;
+  }
+
+  .skill {
+    min-height: 120px;
+    padding: 16px 12px;
+    border-radius: 18px;
+  }
+
+  .skilltop {
+    gap: 10px;
+  }
+
+  .skillicon {
+    flex-basis: 52px;
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+  }
+
+  .skillicon img {
+    width: 28px !important;
+    height: 28px !important;
+  }
+
+  .skillicon i {
+    font-size: 26px !important;
+  }
+
+  .skill h3 {
+    font-size: 17px;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .about-layout {
+    grid-template-columns: 1fr;
+    padding: 40px 0 50px;
+  }
+
+  .about-photo-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .social-row {
+    gap: 8px;
+  }
+
+  .social-row a {
+    border-radius: 16px;
+  }
+
+  .bottomline,
+  footer {
+    flex-wrap: wrap;
+  }
+}
+
+/* =====================================================
+   SMALL PHONES
+   ===================================================== */
+
+@media (max-width: 400px) {
+
+  .brand {
+    font-size: 40px !important;
+  }
+
+  .owner {
+    padding: 8px 14px;
+    font-size: 13px;
+  }
+
+  .links a {
+    padding: 6px 2px;
+    font-size: 13px;
+  }
+
+  .skill {
+    padding: 14px 10px;
+  }
+
+  .skillicon {
+    flex-basis: 46px;
+    width: 46px;
+    height: 46px;
+  }
+
+  .skill h3 {
+    font-size: 15px;
+  }
+}
+
+/* =====================================================
+   SKILLS PAGE ONLY — BLACK & GOLD GLOW DESIGN
+   Only affects the page that has .skill-grid
+   ===================================================== */
+
+body:has(.skill-grid) {
+  background:
+    radial-gradient(ellipse at 100% 18%, #1a1209 0, transparent 45%),
+    #030405;
+}
+
+body:has(.skill-grid) .site-shell {
+  position: relative;
+  border-color: #24211c;
+  background: #030405;
+}
+
+body:has(.skill-grid) .site-shell > main,
+body:has(.skill-grid) .site-shell > footer {
+  position: relative;
+  z-index: 2;
+}
+
+/* GOLD ARCS (TOP RIGHT) */
+
+body:has(.skill-grid) .site-shell::before,
+body:has(.skill-grid) .site-shell::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+body:has(.skill-grid) .site-shell::before {
+  top: 250px;
+  right: -230px;
+  width: 560px;
+  height: 560px;
+  border-top: 2px solid #e8c387;
+  box-shadow: 0 -14px 40px -16px #e0b878aa;
+  -webkit-mask-image: linear-gradient(195deg, #000 0%, #000 18%, transparent 52%);
+  mask-image: linear-gradient(195deg, #000 0%, #000 18%, transparent 52%);
+}
+
+body:has(.skill-grid) .site-shell::after {
+  top: 150px;
+  right: -330px;
+  width: 560px;
+  height: 760px;
+  border-top: 1px solid #e0b87888;
+  -webkit-mask-image: linear-gradient(190deg, #000 0%, transparent 42%);
+  mask-image: linear-gradient(190deg, #000 0%, transparent 42%);
+}
+
+/* HEADING */
+
+body:has(.skill-grid) .page-intro {
+  padding: 62px 0 18px;
+}
+
+body:has(.skill-grid) .page-intro .eyebrow {
+  color: #e0b878;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .42em;
+}
+
+body:has(.skill-grid) .page-intro h1,
+body:has(.skill-grid) .page-intro h2 {
+  margin: 10px 0 0;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(56px, 11vw, 84px);
+  font-weight: 700;
+  letter-spacing: -2px;
+  line-height: 1.1;
+  color: #f7f4ee;
+}
+
+body:has(.skill-grid) .page-intro h1::after,
+body:has(.skill-grid) .page-intro h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 2px;
+  margin-top: 24px;
+  background: #e0b878;
+  box-shadow: 0 0 10px #e0b87888;
+}
+
+/* GRID */
+
+body:has(.skill-grid) .skill-grid {
+  gap: 26px;
+  padding: 44px 0 90px;
+}
+
+/* CARD */
+
+body:has(.skill-grid) .skill {
+  min-height: 160px;
+  padding: 26px 26px;
+  border: 1px solid #c9a46a;
+  border-radius: 22px;
+  background:
+    radial-gradient(circle at 0% 0%, #e0b87822, transparent 38%),
+    radial-gradient(circle at 100% 0%, #e0b87822, transparent 38%),
+    radial-gradient(circle at 0% 100%, #e0b87833, transparent 40%),
+    radial-gradient(circle at 100% 100%, #e0b87833, transparent 40%),
+    linear-gradient(180deg, #1a130b 0%, #080706 42%, #050505 100%);
+  box-shadow:
+    0 0 20px #e0b87833,
+    0 0 2px #e0b878aa,
+    inset 0 0 24px #e0b87826,
+    inset 0 1px 0 #f3d9a866;
+}
+
+body:has(.skill-grid) .skill:hover {
+  transform: translateY(-4px);
+  border-color: #f0cf92;
+  box-shadow:
+    0 0 34px #e0b87850,
+    0 0 3px #f0cf92,
+    inset 0 0 30px #e0b87836,
+    inset 0 1px 0 #f3d9a88a;
+}
+
+/* GOLD WAVE LINES */
+
+body:has(.skill-grid) .skill::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: auto;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 58%;
+  border: 0;
+  border-radius: 0;
+  transform: none;
+  box-shadow: none;
+  pointer-events: none;
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 120' preserveAspectRatio='none'%3E%3Cg fill='none' stroke='%23e0b878' stroke-width='1'%3E%3Cpath d='M0 118 C120 70 230 112 400 14' opacity='.75'/%3E%3Cpath d='M0 118 C130 82 250 118 400 30' opacity='.5'/%3E%3Cpath d='M60 120 C170 92 280 120 400 48' opacity='.35'/%3E%3Cpath d='M140 120 C230 104 320 124 400 66' opacity='.25'/%3E%3C/g%3E%3C/svg%3E")
+    center / 100% 100% no-repeat;
+}
+
+/* GREEN WAVE (3rd card only) */
+
+body:has(.skill-grid) .skill::after {
+  display: none;
+}
+
+body:has(.skill-grid) .skill:nth-child(3)::after {
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: -1;
+  top: auto;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  border: 0;
+  border-radius: 0;
+  transform: none;
+  box-shadow: none;
+  pointer-events: none;
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 120' preserveAspectRatio='none'%3E%3Cg fill='none' stroke='%232fd48a' stroke-width='1'%3E%3Cpath d='M0 110 C100 60 200 120 400 40' opacity='.4'/%3E%3Cpath d='M0 118 C120 80 240 120 400 60' opacity='.28'/%3E%3C/g%3E%3C/svg%3E")
+    center / 100% 100% no-repeat;
+}
+
+/* ICON BOX */
+
+body:has(.skill-grid) .skilltop {
+  gap: 22px;
+}
+
+body:has(.skill-grid) .skillicon {
+  flex: 0 0 82px;
+  width: 82px;
+  height: 82px;
+  border: 1px solid #5a4a33;
+  border-radius: 22px;
+  background: linear-gradient(145deg, #1d1b19, #0c0c0d);
+  box-shadow:
+    inset 0 1px 0 #ffffff12,
+    0 6px 18px #0008;
+}
+
+body:has(.skill-grid) .skill:nth-child(1) .skillicon {
+  border-color: #6e301b;
+  background: linear-gradient(145deg, #2a1510, #120c0a);
+}
+
+body:has(.skill-grid) .skill:nth-child(2) .skillicon {
+  border-color: #6f5a3a;
+  background: linear-gradient(145deg, #25201a, #100f0e);
+}
+
+body:has(.skill-grid) .skill:nth-child(3) .skillicon {
+  border-color: #1f5a41;
+  background: linear-gradient(145deg, #12251d, #0b100e);
+}
+
+body:has(.skill-grid) .skill:nth-child(4) .skillicon {
+  border-color: #3c3c40;
+  background: linear-gradient(145deg, #1f1f21, #0e0e0f);
+}
+
+body:has(.skill-grid) .skillicon img {
+  width: 44px !important;
+  height: 44px !important;
+}
+
+body:has(.skill-grid) .skillicon i {
+  font-size: 40px !important;
+}
+
+/* SKILL NAME */
+
+body:has(.skill-grid) .skill h3 {
+  color: #f7f4ee;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(20px, 2.4vw, 30px);
+  font-weight: 600;
+  letter-spacing: -.3px;
+}
+
+/* FOOTER ICONS (GOLD) */
+
+body:has(.skill-grid) footer a,
+body:has(.skill-grid) .socials a {
+  color: #e0b878;
+  font-size: 18px;
+}
+
+body:has(.skill-grid) footer a:hover,
+body:has(.skill-grid) .socials a:hover {
+  color: #f3dcae;
+}
+
+/* SKILLS — TABLET */
+
+@media (max-width: 900px) {
+  body:has(.skill-grid) .skill {
+    min-height: 140px;
+    padding: 22px 18px;
+  }
+
+  body:has(.skill-grid) .skilltop {
+    gap: 16px;
+  }
+
+  body:has(.skill-grid) .skillicon {
+    flex-basis: 66px;
+    width: 66px;
+    height: 66px;
+    border-radius: 18px;
+  }
+
+  body:has(.skill-grid) .skillicon img {
+    width: 36px !important;
+    height: 36px !important;
+  }
+
+  body:has(.skill-grid) .skillicon i {
+    font-size: 33px !important;
+  }
+}
+
+/* SKILLS — MOBILE */
+
+@media (max-width: 700px) {
+  body:has(.skill-grid) .site-shell::before {
+    top: 190px;
+    right: -250px;
+    width: 460px;
+    height: 460px;
+  }
+
+  body:has(.skill-grid) .site-shell::after {
+    top: 120px;
+    right: -330px;
+    width: 460px;
+    height: 640px;
+  }
+
+  body:has(.skill-grid) .page-intro {
+    padding: 48px 0 10px;
+  }
+
+  body:has(.skill-grid) .page-intro .eyebrow {
+    font-size: 12px;
+  }
+
+  body:has(.skill-grid) .skill-grid {
+    gap: 14px;
+    padding: 34px 0 70px;
+  }
+
+  body:has(.skill-grid) .skill {
+    min-height: 124px;
+    padding: 16px 12px;
+    border-radius: 18px;
+  }
+
+  body:has(.skill-grid) .skilltop {
+    gap: 10px;
+  }
+
+  body:has(.skill-grid) .skillicon {
+    flex-basis: 54px;
+    width: 54px;
+    height: 54px;
+    border-radius: 15px;
+  }
+
+  body:has(.skill-grid) .skillicon img {
+    width: 30px !important;
+    height: 30px !important;
+  }
+
+  body:has(.skill-grid) .skillicon i {
+    font-size: 28px !important;
+  }
+
+  body:has(.skill-grid) .skill h3 {
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 400px) {
+  body:has(.skill-grid) .skillicon {
+    flex-basis: 46px;
+    width: 46px;
+    height: 46px;
+  }
+
+  body:has(.skill-grid) .skill h3 {
+    font-size: 15px;
+  }
+}
