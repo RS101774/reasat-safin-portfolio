@@ -1599,3 +1599,336 @@ body:has(.skill-grid) .socials a:hover {
     font-size: 13px;
   }
              }
+/* ==========================================
+   SKILLS — DESIGN 5: SOFT GLOW CARD
+   Gold + Blue glow | Category tags | No arrows
+========================================== */
+
+/* Card layout */
+.skill-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  padding: 26px 0 40px;
+}
+
+/* Soft glassy gradient cards */
+.skill {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  align-items: flex-start;
+  min-width: 0;
+  min-height: 150px;
+  padding: 17px 15px;
+  overflow: hidden;
+  border: 1px solid #343943;
+  border-radius: 17px;
+
+  background:
+    radial-gradient(
+      ellipse at 0% 0%,
+      rgba(214, 196, 161, 0.23),
+      transparent 65%
+    ),
+    radial-gradient(
+      ellipse at 100% 100%,
+      rgba(85, 120, 160, 0.13),
+      transparent 65%
+    ),
+    linear-gradient(145deg, #1b1b1c 0%, #101114 65%, #0c0d10 100%);
+
+  box-shadow:
+    0 5px 18px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+
+  transition: border-color 0.25s ease, box-shadow 0.25s ease,
+              transform 0.25s ease;
+}
+
+/* Soft gold glow */
+.skill:nth-child(1),
+.skill:nth-child(3) {
+  border-color: #514536;
+  background:
+    radial-gradient(
+      ellipse at 0% 0%,
+      rgba(214, 166, 96, 0.20),
+      transparent 65%
+    ),
+    radial-gradient(
+      ellipse at 100% 100%,
+      rgba(67, 100, 137, 0.10),
+      transparent 65%
+    ),
+    linear-gradient(145deg, #1c1b1a, #101114 75%);
+}
+
+/* Blue-gray glow */
+.skill:nth-child(2),
+.skill:nth-child(4) {
+  border-color: #353a43;
+  background:
+    radial-gradient(
+      ellipse at 100% 0%,
+      rgba(107, 129, 157, 0.17),
+      transparent 65%
+    ),
+    radial-gradient(
+      ellipse at 0% 100%,
+      rgba(214, 196, 161, 0.09),
+      transparent 65%
+    ),
+    linear-gradient(145deg, #191a1d, #0f1012 75%);
+}
+
+.skill:hover {
+  transform: translateY(-3px);
+  border-color: #9b8460;
+  box-shadow:
+    0 8px 24px rgba(0, 0, 0, 0.35),
+    0 0 18px rgba(214, 196, 161, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.07);
+}
+
+/* Remove previous wave decorations */
+.skill::before,
+.skill:nth-child(3)::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* Icon and text arrangement */
+.skilltop {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 9px;
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+}
+
+/* Icon boxes */
+.skillicon {
+  display: flex;
+  flex: 0 0 46px;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border: 1px solid #51483b;
+  border-radius: 13px;
+  background: linear-gradient(145deg, #242321, #111214);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  line-height: 1;
+}
+
+.skill:nth-child(1) .skillicon {
+  border-color: #70402d;
+  background: linear-gradient(145deg, #291a15, #111011);
+}
+
+.skill:nth-child(2) .skillicon {
+  border-color: #66563e;
+  background: linear-gradient(145deg, #29241b, #111112);
+}
+
+.skill:nth-child(3) .skillicon {
+  border-color: #276048;
+  background: linear-gradient(145deg, #14271f, #101211);
+}
+
+.skill:nth-child(4) .skillicon {
+  border-color: #41434a;
+  background: linear-gradient(145deg, #222328, #111214);
+}
+
+.skillicon img {
+  display: block;
+  width: 29px !important;
+  height: 29px !important;
+  max-width: none;
+  object-fit: contain;
+}
+
+.skillicon i {
+  font-size: 27px !important;
+}
+
+/* Skill names */
+.skill h3 {
+  display: block;
+  flex: none;
+  min-width: 0;
+  margin: 0;
+  color: #f5f3ef;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: -0.2px;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+/* Category labels — created without adding arrows */
+.skill h3::after {
+  display: block;
+  width: fit-content;
+  margin-top: 8px;
+  padding: 4px 10px;
+  border: 1px solid rgba(214, 196, 161, 0.20);
+  border-radius: 100px;
+  background: linear-gradient(135deg, #f0dfbd, #d6c4a1);
+  color: #282219;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1.35;
+}
+
+.skill:nth-child(1) h3::after {
+  content: "Frontend";
+}
+
+.skill:nth-child(2) h3::after {
+  content: "Database";
+}
+
+.skill:nth-child(3) h3::after {
+  content: "Backend";
+}
+
+.skill:nth-child(4) h3::after {
+  content: "Tools";
+}
+
+/* Hide old descriptions, progress bars and arrows */
+.skill .bar,
+.skill .percent,
+.skill .muted-note,
+.skill p,
+.skill .description,
+.skill .category,
+.skill .tag,
+.skill .arrow,
+.skill .progress,
+.skill .fa-arrow-right,
+.skill .fa-chevron-right,
+.skill .fa-angle-right {
+  display: none !important;
+}
+
+/* Remove old arc decoration on Skills page only */
+body:has(.skill-grid) .site-shell::before,
+body:has(.skill-grid) .site-shell::after {
+  display: none !important;
+}
+
+body:has(.skill-grid) .site-shell {
+  background: #08090b;
+}
+
+/* Keep footer icons gold */
+body:has(.skill-grid) footer a,
+body:has(.skill-grid) .socials a {
+  color: #d6c4a1;
+}
+
+body:has(.skill-grid) footer a:hover,
+body:has(.skill-grid) .socials a:hover {
+  color: #f3dcae;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .skill-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 13px;
+  }
+
+  .skill {
+    min-height: 135px;
+    padding: 15px 13px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .skill-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    padding: 24px 0 32px;
+  }
+
+  .skill {
+    min-height: 125px;
+    padding: 13px 11px;
+    border-radius: 15px;
+  }
+
+  .skilltop {
+    gap: 8px;
+  }
+
+  .skillicon {
+    flex-basis: 42px;
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+  }
+
+  .skillicon img {
+    width: 26px !important;
+    height: 26px !important;
+  }
+
+  .skillicon i {
+    font-size: 24px !important;
+  }
+
+  .skill h3 {
+    font-size: 14px;
+  }
+
+  .skill h3::after {
+    margin-top: 7px;
+    padding: 4px 9px;
+    font-size: 10px;
+  }
+}
+
+/* Very small mobile */
+@media (max-width: 360px) {
+  .skill-grid {
+    gap: 9px;
+  }
+
+  .skill {
+    min-height: 118px;
+    padding: 11px 9px;
+  }
+
+  .skillicon {
+    flex-basis: 38px;
+    width: 38px;
+    height: 38px;
+  }
+
+  .skillicon img {
+    width: 23px !important;
+    height: 23px !important;
+  }
+
+  .skillicon i {
+    font-size: 21px !important;
+  }
+
+  .skill h3 {
+    font-size: 13px;
+  }
+}
