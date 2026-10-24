@@ -2491,3 +2491,40 @@ html body:has(.skill-grid) .skill-grid .skill::after {
   -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpath d='M0 100 C35 96 88 82 100 12' fill='none' stroke='black' stroke-width='1.4' vector-effect='non-scaling-stroke'/%3E%3Cpath d='M20 100 C50 98 92 90 100 42' fill='none' stroke='black' stroke-opacity='.4' stroke-width='1' vector-effect='non-scaling-stroke'/%3E%3C/svg%3E") center / 100% 100% no-repeat !important;
   mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpath d='M0 100 C35 96 88 82 100 12' fill='none' stroke='black' stroke-width='1.4' vector-effect='non-scaling-stroke'/%3E%3Cpath d='M20 100 C50 98 92 90 100 42' fill='none' stroke='black' stroke-opacity='.4' stroke-width='1' vector-effect='non-scaling-stroke'/%3E%3C/svg%3E") center / 100% 100% no-repeat !important;
 }
+/* =====================================================
+   SKILLS PAGE — SOFTER CURVE + BRIGHTER BORDER
+   (paste at the very bottom of style.css)
+   ===================================================== */
+
+/* brighter border all around + soft outer glow */
+
+html body:has(.skill-grid) .skill-grid .skill {
+  background:
+    radial-gradient(ellipse at 0% 0%, rgba(var(--rgb), .26), transparent 42%) padding-box,
+    radial-gradient(ellipse at 100% 100%, rgba(var(--rgb2), .20), transparent 40%) padding-box,
+    linear-gradient(160deg, #0d0c0b, #050506) padding-box,
+    radial-gradient(circle at 0% 0%, rgba(var(--rgb), 1), transparent 45%) border-box,
+    radial-gradient(circle at 100% 100%, rgba(var(--rgb2), 1), transparent 45%) border-box,
+    linear-gradient(rgba(var(--rgb), .95), rgba(var(--rgb), .95)) border-box !important;
+
+  box-shadow:
+    0 0 22px rgba(var(--rgb), .28),
+    inset 0 0 26px rgba(var(--rgb), .16),
+    inset 0 1px 0 rgba(255, 255, 255, .08) !important;
+}
+
+/* soft glow under the curve (smaller, fainter) */
+
+html body:has(.skill-grid) .skill-grid .skill::before {
+  width: 40% !important;
+  height: 46% !important;
+  background: linear-gradient(135deg, transparent 35%, rgba(var(--rgb2), .24) 100%) !important;
+}
+
+/* thin faint curve line */
+
+html body:has(.skill-grid) .skill-grid .skill::after {
+  width: 40% !important;
+  height: 46% !important;
+  background: rgba(var(--rgb2), .55) !important;
+}
