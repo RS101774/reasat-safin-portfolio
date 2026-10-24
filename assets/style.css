@@ -1654,3 +1654,56 @@ font-size: 24px !important;
 font-size: 13px !important;
 }
 }
+/* FINAL FIX — REFERENCE-STYLE SKILLS GLOW */
+
+.skill {
+position: relative !important;
+isolation: isolate !important;
+overflow: hidden !important;
+border-radius: 22px !important;
+background-color: #101114 !important;
+}
+
+.skill::before {
+content: "" !important;
+display: block !important;
+position: absolute !important;
+inset: 0 !important;
+z-index: -1 !important;
+pointer-events: none !important;
+border-radius: inherit !important;
+background:
+radial-gradient(ellipse at 0% 0%, rgba(255,220,145,.42), transparent 52%),
+radial-gradient(ellipse at 100% 100%, rgba(255,190,95,.30), transparent 48%) !important;
+}
+
+.skill:nth-child(1)::before {
+background:
+radial-gradient(ellipse at 0% 0%, rgba(255,211,125,.52), transparent 54%),
+radial-gradient(ellipse at 100% 100%, rgba(245,105,40,.35), transparent 50%) !important;
+}
+
+.skill:nth-child(2)::before {
+background:
+radial-gradient(ellipse at 100% 0%, rgba(255,220,160,.46), transparent 54%),
+radial-gradient(ellipse at 0% 100%, rgba(220,190,130,.28), transparent 50%) !important;
+}
+
+.skill:nth-child(3)::before {
+background:
+radial-gradient(ellipse at 0% 0%, rgba(125,235,125,.34), transparent 54%),
+radial-gradient(ellipse at 100% 100%, rgba(40,210,130,.32), transparent 50%) !important;
+}
+
+.skill:nth-child(4)::before {
+background:
+radial-gradient(ellipse at 0% 0%, rgba(225,235,245,.34), transparent 54%),
+radial-gradient(ellipse at 100% 100%, rgba(65,145,225,.34), transparent 50%) !important;
+}
+
+.skill::after,
+.skill h3::before,
+.skill h3::after {
+content: none !important;
+display: none !important;
+}
