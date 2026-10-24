@@ -2011,3 +2011,79 @@ body:has(.skill-grid) .page-intro .lead {
     font-size: 14.5px !important;
   }
 }
+/* =====================================================
+   SKILLS PAGE — MATCH REFERENCE (paste at the very bottom)
+   ===================================================== */
+
+/* page ends right after footer */
+body:has(.skill-grid) .site-shell {
+  min-height: 0;
+}
+
+/* ---------- HEADING: tighter spacing ---------- */
+
+body:has(.skill-grid) .page-intro {
+  padding: 8px 0 6px;
+}
+
+body:has(.skill-grid) .eyebrow::before {
+  flex: 0 0 26px;
+  height: 1.5px;
+}
+
+body:has(.skill-grid) .eyebrow {
+  gap: 12px;
+}
+
+body:has(.skill-grid) .page-intro h2 {
+  margin: 2px 0 6px;
+}
+
+body:has(.skill-grid) .page-intro .lead {
+  color: #a9b0c6;
+  line-height: 1.4;
+  margin: 0;
+}
+
+body:has(.skill-grid) .skill-grid {
+  padding: 10px 0 24px !important;
+}
+
+/* ---------- CARD: bright glowing corners, dim edges ---------- */
+
+body:has(.skill-grid) .skill {
+  border: 1px solid transparent !important;
+  background:
+    radial-gradient(circle at 0% 0%, rgba(var(--rgb), .32), transparent 32%) padding-box,
+    radial-gradient(circle at 100% 100%, rgba(var(--rgb2), .30), transparent 36%) padding-box,
+    linear-gradient(160deg, #0e0d0c, #060607) padding-box,
+    radial-gradient(circle at 0% 0%, rgba(var(--rgb), 1), transparent 45%) border-box,
+    radial-gradient(circle at 100% 100%, rgba(var(--rgb2), 1), transparent 45%) border-box,
+    linear-gradient(rgba(var(--rgb), .45), rgba(var(--rgb), .45)) border-box !important;
+  box-shadow:
+    0 0 18px rgba(var(--rgb), .22),
+    inset 0 0 20px rgba(var(--rgb), .12) !important;
+}
+
+/* ---------- CURVE LINES: only in the bottom-right corner ---------- */
+
+body:has(.skill-grid) .skill::before {
+  right: -32% !important;
+  bottom: -72% !important;
+  width: 72% !important;
+  height: 106% !important;
+  border: 1px solid rgba(var(--rgb2), .75) !important;
+  transform: none !important;
+  box-shadow:
+    0 0 12px rgba(var(--rgb2), .35),
+    inset 0 0 14px rgba(var(--rgb2), .12) !important;
+}
+
+body:has(.skill-grid) .skill::after {
+  right: -44% !important;
+  bottom: -88% !important;
+  width: 72% !important;
+  height: 106% !important;
+  border: 1px solid rgba(var(--rgb2), .32) !important;
+  transform: none !important;
+}
