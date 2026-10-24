@@ -1707,3 +1707,274 @@ radial-gradient(ellipse at 100% 100%, rgba(65,145,225,.34), transparent 50%) !im
 content: none !important;
 display: none !important;
 }
+/* =====================================================
+   SKILLS PAGE ONLY — GLOW CARD DESIGN
+   (Paste at the very bottom of style.css)
+   ===================================================== */
+
+body:has(.skill-grid) .site-shell {
+  background: #040405;
+}
+
+/* ---------- HEADING: small gold line before "MY SKILLS" ---------- */
+
+body:has(.skill-grid) .page-intro {
+  padding-top: 20px;
+}
+
+body:has(.skill-grid) .eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+body:has(.skill-grid) .eyebrow::before {
+  content: "";
+  flex: 0 0 44px;
+  height: 2px;
+  background: var(--accent);
+  box-shadow: 0 0 8px rgba(214, 196, 161, .5);
+}
+
+/* ---------- GRID ---------- */
+
+body:has(.skill-grid) .skill-grid {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 14px !important;
+  padding: 18px 0 30px !important;
+}
+
+/* ---------- CARD ---------- */
+
+body:has(.skill-grid) .skill {
+  --rgb: 224, 170, 90;
+  --rgb2: 236, 110, 50;
+  --icon: 232, 100, 48;
+
+  position: relative !important;
+  isolation: isolate !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-width: 0 !important;
+  min-height: 150px !important;
+  padding: 18px 12px !important;
+  overflow: hidden !important;
+  text-align: center !important;
+
+  border: 1px solid rgba(var(--rgb), .8) !important;
+  border-radius: 22px !important;
+
+  background:
+    radial-gradient(circle at 0% 0%, rgba(var(--rgb), .30), transparent 30%),
+    radial-gradient(circle at 100% 100%, rgba(var(--rgb2), .28), transparent 34%),
+    radial-gradient(ellipse at 50% 0%, rgba(var(--rgb), .07), transparent 60%),
+    linear-gradient(160deg, #0f0e0d 0%, #070708 100%) !important;
+
+  box-shadow:
+    0 0 16px rgba(var(--rgb), .22),
+    inset 0 0 22px rgba(var(--rgb), .14),
+    inset 0 1px 0 rgba(255, 255, 255, .08) !important;
+
+  transition: transform .25s ease, box-shadow .25s ease !important;
+}
+
+/* card colors */
+
+body:has(.skill-grid) .skill:nth-child(1) {
+  --rgb: 224, 170, 90;
+  --rgb2: 236, 110, 50;
+  --icon: 232, 100, 48;
+}
+
+body:has(.skill-grid) .skill:nth-child(2) {
+  --rgb: 226, 186, 112;
+  --rgb2: 232, 196, 130;
+  --icon: 200, 170, 105;
+}
+
+body:has(.skill-grid) .skill:nth-child(3) {
+  --rgb: 170, 190, 90;
+  --rgb2: 50, 196, 120;
+  --icon: 40, 190, 120;
+}
+
+body:has(.skill-grid) .skill:nth-child(4) {
+  --rgb: 205, 212, 224;
+  --rgb2: 70, 140, 220;
+  --icon: 165, 170, 182;
+}
+
+body:has(.skill-grid) .skill:hover {
+  transform: translateY(-3px) !important;
+  box-shadow:
+    0 0 26px rgba(var(--rgb), .38),
+    inset 0 0 26px rgba(var(--rgb), .2),
+    inset 0 1px 0 rgba(255, 255, 255, .12) !important;
+}
+
+/* curved arc lines in the bottom-right corner */
+
+body:has(.skill-grid) .skill::before {
+  content: "" !important;
+  display: block !important;
+  position: absolute !important;
+  z-index: -1 !important;
+  top: auto !important;
+  left: auto !important;
+  right: -22% !important;
+  bottom: -58% !important;
+  width: 85% !important;
+  height: 110% !important;
+  border: 1px solid rgba(var(--rgb2), .55) !important;
+  border-radius: 50% !important;
+  background: none !important;
+  box-shadow:
+    0 0 14px rgba(var(--rgb2), .18),
+    inset 0 0 14px rgba(var(--rgb2), .08) !important;
+  transform: rotate(-8deg) !important;
+  pointer-events: none !important;
+}
+
+body:has(.skill-grid) .skill::after {
+  content: "" !important;
+  display: block !important;
+  position: absolute !important;
+  z-index: -1 !important;
+  top: auto !important;
+  left: auto !important;
+  right: -30% !important;
+  bottom: -70% !important;
+  width: 85% !important;
+  height: 110% !important;
+  border: 1px solid rgba(var(--rgb2), .28) !important;
+  border-radius: 50% !important;
+  background: none !important;
+  transform: rotate(-8deg) !important;
+  pointer-events: none !important;
+}
+
+/* ---------- ICON + NAME ---------- */
+
+body:has(.skill-grid) .skilltop {
+  position: relative !important;
+  z-index: 1 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 10px !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  margin: 0 auto !important;
+  text-align: center !important;
+}
+
+body:has(.skill-grid) .skill .skillicon,
+body:has(.skill-grid) .skill:nth-child(1) .skillicon,
+body:has(.skill-grid) .skill:nth-child(2) .skillicon,
+body:has(.skill-grid) .skill:nth-child(3) .skillicon,
+body:has(.skill-grid) .skill:nth-child(4) .skillicon {
+  display: flex !important;
+  flex: 0 0 64px !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 64px !important;
+  height: 64px !important;
+  margin: 0 auto !important;
+  border: 1px solid rgba(var(--icon), .85) !important;
+  border-radius: 18px !important;
+  background: linear-gradient(145deg, rgba(var(--icon), .16), #0b0b0c 75%) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, .06),
+    0 4px 14px rgba(0, 0, 0, .5) !important;
+  line-height: 1 !important;
+}
+
+body:has(.skill-grid) .skillicon img {
+  width: 34px !important;
+  height: 34px !important;
+  max-width: none !important;
+  object-fit: contain !important;
+}
+
+body:has(.skill-grid) .skillicon i {
+  font-size: 31px !important;
+}
+
+body:has(.skill-grid) .skill h3 {
+  display: block !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  color: #f5f3ef !important;
+  font-family: 'DM Sans', sans-serif !important;
+  font-size: 18px !important;
+  font-weight: 500 !important;
+  letter-spacing: -.1px !important;
+  line-height: 1.35 !important;
+  text-align: center !important;
+  overflow-wrap: anywhere !important;
+}
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 600px) {
+
+  body:has(.skill-grid) .skill-grid {
+    gap: 13px !important;
+    padding: 14px 0 26px !important;
+  }
+
+  body:has(.skill-grid) .skill {
+    min-height: 106px !important;
+    padding: 12px 8px 14px !important;
+    border-radius: 18px !important;
+  }
+
+  body:has(.skill-grid) .skilltop {
+    gap: 7px !important;
+  }
+
+  body:has(.skill-grid) .skill .skillicon,
+  body:has(.skill-grid) .skill:nth-child(1) .skillicon,
+  body:has(.skill-grid) .skill:nth-child(2) .skillicon,
+  body:has(.skill-grid) .skill:nth-child(3) .skillicon,
+  body:has(.skill-grid) .skill:nth-child(4) .skillicon {
+    flex-basis: 46px !important;
+    width: 46px !important;
+    height: 46px !important;
+    border-radius: 14px !important;
+  }
+
+  body:has(.skill-grid) .skillicon img {
+    width: 26px !important;
+    height: 26px !important;
+  }
+
+  body:has(.skill-grid) .skillicon i {
+    font-size: 24px !important;
+  }
+
+  body:has(.skill-grid) .skill h3 {
+    font-size: 15px !important;
+  }
+}
+
+@media (max-width: 360px) {
+
+  body:has(.skill-grid) .skill .skillicon,
+  body:has(.skill-grid) .skill:nth-child(1) .skillicon,
+  body:has(.skill-grid) .skill:nth-child(2) .skillicon,
+  body:has(.skill-grid) .skill:nth-child(3) .skillicon,
+  body:has(.skill-grid) .skill:nth-child(4) .skillicon {
+    flex-basis: 42px !important;
+    width: 42px !important;
+    height: 42px !important;
+  }
+
+  body:has(.skill-grid) .skill h3 {
+    font-size: 14px !important;
+  }
+}
