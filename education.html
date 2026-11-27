@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -57,57 +56,38 @@
         <div class="eyebrow">My Education</div>
         <h2>Education</h2>
 
-        <p class="lead" id="eduIntroView">
-          A look at my education so far, the places where I learned,
-          grew, and found my direction. Every classroom taught me
-          something new.
-        </p>
+        <p class="lead" id="eduIntroView">A look at my educational journey so far — the places where I learnt, grew, and found my direction. Every classroom taught me something new.</p>
       </div>
 
       <div class="grid">
 
         <article class="card school-card">
-          <img
-            id="schoolImageView"
-            class="school-image"
-            alt="School building"
-          >
+          <img id="schoolImageView" class="school-image" style="display:block" alt="School building" src="https://i.postimg.cc/YSth43GV/IMG-20261021-005151.jpg">
 
           <div class="details">
             <h3>High School</h3>
-            <p id="edu1View">
-              Add school name, years and achievements in Edit Profile.
-            </p>
+            <p id="edu1View"></p>
           </div>
         </article>
 
         <article class="card school-card">
-          <img
-            id="collegeImageView"
-            class="school-image"
-            alt="College building"
-          >
+          <img id="collegeImageView" class="school-image" style="display:block" alt="College building" src="https://cdn.phototourl.com/member/2026-10-20-9ffde462-4225-487a-9aaa-8dbccb10b338.jpg">
 
           <div class="details">
             <h3>College</h3>
-            <p id="edu2View">
-              Add college name, years and academic details in Edit Profile.
-            </p>
+            <p id="edu2View"></p>
           </div>
         </article>
 
         <article class="card">
           <h3>Future Goals</h3>
-          <p id="edu3View">
-            Add your future learning goals.
-          </p>
+          <p id="edu3View">My aim is to continue my studies at the next level, specifically in Social Work, and in time build a stable and secure life dedicated to community development and helping others. I believe that consistent hard work, dedication, and perseverance can help turn my goals into reality.</p>
         </article>
 
       </div>
 
       <footer>
         <span>© <span id="yearView"></span> Reasat Safin</span>
-
         <span class="socials">
           <a href="contact.html">✉</a>
           <a href="contact.html">f</a>
@@ -129,22 +109,11 @@
     <div class="modal">
       <h2>Owner Login</h2>
       <p class="muted-note">Use your existing Supabase account.</p>
-
       <div class="form">
-        <label>
-          Email
-          <input id="loginEmail" type="email" autocomplete="username">
-        </label>
-
-        <label>
-          Password
-          <input id="loginPassword" type="password"
-                 autocomplete="current-password">
-        </label>
-
+        <label>Email<input id="loginEmail" type="email" autocomplete="username"></label>
+        <label>Password<input id="loginPassword" type="password" autocomplete="current-password"></label>
         <div class="error" id="loginError"></div>
       </div>
-
       <div class="modal-actions">
         <button class="btn outline" id="cancelLogin">Cancel</button>
         <button class="btn" id="loginSubmit">Login</button>
@@ -155,92 +124,25 @@
   <dialog id="editDialog">
     <div class="modal">
       <h2>Edit Portfolio</h2>
-
       <div class="form">
-        <label>
-          Display name
-          <input id="fName">
-        </label>
-
-        <label>
-          Intro
-          <textarea id="fIntro"></textarea>
-        </label>
-
-        <label>
-          About
-          <textarea id="fAbout"></textarea>
-        </label>
-
-        <label>
-          Education — Intro
-          <textarea id="fEduIntro"></textarea>
-        </label>
-
-        <label>
-          Education — School
-          <textarea id="fEdu1"></textarea>
-        </label>
-
-        <label>
-          Education — College / Current studies
-          <textarea id="fEdu2"></textarea>
-        </label>
-
-        <label>
-          Education — Goals
-          <textarea id="fEdu3"></textarea>
-        </label>
-
-        <label>
-          Portrait image URL (direct HTTPS)
-          <input id="fImage">
-        </label>
-
-        <label>
-          Gallery image URLs (one HTTPS URL per line)
-          <textarea id="fGallery"></textarea>
-        </label>
-
-        <label>
-          School image URL
-          <input id="fSchoolImage">
-        </label>
-
-        <label>
-          College image URL
-          <input id="fCollegeImage">
-        </label>
-
-        <label>
-          Skills (one per line, format: Name | 85)
-          <textarea id="fSkills"
-            placeholder="HTML & CSS | 90&#10;JavaScript | 75&#10;Python | 60"></textarea>
-        </label>
-
-        <label>
-          Email
-          <input id="fEmail" type="email">
-        </label>
-
-        <label>
-          Facebook URL
-          <input id="fFacebook">
-        </label>
-
-        <label>
-          Instagram URL
-          <input id="fInstagram">
-        </label>
-
-        <label>
-          Telegram URL
-          <input id="fTelegram">
-        </label>
-
+        <label>Display name<input id="fName"></label>
+        <label>Intro<textarea id="fIntro"></textarea></label>
+        <label>About<textarea id="fAbout"></textarea></label>
+        <label>Education — Intro<textarea id="fEduIntro"></textarea></label>
+        <label>Education — School<textarea id="fEdu1"></textarea></label>
+        <label>Education — College / Current studies<textarea id="fEdu2"></textarea></label>
+        <label>Education — Goals<textarea id="fEdu3"></textarea></label>
+        <label>Portrait image URL (direct HTTPS)<input id="fImage"></label>
+        <label>Gallery image URLs (one HTTPS URL per line)<textarea id="fGallery"></textarea></label>
+        <label>School image URL<input id="fSchoolImage"></label>
+        <label>College image URL<input id="fCollegeImage"></label>
+        <label>Skills (one per line, format: Name | 85)<textarea id="fSkills" placeholder="HTML & CSS | 90&#10;JavaScript | 75&#10;Python | 60"></textarea></label>
+        <label>Email<input id="fEmail" type="email"></label>
+        <label>Facebook URL<input id="fFacebook"></label>
+        <label>Instagram URL<input id="fInstagram"></label>
+        <label>Telegram URL<input id="fTelegram"></label>
         <div class="error" id="saveError"></div>
       </div>
-
       <div class="modal-actions">
         <button class="btn outline" id="logoutBtn">Logout</button>
         <button class="btn outline" id="cancelEdit">Cancel</button>
